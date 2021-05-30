@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ios_opdep" customModuleProvider="target">
+            <connections>
+                <outlet property="textDesAuth" destination="beU-ez-TL0" id="lj1-Ch-WaR"/>
+                <outlet property="textWellcome" destination="Uzu-zJ-0Uk" id="pdu-zo-0ba"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewFacebook" destination="LeT-V7-uQg" id="0lR-xb-Qaz"/>
+                <outlet property="viewGoogle" destination="xWv-R7-Xx3" id="Zn9-Dg-EHZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="W3v-XJ-mVG">
+                    <rect key="frame" x="58.5" y="244" width="297" height="147"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-zJ-0Uk">
+                    <rect key="frame" x="10" y="421" width="394" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beU-ez-TL0">
+                    <rect key="frame" x="10" y="462" width="394" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-V7-uQg">
+                    <rect key="frame" x="20" y="503" width="374" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-mr-tPy">
+                            <rect key="frame" x="10" y="12.5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="6BG-xF-Aiu"/>
+                                <constraint firstAttribute="width" constant="25" id="bo5-gT-Ybc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng nhập với FACEBOOK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLQ-YZ-L77">
+                            <rect key="frame" x="55" y="0.0" width="201.5" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <color key="highlightedColor" systemColor="secondarySystemBackgroundColor"/>
+                            <size key="shadowOffset" width="-1" height="-1"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="yLQ-YZ-L77" secondAttribute="bottom" id="Czw-OB-gxd"/>
+                        <constraint firstItem="Tug-mr-tPy" firstAttribute="centerY" secondItem="LeT-V7-uQg" secondAttribute="centerY" id="K8F-1I-ndW"/>
+                        <constraint firstItem="yLQ-YZ-L77" firstAttribute="leading" secondItem="Tug-mr-tPy" secondAttribute="trailing" constant="20" id="MWa-ND-cLJ"/>
+                        <constraint firstItem="yLQ-YZ-L77" firstAttribute="top" secondItem="LeT-V7-uQg" secondAttribute="top" id="PPa-la-z18"/>
+                        <constraint firstItem="Tug-mr-tPy" firstAttribute="leading" secondItem="LeT-V7-uQg" secondAttribute="leading" constant="10" id="Z8p-6H-nlJ"/>
+                        <constraint firstAttribute="height" constant="50" id="llX-E2-IKM"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWv-R7-Xx3">
+                    <rect key="frame" x="20" y="573" width="374" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-7E-qZx">
+                            <rect key="frame" x="10" y="10" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Ast-mB-dwi"/>
+                                <constraint firstAttribute="width" constant="25" id="qAg-iT-Ozc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Đăng nhập với Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crm-M0-BcO">
+                            <rect key="frame" x="55" y="0.0" width="309" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="MzX-7E-qZx" firstAttribute="leading" secondItem="xWv-R7-Xx3" secondAttribute="leading" constant="10" id="1Mz-NB-1xV"/>
+                        <constraint firstItem="Crm-M0-BcO" firstAttribute="centerY" secondItem="xWv-R7-Xx3" secondAttribute="centerY" id="G8L-LM-ber"/>
+                        <constraint firstItem="Crm-M0-BcO" firstAttribute="leading" secondItem="MzX-7E-qZx" secondAttribute="trailing" constant="20" id="Jeg-gR-jxd"/>
+                        <constraint firstItem="MzX-7E-qZx" firstAttribute="centerY" secondItem="xWv-R7-Xx3" secondAttribute="centerY" id="Xvi-U7-aof"/>
+                        <constraint firstAttribute="trailing" secondItem="Crm-M0-BcO" secondAttribute="trailing" constant="10" id="mVH-dy-H0K"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xWv-R7-Xx3" secondAttribute="trailing" constant="20" id="36r-tt-qx8"/>
+                <constraint firstItem="beU-ez-TL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="3Bn-Bu-Baf"/>
+                <constraint firstItem="LeT-V7-uQg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9VX-Al-Fbh"/>
+                <constraint firstItem="xWv-R7-Xx3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="AfE-3T-iW7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uzu-zJ-0Uk" secondAttribute="trailing" constant="10" id="Lna-Be-GCi"/>
+                <constraint firstItem="xWv-R7-Xx3" firstAttribute="top" secondItem="LeT-V7-uQg" secondAttribute="bottom" constant="30" id="Swl-GD-VXR"/>
+                <constraint firstItem="W3v-XJ-mVG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aAj-EE-HgT"/>
+                <constraint firstItem="Uzu-zJ-0Uk" firstAttribute="top" secondItem="W3v-XJ-mVG" secondAttribute="bottom" constant="30" id="bGn-ho-isX"/>
+                <constraint firstItem="beU-ez-TL0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eoB-wu-MZw"/>
+                <constraint firstItem="Uzu-zJ-0Uk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gC9-3s-hdJ"/>
+                <constraint firstItem="LeT-V7-uQg" firstAttribute="top" secondItem="beU-ez-TL0" secondAttribute="bottom" constant="20" id="gHp-GW-KYh"/>
+                <constraint firstItem="beU-ez-TL0" firstAttribute="top" secondItem="Uzu-zJ-0Uk" secondAttribute="bottom" constant="20" id="jCc-XN-INx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LeT-V7-uQg" secondAttribute="trailing" constant="20" id="jcP-xV-YLj"/>
+                <constraint firstItem="Uzu-zJ-0Uk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k6M-1q-g3H"/>
+                <constraint firstItem="W3v-XJ-mVG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="n8z-6E-pep"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="beU-ez-TL0" secondAttribute="trailing" constant="10" id="oAa-eA-28y"/>
+            </constraints>
+            <point key="canvasLocation" x="100.00000000000001" y="86.383928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="facebook" width="512" height="512"/>
+        <image name="google" width="256" height="256"/>
+        <image name="logo" width="297" height="147"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

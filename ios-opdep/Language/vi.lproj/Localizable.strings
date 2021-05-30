@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  ios-opdep
+
+  Created by Quang Nguyễn Như on 27/04/2021.
+  
+*/
+// MARK: - Common
+"button_confirm" = "Xác nhận";
+
+// MARK: - Login
+"title_login" = "Chào mừng bạn đến Ốp Đẹp";
+"description_login" = "Đăng nhập để tiếp tục";
+"placeholder_phone" = "Nhập số điện thoại";
+"placeholder_otp" = "Code";
+"button_submit" = "Xác minh số điện thoại";
+
+// MARK: - Editor
+"your_design" = "Thiết Kế Của Bạn";
+"editor_image" = "Ảnh";
+"editor_color" = "Màu nền";
+"editor_text" = "Thêm Chữ";
+"editor_sticker" = "Sticker";
+"editor_background" = "HÌNH NỀN";
+"editor_frame" = "KHUNG HÌNH";
+"editor_effects" = "Hiệu ứng";
+"editor_reset" = "Xóa ảnh";
+"editor_your_photo" = "Ảnh của bạn";
+"editor_from_camera" = "Chụp ảnh";
+"editor_from_photo_library" = "Chọn ảnh có sẵn";
+"editor_pattern" = "Mẫu";
+"editor_textures" = "Kết cấu";
+"editor_colours" = "Màu sắc";
+"editor_Insert_Image" = "Chèn hình ảnh";
+"editor_no_image" = "Vui lòng chèn hình ảnh mà bạn có thể tạo hiệu ứng";
+"editor_no_text" = "Vui lòng chèn văn bản của bạn";
+"editor_attribute_text" = "Chỉnh sửa văn bản";
+"editor_attribute_image" = "Chỉnh sửa hình ảnh";
+"editor_attribute_color" = "Chỉnh sửa màu nền";
+
+// MARK: - Shopping cart
+"cart_title" = "Giỏ Hàng";
+"cart_next" = "Tiếp tục";
+"cart_delete" = "Xoá";
+"cart_quantity" = "Số Lượng";
+"cart_shipping_price" = "Phí giao hàng nhanh";
+"cart_total_price" = "Tổng tiền";
+"cart_empty" = "Bạn chưa có đơn hàng nào.";
+
+// MARK: - UploadDesign
+"upload_design_title" = "Kiểm tra thiết kế";
+"upload_design_next" = "Tiếp tục đặt hàng";
