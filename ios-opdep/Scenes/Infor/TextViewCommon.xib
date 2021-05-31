@@ -42,22 +42,19 @@
                         <constraint firstAttribute="width" constant="15" id="x40-hP-lB9"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSC-lK-Q11">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSC-lK-Q11">
                     <rect key="frame" x="10" y="468.5" width="394" height="1"/>
                     <color key="backgroundColor" systemColor="labelColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="EEH-p6-hdB"/>
-                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="4a8-gl-fcE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Wj-JN-iAL"/>
+                <constraint firstItem="aSC-lK-Q11" firstAttribute="top" secondItem="Q60-7D-3aH" secondAttribute="bottom" constant="5" id="71a-j3-Mkb"/>
                 <constraint firstItem="aSC-lK-Q11" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="PBc-ls-3Wp"/>
                 <constraint firstItem="hau-Da-HWT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="QNr-ia-gLN"/>
                 <constraint firstAttribute="trailing" secondItem="4a8-gl-fcE" secondAttribute="trailing" constant="10" id="Qr3-MV-yfa"/>
-                <constraint firstItem="aSC-lK-Q11" firstAttribute="top" secondItem="Q60-7D-3aH" secondAttribute="bottom" constant="10" id="ToW-Cp-08V"/>
                 <constraint firstItem="Q60-7D-3aH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bMp-7F-h9O"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aSC-lK-Q11" secondAttribute="trailing" constant="10" id="fHA-yU-jTh"/>
                 <constraint firstItem="hau-Da-HWT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="j9d-uc-ha4"/>

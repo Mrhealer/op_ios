@@ -22,6 +22,9 @@ class InformationRouter: GenericRouter<UINavigationController> {
         OrderHistoryRouter(AppLogic.shared.appRouter.rootNavigationController).startWith(userId: userId)
     }
     
+    func navigateToCartOrder(){
+        ShoppingCartRouter(AppLogic.shared.appRouter.rootNavigationController).startWith()
+    }
     func presentSignIn() {
         let navigation = BasicNavigationController()
         let router = LoginRouter(navigation)

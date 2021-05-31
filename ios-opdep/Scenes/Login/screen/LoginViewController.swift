@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
         textDesAuth.font = R.font.openSansSemiBold(size: 14)
         textDesAuth.textAlignment = .center
         
-        viewGoogle.backgroundColor = .red
+        //viewGoogle.backgroundColor = .red
         viewFacebook.backgroundColor = .blue
     }
     

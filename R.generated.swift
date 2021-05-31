@@ -322,7 +322,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 82 images.
+  /// This `R.image` struct is generated, and contains static references to 84 images.
   struct image {
     /// Image `add_photo`.
     static let add_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_photo")
@@ -458,6 +458,10 @@ struct R: Rswift.Validatable {
     static let tabbar_home_active = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_home_active")
     /// Image `tabbar_home`.
     static let tabbar_home = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_home")
+    /// Image `tabbar_infor_active`.
+    static let tabbar_infor_active = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_infor_active")
+    /// Image `tabbar_infor`.
+    static let tabbar_infor = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_infor")
     /// Image `text_align_left`.
     static let text_align_left = Rswift.ImageResource(bundle: R.hostingBundle, name: "text_align_left")
     /// Image `text_align_right`.
@@ -955,6 +959,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "tabbar_home_active", bundle: ..., traitCollection: ...)`
     static func tabbar_home_active(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tabbar_home_active, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbar_infor", bundle: ..., traitCollection: ...)`
+    static func tabbar_infor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbar_infor, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbar_infor_active", bundle: ..., traitCollection: ...)`
+    static func tabbar_infor_active(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbar_infor_active, compatibleWith: traitCollection)
     }
     #endif
 

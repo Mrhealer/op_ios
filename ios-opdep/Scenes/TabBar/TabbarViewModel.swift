@@ -15,18 +15,18 @@ enum HomeTab: Int {
     case cart = 2
     case history = 0
     
-    var title: String {
-        switch self {
-        case .infor: return "Thông tin"
-        case .home: return "Trang Chủ"
-        case .cart: return "Giỏ Hàng"
-        case .history: return "Tính năng"
-        }
-    }
+//    var title: String {
+//        switch self {
+//        case .infor: return "Thông tin"
+//        case .home: return "Trang Chủ"
+//        case .cart: return "Giỏ Hàng"
+//        case .history: return "Tính năng"
+//        }
+//    }
     
     var icon: UIImage? {
         switch self {
-        case .infor: return R.image.tabbar_history()
+        case .infor: return R.image.tabbar_infor()
         case .home: return R.image.tabbar_home()
         case .cart: return R.image.tabbar_cart()
         case .history: return R.image.tabbar_history()
@@ -35,7 +35,7 @@ enum HomeTab: Int {
     
     var activedIcon: UIImage? {
         switch self {
-        case .infor: return R.image.tabbar_history_active()
+        case .infor: return R.image.tabbar_infor_active()
         case .home: return R.image.tabbar_home_active()
         case .cart: return R.image.tabbar_cart_active()
         case .history: return R.image.tabbar_history_active()

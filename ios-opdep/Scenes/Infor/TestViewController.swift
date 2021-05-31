@@ -71,6 +71,9 @@ class TestViewController: BasicViewController {
             view.addGestureRecognizer(tap)
             view.isUserInteractionEnabled = true
             view.tag = index
+            
+    
+            
             stackViewInfo.withBorder(width: 1)
             stackViewInfo.addArrangedSubview(view)
         }
@@ -111,11 +114,14 @@ class TestViewController: BasicViewController {
     @objc func touchHappen(_ sender: UITapGestureRecognizer) {
         //        arrayItemInfo[sender.view?.tag ?? 0]
         switch sender.view?.tag {
+        case 0:
+            viewModel.startProfile()
+            break
         case 1:
-            print("Hello Dear you are here1")
+            viewModel.startCardOrder()
             break
         case 2:
-            //            CocoaAction<Any>(viewModel.navigateToOrderHistoryAction)
+            viewModel.startOrderHistory()
             break
         case 3:
             let url = URL(string: "https://www.instagram.com/inopdepvn/")
