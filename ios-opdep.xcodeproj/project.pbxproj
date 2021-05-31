@@ -518,6 +518,7 @@
 		607DB3502662C7A8008798D5 /* terms_conditions_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms_conditions_en.html; sourceTree = "<group>"; };
 		607DB3542662C991008798D5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		607DB3552662C991008798D5 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		607DB3582664B9E7008798D5 /* ios-opdep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-opdep.entitlements"; sourceTree = "<group>"; };
 		60B3D8D226615F3A005F032B /* InformationBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationBridge.swift; sourceTree = "<group>"; };
 		60B3D8D426615F3A005F032B /* InformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRouter.swift; sourceTree = "<group>"; };
 		60B3D8D626615F3A005F032B /* InformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationCell.xib; sourceTree = "<group>"; };
@@ -815,6 +816,7 @@
 		3DD13CBE2633C33B00C2795D /* ios-opdep */ = {
 			isa = PBXGroup;
 			children = (
+				607DB3582664B9E7008798D5 /* ios-opdep.entitlements */,
 				3DD13D1D2633C43D00C2795D /* Common */,
 				3DD13D1E2633C44500C2795D /* CoreServices */,
 				3DD13D202633C45700C2795D /* Utils */,
@@ -2266,6 +2268,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-opdep/ios-opdep.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLJ893LV9Z;
 				INFOPLIST_FILE = "ios-opdep/Info.plist";
@@ -2287,6 +2290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-opdep/ios-opdep.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLJ893LV9Z;
 				INFOPLIST_FILE = "ios-opdep/Info.plist";

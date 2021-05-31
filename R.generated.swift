@@ -123,6 +123,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.file` struct is generated, and contains static references to 12 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
@@ -314,8 +325,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 84 images.
+  /// This `R.image` struct is generated, and contains static references to 86 images.
   struct image {
+    /// Image `Facebook-2`.
+    static let facebook2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Facebook-2")
     /// Image `add_photo`.
     static let add_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_photo")
     /// Image `adjusted_ratio`.
@@ -346,6 +359,8 @@ struct R: Rswift.Validatable {
     static let eye_style_frame = Rswift.ImageResource(bundle: R.hostingBundle, name: "eye_style_frame")
     /// Image `facebook-1`.
     static let facebook1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebook-1")
+    /// Image `facebook-logo-png-38362`.
+    static let facebookLogoPng38362 = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebook-logo-png-38362")
     /// Image `facebook`.
     static let facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebook")
     /// Image `filter_n0`.
@@ -486,6 +501,13 @@ struct R: Rswift.Validatable {
     static let unlock_scroll_content = Rswift.ImageResource(bundle: R.hostingBundle, name: "unlock_scroll_content")
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Facebook-2", bundle: ..., traitCollection: ...)`
+    static func facebook2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.facebook2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "add_photo", bundle: ..., traitCollection: ...)`
     static func add_photo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.add_photo, compatibleWith: traitCollection)
@@ -594,6 +616,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "facebook-1", bundle: ..., traitCollection: ...)`
     static func facebook1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.facebook1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "facebook-logo-png-38362", bundle: ..., traitCollection: ...)`
+    static func facebookLogoPng38362(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.facebookLogoPng38362, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2117,7 +2146,10 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "choose_photos", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_photos' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "facebook-logo-png-38362", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'facebook-logo-png-38362' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "google", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'google' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "AccentColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AccentColor' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
         }
       }
 

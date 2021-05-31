@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ios_opdep" customModuleProvider="target">
             <connections>
+                <outlet property="stackView" destination="ta1-md-bUd" id="W80-AQ-cGs"/>
                 <outlet property="textDesAuth" destination="beU-ez-TL0" id="lj1-Ch-WaR"/>
                 <outlet property="textWellcome" destination="Uzu-zJ-0Uk" id="pdu-zo-0ba"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,19 +38,33 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-md-bUd">
-                    <rect key="frame" x="20" y="427" width="374" height="90"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-md-bUd">
+                    <rect key="frame" x="20" y="427" width="374" height="140"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVg-Ad-YpJ">
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIU-Tq-Aln">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="6T2-eA-XyN"/>
+                                <constraint firstAttribute="height" constant="60" id="5zB-Ai-P88"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
+                            <state key="normal" title="Sign in with Facebook" image="facebook-logo-png-38362">
+                                <color key="titleColor" systemColor="systemBackgroundColor"/>
+                            </state>
+                            <connections>
+                                <action selector="loginFacebook:" destination="-1" eventType="touchUpInside" id="YOD-WD-OfB"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avd-yM-bRz">
-                            <rect key="frame" x="0.0" y="60" width="374" height="30"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-c9-18f">
+                            <rect key="frame" x="0.0" y="80" width="374" height="60"/>
+                            <color key="backgroundColor" red="0.93169744964671974" green="0.98631815033578096" blue="1" alpha="0.62114668865593115" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
+                            <state key="normal" title="Sign in with google  " image="google">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="signinGoogle:" destination="-1" eventType="touchUpInside" id="phX-G4-PFe"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -75,6 +91,11 @@
     </objects>
     <resources>
         <image name="choose_photos" width="42" height="42"/>
+        <image name="facebook-logo-png-38362" width="44" height="44"/>
+        <image name="google" width="22" height="22"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

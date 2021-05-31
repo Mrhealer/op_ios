@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -24,6 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         AppLogic.shared.appRouter.window = window
         AppLogic.shared.startUserSession()
     }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+            let openURLContext = Array(URLContexts).first
+            if openURLContext != nil {
+                if let URL = openURLContext?.url, let annotation = openURLContext?.options.annotation {
+                    ApplicationDelegate.shared.application(UIApplication.shared, open: URL, sourceApplication: openURLContext?.options.sourceApplication, annotation: annotation)
+                }
+            }
+        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

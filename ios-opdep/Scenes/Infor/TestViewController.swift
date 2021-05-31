@@ -64,7 +64,7 @@ class TestViewController: BasicViewController {
             view.textTitle.font = R.font.openSansRegular(size: 16)
             view.underLine.backgroundColor = .black
             view.snp.makeConstraints{
-                $0.height.equalTo(30)
+                $0.height.equalTo(50)
                 
             }
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.touchHappen(_:)))
@@ -76,6 +76,8 @@ class TestViewController: BasicViewController {
             
             stackViewInfo.withBorder(width: 1)
             stackViewInfo.addArrangedSubview(view)
+            stackViewInfo.addMiddleBorderWithColor(color: .blue, width: 1.0)
+
         }
         
         
@@ -88,7 +90,7 @@ class TestViewController: BasicViewController {
             view.imageRight.image = item.imageRight
             view.textTitle.font = R.font.openSansRegular(size: 16)
             view.snp.makeConstraints{
-                $0.height.equalTo(30)
+                $0.height.equalTo(50)
                 
             }
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.touchHappenSettings(_:)))
@@ -98,6 +100,8 @@ class TestViewController: BasicViewController {
             view.underLine.backgroundColor = .black
             stackViewSettings.withBorder(width: 1)
             stackViewSettings.addArrangedSubview(view)
+            stackViewSettings.addMiddleBorderWithColor(color: .blue, width: 1.0)
+
         }
         
     }
@@ -162,5 +166,43 @@ class TestViewController: BasicViewController {
         }
     }
     
+    
+}
+
+extension UIView {
+    func addTopBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x:0,y: 0, width:self.frame.size.width, height:width)
+        self.layer.addSublayer(border)
+    }
+
+    func addRightBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: self.frame.size.width - width,y: 0, width:width, height:self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+
+    func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x:0, y:self.frame.size.height - width, width:self.frame.size.width, height:width)
+        self.layer.addSublayer(border)
+    }
+
+    func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x:0, y:0, width:width, height:self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+
+    func addMiddleBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x:self.frame.size.width/2, y:0, width:width, height:self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
 }
 

@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,9 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appLogic.startSetup()
         AppLogic.shared.appRouter.window = window
         AppLogic.shared.startUserSession()
-
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance().clientID = "439309188709-k5bviqnelhibvug5ann8dr46es45i1et.apps.googleusercontent.com"
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+            return ApplicationDelegate.shared.application(app, open: url, options: options)
+        }
 
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)

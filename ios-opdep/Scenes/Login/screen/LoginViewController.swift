@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInDelegate {
 
-    
     @IBOutlet weak var textWellcome: UILabel!
     @IBOutlet weak var textDesAuth: UILabel!
-    @IBOutlet weak var viewGoogle: UIView!
-    @IBOutlet weak var viewFacebook: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    
     let viewModel: LoginViewModel
     
     
@@ -35,6 +36,7 @@ class LoginViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         let backButton = UIBarButtonItem()
         backButton.title = "New Back Button Text"
+        backButton.tintColor = .red
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
 
         
@@ -44,11 +46,44 @@ class LoginViewController: UIViewController {
         textWellcome.textAlignment = .center
         textDesAuth.font = R.font.openSansSemiBold(size: 14)
         textDesAuth.textAlignment = .center
-        
-        //viewGoogle.backgroundColor = .red
-        //viewFacebook.backgroundColor = .blue
     }
     
+    @IBAction func loginFacebook(_ sender: Any) {
+        getFacebookUserInfo()
+    }
     
+    func getFacebookUserInfo() {
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            loginManager.logIn(permissions: [.email, .publicProfile], viewController: self) { [weak self] (result) in
+                guard self != nil else { return }
+                switch result {
+                case .cancelled:
+                    print("Cancel button click")
+                case .success( _, _, let token):
+                    print("success", token as Any)
+                default:
+                    print("??")
+                }
+            }
+        }
     
+    @IBAction func signinGoogle(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard error == nil else {
+            return
+        }
+        if let idtoken = user.authentication.idToken {
+            print("abc123===", idtoken)
+        } else {
+            return
+        }
+        
+    }
 }
