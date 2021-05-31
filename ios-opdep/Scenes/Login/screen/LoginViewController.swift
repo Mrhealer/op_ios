@@ -14,9 +14,9 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var textWellcome: UILabel!
     @IBOutlet weak var textDesAuth: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var titleHeader: UILabel!
     
     let viewModel: LoginViewModel
-    
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -29,16 +29,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = Localize.InfomationAccount.auth
-        self.navigationController?.navigationBar.barTintColor = UIColor.Basic.ping
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.isNavigationBarHidden = false
-        let backButton = UIBarButtonItem()
-        backButton.title = "New Back Button Text"
-        backButton.tintColor = .red
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-
+        titleHeader.text = Localize.InfomationAccount.auth
         
         textWellcome.text = Localize.Login.title
         textDesAuth.text = Localize.Login.description
@@ -86,4 +77,9 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         }
         
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        InformationRouter(AppLogic.shared.appRouter.rootNavigationController).close()
+    }
+    
 }

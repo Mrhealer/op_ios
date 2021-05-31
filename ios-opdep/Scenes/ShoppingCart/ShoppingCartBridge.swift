@@ -15,6 +15,8 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
                                     font: .font(style: .medium, size: 16),
                                     textAlignment: .center)
     
+    let buttonLogin = StyleButton(title: Localize.InfomationAccount.auth, backgroundColor: .lightGray, minHeight: 50, cornerRadius: 5)
+    
     override func render(tableView: UITableView, in parentView: UIView) {
         viewController?.view.backgroundColor = .white
         setupView(tableView: tableView, in: parentView)
@@ -33,7 +35,7 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
                                          cornerRadius: 13)
         parentView.addSubviews(navigationBar, tableView,
                                labelEmptyData,
-                               stackView, buttonCheckout)
+                               stackView, buttonCheckout, buttonLogin)
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(parentView.safeAreaLayoutGuide)
             $0.left.right.equalToSuperview()
@@ -62,21 +64,32 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
             $0.left.equalToSuperview().offset(30)
             $0.right.equalToSuperview().offset(-30)
         }
+        buttonLogin.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().offset(30)
+            $0.right.equalToSuperview().offset(-30)
+        }
         viewController?.bindViewModel(viewModel)
         viewModel.fetchDataShoppingCart()
         
-        [tableView, stackView, buttonCheckout, labelEmptyData].forEach {
+        [tableView, stackView, buttonCheckout, labelEmptyData, buttonLogin].forEach {
             $0.isHidden = true
         }
-        viewModel.shoppingCart.signal.observeValues { [weak self] in
-            guard let sself = self else { return }
-            let data = $0
-            [tableView, stackView, buttonCheckout].forEach {
-                $0.isHidden = data.count == 0 ? true : false
+        
+        if viewModel.userId.value.isEmpty {
+            buttonLogin.isHidden = false
+        } else {
+            viewModel.shoppingCart.signal.observeValues { [weak self] in
+                guard let sself = self else { return }
+                let data = $0
+                [tableView, stackView, buttonCheckout].forEach {
+                    $0.isHidden = data.count == 0 ? true : false
+                }
+                sself.labelEmptyData.isHidden = data.count == 0 ? false : true
             }
-            sself.labelEmptyData.isHidden = data.count == 0 ? false : true
         }
         buttonCheckout.reactive.pressed = CocoaAction(viewModel.navigateToDiscountAction)
+        buttonLogin.reactive.pressed = CocoaAction(viewModel.navigateToLoginAction)
     }
     
     private func buildTotalPriceView() -> UIStackView {

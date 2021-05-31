@@ -31,4 +31,8 @@ class ShoppingCartRouter: GenericRouter<UINavigationController> {
     func navigateToDiscount(userId: String) {
         DiscountRouter(AppLogic.shared.appRouter.rootNavigationController).startWith(userId: userId)
     }
+    
+    func navigationToLogin() {
+        InformationRouter(AppLogic.shared.appRouter.rootNavigationController).presentSignIn()
+    }
 }

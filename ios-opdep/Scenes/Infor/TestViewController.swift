@@ -76,7 +76,6 @@ class TestViewController: BasicViewController {
             
             stackViewInfo.withBorder(width: 1)
             stackViewInfo.addArrangedSubview(view)
-            stackViewInfo.addMiddleBorderWithColor(color: .blue, width: 1.0)
 
         }
         
@@ -100,8 +99,6 @@ class TestViewController: BasicViewController {
             view.underLine.backgroundColor = .black
             stackViewSettings.withBorder(width: 1)
             stackViewSettings.addArrangedSubview(view)
-            stackViewSettings.addMiddleBorderWithColor(color: .blue, width: 1.0)
-
         }
         
     }
