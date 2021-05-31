@@ -23,6 +23,10 @@ target 'ios-opdep' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   
+  pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
+  
+  
   #Language support
   pod 'Localize'
 

@@ -123,10 +123,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 13 files.
+  /// This `R.file` struct is generated, and contains static references to 12 files.
   struct file {
-    /// Resource file `.swiftlint.yml`.
-    static let swiftlintYml = Rswift.FileResource(bundle: R.hostingBundle, name: ".swiftlint", pathExtension: "yml")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `OpenSans-Bold.ttf`.
@@ -151,12 +149,6 @@ struct R: Rswift.Validatable {
     static let openSansSemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-SemiBoldItalic", pathExtension: "ttf")
     /// Resource file `terms_conditions_en.html`.
     static let terms_conditions_enHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "terms_conditions_en", pathExtension: "html")
-
-    /// `bundle.url(forResource: ".swiftlint", withExtension: "yml")`
-    static func swiftlintYml(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.swiftlintYml
-      return fileResource.bundle.url(forResource: fileResource)
-    }
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
@@ -2124,9 +2116,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "facebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'facebook' is used in nib 'LoginViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "google", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'google' is used in nib 'LoginViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "choose_photos", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_photos' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

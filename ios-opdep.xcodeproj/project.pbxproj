@@ -237,7 +237,6 @@
 		3DFDA2B126415F2400DC3B92 /* StickerImagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFDA2B026415F2400DC3B92 /* StickerImagesRequest.swift */; };
 		3DFDA2B726415F5300DC3B92 /* DownloadFontRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFDA2B626415F5300DC3B92 /* DownloadFontRequest.swift */; };
 		3DFDA2DE2641620400DC3B92 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFDA2DD2641620400DC3B92 /* R.generated.swift */; };
-		3DFDA2E32641621900DC3B92 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3DFDA2E22641621900DC3B92 /* .swiftlint.yml */; };
 		607DB34E2662A72C008798D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607DB34C2662A72C008798D5 /* LoginViewController.swift */; };
 		607DB34F2662A72C008798D5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607DB34D2662A72C008798D5 /* LoginViewController.xib */; };
 		607DB3512662C7A8008798D5 /* terms_conditions_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 607DB3502662C7A8008798D5 /* terms_conditions_en.html */; };
@@ -513,7 +512,6 @@
 		3DFDA2B026415F2400DC3B92 /* StickerImagesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerImagesRequest.swift; sourceTree = "<group>"; };
 		3DFDA2B626415F5300DC3B92 /* DownloadFontRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFontRequest.swift; sourceTree = "<group>"; };
 		3DFDA2DD2641620400DC3B92 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		3DFDA2E22641621900DC3B92 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5802A91513690FA6A4C96DDB /* Pods_ios_opdep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_opdep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607DB34C2662A72C008798D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		607DB34D2662A72C008798D5 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -795,7 +793,6 @@
 			isa = PBXGroup;
 			children = (
 				3DFDA2DD2641620400DC3B92 /* R.generated.swift */,
-				3DFDA2E22641621900DC3B92 /* .swiftlint.yml */,
 				3DD13CBE2633C33B00C2795D /* ios-opdep */,
 				3DD13CD52633C33E00C2795D /* ios-opdepTests */,
 				3DD13CE02633C33E00C2795D /* ios-opdepUITests */,
@@ -1570,6 +1567,7 @@
 				3DD13CB92633C33B00C2795D /* Frameworks */,
 				3DD13CBA2633C33B00C2795D /* Resources */,
 				AE88FA3ECF365DC9FBAC1AB4 /* [CP] Embed Pods Frameworks */,
+				0B3116FEBF8617EB6C6CEB9A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1608,6 +1606,7 @@
 				3DD13CDA2633C33E00C2795D /* Frameworks */,
 				3DD13CDB2633C33E00C2795D /* Resources */,
 				B0FFD5E6E22E86292646E642 /* [CP] Embed Pods Frameworks */,
+				41FE1657F507D5EAF9FCF897 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1667,7 +1666,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DFDA2E32641621900DC3B92 /* .swiftlint.yml in Resources */,
 				3D7BA65326387D6E009597CA /* OpenSans-Light.ttf in Resources */,
 				3DD13CCC2633C33E00C2795D /* LaunchScreen.storyboard in Resources */,
 				607DB3572662C991008798D5 /* WebViewController.xib in Resources */,
@@ -1730,6 +1728,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0B3116FEBF8617EB6C6CEB9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-opdep/Pods-ios-opdep-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-opdep/Pods-ios-opdep-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-opdep/Pods-ios-opdep-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1E1DAC8D1576DE0A49B0F871 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1750,6 +1765,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41FE1657F507D5EAF9FCF897 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-opdep-ios-opdepUITests/Pods-ios-opdep-ios-opdepUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-opdep-ios-opdepUITests/Pods-ios-opdep-ios-opdepUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-opdep-ios-opdepUITests/Pods-ios-opdep-ios-opdepUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		60B3D8E1266202B1005F032B /* ShellScript */ = {
