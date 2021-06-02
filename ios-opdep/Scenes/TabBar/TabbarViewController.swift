@@ -52,6 +52,10 @@ final class HomeTabBarViewController: UITabBarController, UITabBarControllerDele
             guard let sself = self else { return }
             let selectedItem = $0
             guard let selected = selectedItem else { return }
+            let userID = Property(value: APIService.shared.keyStore.userId.asStringOrEmpty())
+            if userID.value.isEmpty && selected.tab.rawValue == HomeTab.cart.rawValue {
+                InformationRouter(AppLogic.shared.appRouter.rootNavigationController).presentSignIn()
+            }
             let module = sself.viewModel.modules[selected.tab.rawValue]
             if module.container?.viewControllers.isEmpty == true {
                 module.router.start()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,15 +34,33 @@
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-fi-yA2">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="gCf-fi-yA2" firstAttribute="leading" secondItem="jVR-5i-qeb" secondAttribute="leading" id="7Uk-V2-43Y"/>
                         <constraint firstAttribute="bottom" secondItem="gCf-fi-yA2" secondAttribute="bottom" id="MFK-JV-fvH"/>
                         <constraint firstAttribute="trailing" secondItem="gCf-fi-yA2" secondAttribute="trailing" id="aLP-6V-mF4"/>
                         <constraint firstItem="gCf-fi-yA2" firstAttribute="top" secondItem="jVR-5i-qeb" secondAttribute="top" constant="10" id="ynR-on-4qM"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.64233041804438862" green="0.68381460917364689" blue="0.67899236701366128" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthNew">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColorNew">
+                            <color key="value" red="0.64233041804438862" green="0.68381460917364689" blue="0.67899236701366128" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8u-JP-Rnb">
                     <rect key="frame" x="20" y="94.5" width="41.5" height="20.5"/>
@@ -64,10 +82,21 @@
                         <constraint firstAttribute="trailing" secondItem="DOj-KP-RuE" secondAttribute="trailing" id="yuJ-dx-iw5"/>
                         <constraint firstItem="DOj-KP-RuE" firstAttribute="top" secondItem="nFt-0g-Bsz" secondAttribute="top" id="zZm-LJ-7op"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthNew">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusNew">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColorNew">
+                            <color key="value" red="0.64233041804438862" green="0.68381460917364689" blue="0.67899236701366128" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+            <color key="backgroundColor" red="1" green="0.8076562741615203" blue="0.86590261958190828" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="6Tp-td-OVQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1Uw-Ah-hxC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Tp-td-OVQ" secondAttribute="trailing" id="5Vv-d0-cer"/>
@@ -78,16 +107,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nFt-0g-Bsz" secondAttribute="trailing" constant="20" id="Xbs-ud-8y8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jVR-5i-qeb" secondAttribute="trailing" constant="20" id="ZaC-mD-iPj"/>
                 <constraint firstItem="nFt-0g-Bsz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cZA-tq-div"/>
-                <constraint firstItem="jVR-5i-qeb" firstAttribute="top" secondItem="6Tp-td-OVQ" secondAttribute="bottom" id="lA4-jW-z8q"/>
+                <constraint firstItem="jVR-5i-qeb" firstAttribute="top" secondItem="6Tp-td-OVQ" secondAttribute="bottom" constant="20" id="lA4-jW-z8q"/>
                 <constraint firstItem="u8u-JP-Rnb" firstAttribute="top" secondItem="jVR-5i-qeb" secondAttribute="bottom" constant="20" id="ydu-6N-MjR"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="67.633928571428569"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

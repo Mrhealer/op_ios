@@ -7,6 +7,7 @@
 
 import Foundation
 import ReactiveSwift
+import SDWebImage
 
 class ProductGirdCell: UICollectionViewCell {
     
@@ -69,7 +70,12 @@ class ProductGirdCell: UICollectionViewCell {
                                  fontName: .font(style: .regular, size: 12))
         
         if let urlString = viewModel.imgUrl, let url = URL(string: urlString) {
-            image.af.setImage(withURL: url)
+            if urlString.range(of: "webp") != nil {
+                image.sd_setImage(with: url, completed: nil)
+            }else {
+                image.af.setImage(withURL: url)
+            }
+ 
         }
     }
 }

@@ -108,6 +108,9 @@ PODS:
   - ReactiveCocoa (10.2.0):
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.5.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - SkyFloatingLabelTextField (3.8.0)
   - SnapKit (5.0.1)
   - SwiftLint (0.39.2)
@@ -125,6 +128,7 @@ DEPENDENCIES:
   - MBProgressHUD (= 1.2.0)
   - R.swift (= 5.2.2)
   - ReactiveCocoa (= 10.2.0)
+  - SDWebImage
   - SkyFloatingLabelTextField (= 3.8.0)
   - SnapKit (~> 5.0.1)
   - SwiftLint (~> 0.39.2)
@@ -158,6 +162,7 @@ SPEC REPOS:
     - R.swift.Library
     - ReactiveCocoa
     - ReactiveSwift
+    - SDWebImage
     - SkyFloatingLabelTextField
     - SnapKit
     - SwiftLint
@@ -190,10 +195,11 @@ SPEC CHECKSUMS:
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   ReactiveCocoa: a123c42f449c552460a4ee217dd49c76a17c8204
   ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 4cdcda2b49b9d77e93345d93a305fb7f7e5301b1
+PODFILE CHECKSUM: 879d4ec03932ce9dfd119954f66f6ca2d6d8f933
 
 COCOAPODS: 1.10.1

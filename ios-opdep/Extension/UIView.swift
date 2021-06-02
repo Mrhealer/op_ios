@@ -115,5 +115,77 @@ extension UIView {
 
         self.layer.addSublayer(shapeLayer)
     }
+    
+    @IBInspectable
+    var cornerRadiusNew: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    @IBInspectable
+    var borderWidthNew: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderColorNew: UIColor? {
+        get {
+            let color = UIColor.init(cgColor: layer.borderColor!)
+            return color
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    @IBInspectable
+    var shadowRadiusNew: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowColor = UIColor(red: 0.135, green: 0.368, blue: 0.771, alpha: 0.11).cgColor
+            layer.shadowOffset = CGSize(width: 0, height: 4)
+            layer.shadowOpacity = 1
+            layer.shadowRadius = newValue
+            layer.masksToBounds = false
+        }
+    }
+    
+    @IBInspectable
+    var shadowRadiusTopNew: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowColor = UIColor(red: 0.922, green: 0.937, blue: 0.973, alpha: 0.7).cgColor
+            layer.shadowOffset = CGSize(width: 0, height: 4)
+            layer.shadowOpacity = 1
+            layer.shadowRadius = newValue
+            layer.masksToBounds = false
+            layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: -layer.shadowRadius, width: bounds.width, height: layer.shadowRadius)).cgPath
+        }
+    }
+    
+    func setGradientBackgroundNew(colorTop: UIColor, colorBottom: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = bounds
+
+       layer.insertSublayer(gradientLayer, at: 0)
+    }
 
 }

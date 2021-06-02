@@ -31,6 +31,7 @@ class ShoppingCartViewModel: ListViewModel, BasicViewModel {
     
     let saveCartsAssetAction: Action<ShoppingCartResponse, Void, Never>
     let navigateToDiscountAction: Action<Void, Void, Never>
+    let navigateToLoginAction: Action<Void, Void, Never>
     let deleteOrderAction: Action<String, DeleteOrderResponse, APIError>
     let fetchDataShoppingCartAction: Action<Void, ShoppingCartResponse, APIError>
     
@@ -66,6 +67,11 @@ class ShoppingCartViewModel: ListViewModel, BasicViewModel {
         
         navigateToDiscountAction = Action { [router, userId] in
             router.navigateToDiscount(userId: userId.value)
+            return .init(value: ())
+        }
+        
+        navigateToLoginAction = Action { [router] in
+            router.navigationToLogin()
             return .init(value: ())
         }
                         

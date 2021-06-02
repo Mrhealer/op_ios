@@ -36,6 +36,7 @@ class ProductViewController: BasicViewController {
     func prepare() {
         let navigationBar = CustomNavigation(title: viewModel.categoryName.value,
                                              viewController: self)
+        navigationBar.nextBarItem.isHidden = true
         view.addSubviews(navigationBar, productGridView)
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)

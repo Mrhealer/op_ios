@@ -15,6 +15,8 @@ class LoginViewModel: BasicViewModel {
     let isLoading: Signal<Bool, Never>
     
     let numberPhone = MutableProperty<String?>(nil)
+    let dataLogin = MutableProperty<DataLogin?>(nil)
+    
     let otp = MutableProperty<String?>(nil)
     let verifycationID = MutableProperty<String?>(nil)
     let isShowOtp = MutableProperty<Bool>(false)
@@ -25,14 +27,16 @@ class LoginViewModel: BasicViewModel {
     let sendOtpAction: Action<Void, String, ValidateError>
     let verificationNumberPhoneAction: Action<Void, String, ValidateError>
     let combineLoginPhoneNumber = MutableProperty<(String?, String?)>((nil, nil))
-
+    
     let router: LoginRouter
     let worker: LoginWorker
+    let apiService : APIService
     
     init(apiService: APIService,
          router: LoginRouter) {
         self.router = router
         self.worker = .init(apiService: apiService)
+        self.apiService = apiService
         // Gửi mã OTP
         sendOtpAction = Action(state: numberPhone) { numberPhone in
             SignalProducer { observer, _ in
@@ -43,14 +47,14 @@ class LoginViewModel: BasicViewModel {
                     .verifyPhoneNumber(numberPhone.asStringOrEmpty(),
                                        uiDelegate: nil,
                                        completion: { verifycationID, error in
-                                            if error != nil {
-                                                observer.send(error: ValidateError.incorrectPhone)
-                                                observer.sendCompleted()
-                                            } else {
-                                                observer.send(value: verifycationID.asStringOrEmpty())
-                                                observer.sendCompleted()
-                                            }
-                                        })
+                                        if error != nil {
+                                            observer.send(error: ValidateError.incorrectPhone)
+                                            observer.sendCompleted()
+                                        } else {
+                                            observer.send(value: verifycationID.asStringOrEmpty())
+                                            observer.sendCompleted()
+                                        }
+                                       })
             }
         }
         // Xác nhận mã otp
@@ -90,8 +94,8 @@ class LoginViewModel: BasicViewModel {
             print("Token: \($0)")
         }
 
-        loginNumberPhoneAction = Action(state: numberPhone) { [worker] numberPhone in
-            worker.login(with: numberPhone.asStringOrEmpty())
+        loginNumberPhoneAction = Action(state: dataLogin) { [worker] dataLogin in
+            worker.login(with: dataLogin! as DataLogin)
         }
         
         loginNumberPhoneAction.values.observeValues { [router] in
@@ -109,13 +113,17 @@ class LoginViewModel: BasicViewModel {
         
         combineLoginPhoneNumber <~ SignalProducer.combineLatest(verifycationID.producer,
                                                                 otp.producer)
-
+        
         errors = Signal.merge(sendOtpAction.errors.map { $0 },
                               verificationNumberPhoneAction.errors.map { $0 },
                               loginNumberPhoneAction.errors.map { $0 })
         isLoading = Signal.merge(sendOtpAction.isExecuting.signal,
                                  verificationNumberPhoneAction.isExecuting.signal,
                                  loginNumberPhoneAction.isExecuting.signal)
+    }
+    
+    func loginWithSocial() {
+        loginNumberPhoneAction.apply().start()
     }
 }
 
@@ -135,3 +143,19 @@ enum AccountType {
     }
 }
 
+class DataLogin {
+    var name : String?
+    var fb_id : String?
+    var email_google : String?
+    var phone_number_firebase : String?
+    var type : String
+    
+    
+    init(name: String, fb_id :String, email_google : String, phone_number_firebase: String, type :String) {
+        self.name = name
+        self.fb_id = fb_id
+        self.email_google = email_google
+        self.phone_number_firebase = phone_number_firebase
+        self.type = type
+    }
+}
