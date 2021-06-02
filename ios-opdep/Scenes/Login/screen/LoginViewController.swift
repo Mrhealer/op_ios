@@ -9,6 +9,11 @@ import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
 
+import ReactiveCocoa
+import ReactiveSwift
+import SkyFloatingLabelTextField
+
+
 class LoginViewController: UIViewController, GIDSignInDelegate {
 
     @IBOutlet weak var textWellcome: UILabel!
@@ -37,6 +42,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         textWellcome.textAlignment = .center
         textDesAuth.font = R.font.openSansSemiBold(size: 14)
         textDesAuth.textAlignment = .center
+
     }
     
     @IBAction func loginFacebook(_ sender: Any) {
@@ -47,17 +53,40 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             let loginManager = LoginManager()
             loginManager.logOut()
             loginManager.logIn(permissions: [.email, .publicProfile], viewController: self) { [weak self] (result) in
-                guard self != nil else { return }
+                guard let self = self else { return }
                 switch result {
                 case .cancelled:
                     print("Cancel button click")
                 case .success( _, _, let token):
                     print("success", token as Any)
+                    self.getUserProfile()
+
                 default:
                     print("??")
                 }
             }
         }
+    
+    func getUserProfile() {
+               let connection = GraphRequestConnection()
+               connection.add(GraphRequest(graphPath: "/me", parameters: ["fields" : "id,name,email"], httpMethod: .get)) { (connection, response, error) in
+                   if let error = error {
+                       print("Error getting user info = \(error.localizedDescription)")
+                   } else {
+                       guard let userInfo = response as? Dictionary<String,Any> else {
+                           return
+                       }
+                    let userID = userInfo["id"] as? String ?? ""
+                    let userName = userInfo["name"] as? String ?? ""
+                    let email = userInfo["email"] as? String ?? ""
+                    let dataLogin = DataLogin(name: userName, fb_id: userID, email_google: email, phone_number_firebase: "", type: "1")
+                    self.viewModel.dataLogin.value = dataLogin
+                    self.viewModel.loginWithSocial()
+
+                   }
+               }
+               connection.start()
+           }
     
     @IBAction func signinGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
@@ -72,6 +101,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         }
         if let idtoken = user.authentication.idToken {
             print("abc123===", idtoken)
+            let userID = user.userID
+            let userName = user.profile.name
+            let email = user.profile.email
+            let dataLogin = DataLogin(name: userName!, fb_id: userID!, email_google: email!, phone_number_firebase: "", type: "3")
+            self.viewModel.dataLogin.value = dataLogin
+            self.viewModel.loginWithSocial()
+    
         } else {
             return
         }

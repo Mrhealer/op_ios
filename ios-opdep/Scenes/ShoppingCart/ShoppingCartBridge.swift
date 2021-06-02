@@ -26,7 +26,8 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
         tableView.separatorStyle = .none
         let navigationBar = CustomNavigation(title: Localize.ShoppingCart.title,
                                              viewController: viewController)
-        navigationBar.backBarItem.isHidden = viewModel.typeScreen == TypeScreen.root ? true : false
+//        navigationBar.backBarItem.isHidden = viewModel.typeScreen == TypeScreen.root ? true : false
+        navigationBar.nextBarItem.isHidden = true
         let stackView = buildTotalPriceView()
         let buttonCheckout = StyleButton(title: Localize.ShoppingCart.next,
                                          titleFont: .font(style: .medium, size: 16),

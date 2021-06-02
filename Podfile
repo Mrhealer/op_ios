@@ -26,6 +26,7 @@ target 'ios-opdep' do
   pod 'FBSDKLoginKit'
   pod 'GoogleSignIn'
   
+  pod 'SDWebImage'
   
   #Language support
   pod 'Localize'

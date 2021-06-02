@@ -50,3 +50,15 @@
 // MARK: - UploadDesign
 "upload_design_title" = "Kiểm tra thiết kế";
 "upload_design_next" = "Tiếp tục đặt hàng";
+
+//information
+"information_common" = "Thông tin chung";
+"information_settings"= "Cài đặt";
+"information_received_order" = "Thông tin nhận hàng";
+"information_history_order" = "Lịch sử đơn hàng";
+"information_instagram" = "Instagram";
+"information_facebook" = "Facebook";
+"information_share" = "Chia sẻ";
+"information_term" = "Chính sách";
+"information_survey" = "Góp ý - Đánh giá";
+"information_auth" = "Đăng ký / Đăng nhập";

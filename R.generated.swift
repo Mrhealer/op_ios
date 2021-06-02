@@ -1221,8 +1221,8 @@ struct R: Rswift.Validatable {
       static let cart_empty = Rswift.StringResource(key: "cart_empty", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Chia sẻ
       ///
-      /// Locales: en
-      static let information_share = Rswift.StringResource(key: "information_share", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_share = Rswift.StringResource(key: "information_share", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Chào mừng bạn đến Ốp Đẹp
       ///
       /// Locales: en, vi
@@ -1233,8 +1233,8 @@ struct R: Rswift.Validatable {
       static let editor_Insert_Image = Rswift.StringResource(key: "editor_Insert_Image", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Chính sách
       ///
-      /// Locales: en
-      static let information_term = Rswift.StringResource(key: "information_term", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_term = Rswift.StringResource(key: "information_term", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Chỉnh sửa hình ảnh
       ///
       /// Locales: en, vi
@@ -1261,20 +1261,20 @@ struct R: Rswift.Validatable {
       static let placeholder_otp = Rswift.StringResource(key: "placeholder_otp", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Cài đặt
       ///
-      /// Locales: en
-      static let information_settings = Rswift.StringResource(key: "information_settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_settings = Rswift.StringResource(key: "information_settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Facebook
       ///
-      /// Locales: en
-      static let information_facebook = Rswift.StringResource(key: "information_facebook", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_facebook = Rswift.StringResource(key: "information_facebook", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Giỏ Hàng
       ///
       /// Locales: en, vi
       static let cart_title = Rswift.StringResource(key: "cart_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Góp ý - Đánh giá
       ///
-      /// Locales: en
-      static let information_survey = Rswift.StringResource(key: "information_survey", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_survey = Rswift.StringResource(key: "information_survey", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Hiệu ứng
       ///
       /// Locales: en, vi
@@ -1285,8 +1285,8 @@ struct R: Rswift.Validatable {
       static let editor_background = Rswift.StringResource(key: "editor_background", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Instagram
       ///
-      /// Locales: en
-      static let information_instagram = Rswift.StringResource(key: "information_instagram", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_instagram = Rswift.StringResource(key: "information_instagram", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: KHUNG HÌNH
       ///
       /// Locales: en, vi
@@ -1301,8 +1301,8 @@ struct R: Rswift.Validatable {
       static let editor_textures = Rswift.StringResource(key: "editor_textures", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Lịch sử đơn hàng
       ///
-      /// Locales: en
-      static let information_history_order = Rswift.StringResource(key: "information_history_order", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_history_order = Rswift.StringResource(key: "information_history_order", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Màu nền
       ///
       /// Locales: en, vi
@@ -1341,12 +1341,12 @@ struct R: Rswift.Validatable {
       static let editor_text = Rswift.StringResource(key: "editor_text", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Thông tin chung
       ///
-      /// Locales: en
-      static let information_common = Rswift.StringResource(key: "information_common", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_common = Rswift.StringResource(key: "information_common", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Thông tin nhận hàng
       ///
-      /// Locales: en
-      static let information_received_order = Rswift.StringResource(key: "information_received_order", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_received_order = Rswift.StringResource(key: "information_received_order", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Tiếp tục
       ///
       /// Locales: en, vi
@@ -1385,8 +1385,8 @@ struct R: Rswift.Validatable {
       static let editor_reset = Rswift.StringResource(key: "editor_reset", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Đăng ký / Đăng nhập
       ///
-      /// Locales: en
-      static let information_auth = Rswift.StringResource(key: "information_auth", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, vi
+      static let information_auth = Rswift.StringResource(key: "information_auth", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Đăng nhập để tiếp tục
       ///
       /// Locales: en, vi
@@ -1417,7 +1417,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Chia sẻ
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_share(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_share", bundle: hostingBundle, comment: "")
@@ -1462,7 +1462,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Chính sách
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_term(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_term", bundle: hostingBundle, comment: "")
@@ -1567,7 +1567,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cài đặt
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_settings(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_settings", bundle: hostingBundle, comment: "")
@@ -1582,7 +1582,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Facebook
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_facebook(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_facebook", bundle: hostingBundle, comment: "")
@@ -1612,7 +1612,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Góp ý - Đánh giá
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_survey(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_survey", bundle: hostingBundle, comment: "")
@@ -1657,7 +1657,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Instagram
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_instagram(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_instagram", bundle: hostingBundle, comment: "")
@@ -1717,7 +1717,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Lịch sử đơn hàng
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_history_order(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_history_order", bundle: hostingBundle, comment: "")
@@ -1867,7 +1867,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Thông tin chung
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_common(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_common", bundle: hostingBundle, comment: "")
@@ -1882,7 +1882,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Thông tin nhận hàng
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_received_order(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_received_order", bundle: hostingBundle, comment: "")
@@ -2032,7 +2032,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Đăng ký / Đăng nhập
       ///
-      /// Locales: en
+      /// Locales: en, vi
       static func information_auth(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("information_auth", bundle: hostingBundle, comment: "")
