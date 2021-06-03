@@ -15,14 +15,14 @@ enum HomeTab: Int {
     case cart = 2
     case history = 0
     
-//    var title: String {
-//        switch self {
-//        case .infor: return "Thông tin"
-//        case .home: return "Trang Chủ"
-//        case .cart: return "Giỏ Hàng"
-//        case .history: return "Tính năng"
-//        }
-//    }
+    var title: String {
+        switch self {
+        case .infor: return "Thông tin"
+        case .home: return "Trang Chủ"
+        case .cart: return "Giỏ Hàng"
+        case .history: return "Tính năng"
+        }
+    }
     
     var icon: UIImage? {
         switch self {

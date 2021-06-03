@@ -10,8 +10,7 @@ import Alamofire
 
 struct LoginNumberPhoneRequest: RoutableRequest, EncodableRequest {
     public typealias Response = LoginNumberPhoneResponse
-    public let route = "login-V2"
-    
+    public let route = "login-v2"
     var body: LoginNumberPhoneBodyRequest
     let method: HTTPMethod = .post
     init(name: String, type :String,fb_id : String, email_google : String ) {
@@ -21,10 +20,10 @@ struct LoginNumberPhoneRequest: RoutableRequest, EncodableRequest {
 
 struct LoginNumberPhoneBodyRequest: Encodable {
     // swiftlint:disable identifier_name
-    let name : String
+    let name : String?
     let type: String
-    let fb_id: String
-    let email_google: String
+    let fb_id: String?
+    let email_google: String?
     init(name: String, type :String,fb_id : String, email_google : String) {
         self.name = name
         self.type = type

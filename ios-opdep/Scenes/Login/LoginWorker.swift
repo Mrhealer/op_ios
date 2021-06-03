@@ -16,7 +16,7 @@ class LoginWorker {
     }
     
     func login(with dataLogin: DataLogin ) -> SignalProducer<LoginNumberPhoneResponse, APIError> {
-        let request = LoginNumberPhoneRequest(name: dataLogin.name!, type: dataLogin.type, fb_id: dataLogin.fb_id!, email_google :dataLogin.email_google!)
+        let request = LoginNumberPhoneRequest(name: dataLogin.name ?? "", type: dataLogin.type, fb_id: dataLogin.fb_id ?? "", email_google :dataLogin.email_google!)
         return apiService.reactive.response(of: request)
     }
     

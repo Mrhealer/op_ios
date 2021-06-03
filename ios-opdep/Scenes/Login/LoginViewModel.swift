@@ -94,9 +94,10 @@ class LoginViewModel: BasicViewModel {
             print("Token: \($0)")
         }
 
-        loginNumberPhoneAction = Action(state: dataLogin) { [worker] dataLogin in
-            worker.login(with: dataLogin! as DataLogin)
+        loginNumberPhoneAction = Action(state: dataLogin) {
+            [worker] dataLogin in worker.login(with: dataLogin!)
         }
+        
         
         loginNumberPhoneAction.values.observeValues { [router] in
             if let data = $0.data {
