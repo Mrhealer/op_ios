@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ios_opdep" customModuleProvider="target">
             <connections>
+                <outlet property="appleLoginButton" destination="zqA-5p-5O6" id="Oi4-fx-ap6"/>
                 <outlet property="stackView" destination="ta1-md-bUd" id="W80-AQ-cGs"/>
                 <outlet property="textDesAuth" destination="beU-ez-TL0" id="lj1-Ch-WaR"/>
                 <outlet property="textWellcome" destination="Uzu-zJ-0Uk" id="pdu-zo-0ba"/>
@@ -60,28 +61,32 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="W3v-XJ-mVG">
-                    <rect key="frame" x="79" y="244" width="256" height="256"/>
+                    <rect key="frame" x="132" y="144" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="37g-KS-kbD"/>
+                        <constraint firstAttribute="width" secondItem="W3v-XJ-mVG" secondAttribute="height" multiplier="1:1" id="eRN-6C-ao2"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-zJ-0Uk">
-                    <rect key="frame" x="10" y="530" width="394" height="20.5"/>
+                    <rect key="frame" x="10" y="324" width="394" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beU-ez-TL0">
-                    <rect key="frame" x="10" y="570.5" width="394" height="20.5"/>
+                    <rect key="frame" x="10" y="364.5" width="394" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-md-bUd">
-                    <rect key="frame" x="20" y="641" width="374" height="140"/>
+                    <rect key="frame" x="20" y="435" width="374" height="208"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIU-Tq-Aln">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                             <color key="backgroundColor" name="AccentColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="5zB-Ai-P88"/>
+                                <constraint firstAttribute="height" constant="56" id="5zB-Ai-P88"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
@@ -98,7 +103,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-c9-18f">
-                            <rect key="frame" x="0.0" y="80" width="374" height="60"/>
+                            <rect key="frame" x="0.0" y="76" width="374" height="56"/>
                             <color key="backgroundColor" red="0.93169744964671974" green="0.98631815033578096" blue="1" alpha="0.62114668865593115" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
@@ -112,6 +117,22 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="signinGoogle:" destination="-1" eventType="touchUpInside" id="phX-G4-PFe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-5p-5O6">
+                            <rect key="frame" x="0.0" y="152" width="374" height="56"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="24"/>
+                            <state key="normal" title="Sign up with Apple" image="apple">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusNew">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="taploginApple:" destination="-1" eventType="touchUpInside" id="SBO-jE-mL9"/>
                             </connections>
                         </button>
                     </subviews>
@@ -132,7 +153,7 @@
                 <constraint firstItem="Uzu-zJ-0Uk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gC9-3s-hdJ"/>
                 <constraint firstItem="beU-ez-TL0" firstAttribute="top" secondItem="Uzu-zJ-0Uk" secondAttribute="bottom" constant="20" id="jCc-XN-INx"/>
                 <constraint firstItem="Uzu-zJ-0Uk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k6M-1q-g3H"/>
-                <constraint firstItem="W3v-XJ-mVG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="n8z-6E-pep"/>
+                <constraint firstItem="W3v-XJ-mVG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="n8z-6E-pep"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="beU-ez-TL0" secondAttribute="trailing" constant="10" id="oAa-eA-28y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mih-2F-zPt" secondAttribute="trailing" id="q4k-cC-dRd"/>
                 <constraint firstItem="mih-2F-zPt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tDG-xU-qrT"/>
@@ -141,6 +162,7 @@
         </view>
     </objects>
     <resources>
+        <image name="apple" width="69" height="44"/>
         <image name="facebook-logo-png-38362" width="44" height="44"/>
         <image name="google" width="44" height="44"/>
         <image name="logo" width="256" height="256"/>

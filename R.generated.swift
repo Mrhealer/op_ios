@@ -325,7 +325,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 86 images.
+  /// This `R.image` struct is generated, and contains static references to 87 images.
   struct image {
     /// Image `Facebook-2`.
     static let facebook2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Facebook-2")
@@ -335,6 +335,8 @@ struct R: Rswift.Validatable {
     static let adjusted_ratio = Rswift.ImageResource(bundle: R.hostingBundle, name: "adjusted_ratio")
     /// Image `adjusted_vertical`.
     static let adjusted_vertical = Rswift.ImageResource(bundle: R.hostingBundle, name: "adjusted_vertical")
+    /// Image `apple`.
+    static let apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "apple")
     /// Image `background_frame`.
     static let background_frame = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_frame")
     /// Image `camera`.
@@ -525,6 +527,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "adjusted_vertical", bundle: ..., traitCollection: ...)`
     static func adjusted_vertical(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.adjusted_vertical, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "apple", bundle: ..., traitCollection: ...)`
+    static func apple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.apple, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2145,6 +2154,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "apple", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'apple' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "facebook-logo-png-38362", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'facebook-logo-png-38362' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "google", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'google' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in nib 'LoginViewController', but couldn't be loaded.") }
