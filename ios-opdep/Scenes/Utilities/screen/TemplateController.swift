@@ -1,0 +1,115 @@
+//
+//  TemplateController.swift
+//  ios-opdep
+//
+//  Created by VMO C10 IOS on 6/3/21.
+//
+
+import UIKit
+
+class TemplateController: BasicViewController {
+
+    @IBOutlet weak var headerView: HeaderView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    override var shouldHideNavigationBar: Bool { true }
+    let viewModel: TemplateViewModel
+    
+    var colorsArray = Colors()
+    var tappedCell: CollectionViewCellModel!
+    
+    
+    init(viewModel: TemplateViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "TemplateController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        super.loadView()
+        bindViewModel(viewModel)
+        
+//        tableView.backgroundColor = .darkGray
+        tableView.separatorStyle = .none
+        
+        // Register the xib for tableview cell
+        let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
+        self.tableView.register(cellNib, forCellReuseIdentifier: "tableviewcellid")
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+}
+
+extension TemplateController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return colorsArray.objectsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colorsArray.objectsArray[section].subcategory.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    // Category Title
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .purple
+        let titleLabel = UILabel(frame: CGRect(x: 8, y: 0, width: 200, height: 44))
+        headerView.addSubview(titleLabel)
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        titleLabel.text = colorsArray.objectsArray[section].category
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "tableviewcellid", for: indexPath) as? TableViewCell {
+            // Show SubCategory Title
+            let subCategoryTitle = colorsArray.objectsArray[indexPath.section].subcategory
+            cell.subCategoryLabel.text = subCategoryTitle[indexPath.row]
+
+            // Pass the data to colletionview inside the tableviewcell
+            let rowArray = colorsArray.objectsArray[indexPath.section].colors[indexPath.row]
+            cell.updateCellWith(row: rowArray)
+
+            // Set cell's delegate
+            cell.cellDelegate = self
+            
+            cell.selectionStyle = .none
+            return cell
+       }
+        return UITableViewCell()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsviewcontrollerseg" {
+//            let DestViewController = segue.destination as! DetailsViewController
+//            DestViewController.backgroundColor = tappedCell.color
+//            DestViewController.backgroundColorName = tappedCell.name
+        }
+    }
+}
+
+extension TemplateController: CollectionViewCellDelegate {
+    func collectionView(collectionviewcell: CollectionViewCell?, index: Int, didTappedInTableViewCell: TableViewCell) {
+        if let colorsRow = didTappedInTableViewCell.rowWithColors {
+            self.tappedCell = colorsRow[index]
+            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+            // You can also do changes to the cell you tapped using the 'collectionviewcell'
+        }
+    }
+}
+

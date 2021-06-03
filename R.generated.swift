@@ -325,7 +325,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 86 images.
+  /// This `R.image` struct is generated, and contains static references to 87 images.
   struct image {
     /// Image `Facebook-2`.
     static let facebook2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Facebook-2")
@@ -469,6 +469,8 @@ struct R: Rswift.Validatable {
     static let tabbar_infor_active = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_infor_active")
     /// Image `tabbar_infor`.
     static let tabbar_infor = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_infor")
+    /// Image `template`.
+    static let template = Rswift.ImageResource(bundle: R.hostingBundle, name: "template")
     /// Image `text_align_left`.
     static let text_align_left = Rswift.ImageResource(bundle: R.hostingBundle, name: "text_align_left")
     /// Image `text_align_right`.
@@ -998,6 +1000,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "template", bundle: ..., traitCollection: ...)`
+    static func template(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.template, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "text_align", bundle: ..., traitCollection: ...)`
     static func text_align(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.text_align, compatibleWith: traitCollection)
@@ -1135,18 +1144,42 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
+    /// Nib `CollectionViewCell`.
+    static let collectionViewCell = _R.nib._CollectionViewCell()
+    /// Nib `HeaderView`.
+    static let headerView = _R.nib._HeaderView()
     /// Nib `InformationCell`.
     static let informationCell = _R.nib._InformationCell()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
+    /// Nib `TableViewCell`.
+    static let tableViewCell = _R.nib._TableViewCell()
+    /// Nib `TemplateController`.
+    static let templateController = _R.nib._TemplateController()
     /// Nib `TestViewController`.
     static let testViewController = _R.nib._TestViewController()
     /// Nib `TextViewCommon`.
     static let textViewCommon = _R.nib._TextViewCommon()
     /// Nib `WebViewController`.
     static let webViewController = _R.nib._WebViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.collectionViewCell) instead")
+    static func collectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.collectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.headerView) instead")
+    static func headerView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.headerView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "InformationCell", in: bundle)`
@@ -1161,6 +1194,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loginViewController) instead")
     static func loginViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loginViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tableViewCell) instead")
+    static func tableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TemplateController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.templateController) instead")
+    static func templateController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.templateController)
     }
     #endif
 
@@ -1188,12 +1237,28 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func collectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CollectionViewCell? {
+      return R.nib.collectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CollectionViewCell
+    }
+
+    static func headerView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.headerView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func informationCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InformationCell? {
       return R.nib.informationCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InformationCell
     }
 
     static func loginViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func tableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TableViewCell? {
+      return R.nib.tableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCell
+    }
+
+    static func templateController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.templateController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func testViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1207,6 +1272,16 @@ struct R: Rswift.Validatable {
     static func webViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.webViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `collectionviewcellid`.
+    static let collectionviewcellid: Rswift.ReuseIdentifier<CollectionViewCell> = Rswift.ReuseIdentifier(identifier: "collectionviewcellid")
+    /// Reuse identifier `tableviewcellid`.
+    static let tableviewcellid: Rswift.ReuseIdentifier<TableViewCell> = Rswift.ReuseIdentifier(identifier: "tableviewcellid")
 
     fileprivate init() {}
   }
@@ -2122,7 +2197,40 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _HeaderView.validate()
       try _LoginViewController.validate()
+      try _TemplateController.validate()
+    }
+
+    struct _CollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = CollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "collectionviewcellid"
+      let name = "CollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _HeaderView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "HeaderView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "template", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'template' is used in nib 'HeaderView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _InformationCell: Rswift.NibResourceType {
@@ -2151,6 +2259,37 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "navigation_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navigation_back' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "AccentColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AccentColor' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = TableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "tableviewcellid"
+      let name = "TableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TemplateController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TemplateController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "template", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'template' is used in nib 'TemplateController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
 

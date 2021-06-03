@@ -63,9 +63,9 @@ class TabBarViewModel {
         customBarViewModel = .init()
         self.startTab = startTab
         
-        let utilityContainer = BasicNavigationController()
-        let Utility = Module(container: utilityContainer,
-                             router: UtilityRouter(utilityContainer))
+        let templateContainer = BasicNavigationController()
+        let template = Module(container: templateContainer,
+                             router: TemplateRouter(templateContainer))
         
         let homeContainer = BasicNavigationController()
         let home = Module(container: homeContainer,
@@ -77,7 +77,7 @@ class TabBarViewModel {
         
         let inforContainer = BasicNavigationController()
         let infor = Module(container: inforContainer, router: InformationRouter(inforContainer))
-        modules = [Utility, home, cart, infor]
+        modules = [template, home, cart, infor]
     }
     
     func start() {

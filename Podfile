@@ -30,6 +30,9 @@ target 'ios-opdep' do
   
   #Language support
   pod 'Localize'
+  
+  pod "GSKStretchyHeaderView"
+
 
   target 'ios-opdepTests' do
     inherit! :search_paths
