@@ -15,8 +15,7 @@ class TemplateController: BasicViewController {
     override var shouldHideNavigationBar: Bool { true }
     let viewModel: TemplateViewModel
     
-    var colorsArray = Colors()
-    var tappedCell: CollectionViewCellModel!
+    var tappedCell: Content!
     
     
     init(viewModel: TemplateViewModel) {
@@ -31,8 +30,11 @@ class TemplateController: BasicViewController {
     override func loadView() {
         super.loadView()
         bindViewModel(viewModel)
+        viewModel.fetchTemplate()
+        viewModel.fetchTemplateAction.values.observeValues { _ in
+            self.tableView.reloadData()
+        }
         
-//        tableView.backgroundColor = .darkGray
         tableView.separatorStyle = .none
         
         // Register the xib for tableview cell
@@ -40,6 +42,8 @@ class TemplateController: BasicViewController {
         self.tableView.register(cellNib, forCellReuseIdentifier: "tableviewcellid")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
     }
     
 }
@@ -47,11 +51,11 @@ class TemplateController: BasicViewController {
 extension TemplateController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return colorsArray.objectsArray.count
+        return viewModel.templateData.value.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colorsArray.objectsArray[section].subcategory.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -61,12 +65,12 @@ extension TemplateController: UITableViewDelegate, UITableViewDataSource {
     // Category Title
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-        headerView.backgroundColor = .purple
+        headerView.backgroundColor = UIColor.init(hexString: "#FFB0BD")
         let titleLabel = UILabel(frame: CGRect(x: 8, y: 0, width: 200, height: 44))
         headerView.addSubview(titleLabel)
-        titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        titleLabel.text = colorsArray.objectsArray[section].category
+        titleLabel.textColor = .blue
+        titleLabel.font = R.font.openSansBold(size: 18)
+        titleLabel.text = viewModel.templateData.value[section].name
         return headerView
     }
     
@@ -77,11 +81,12 @@ extension TemplateController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "tableviewcellid", for: indexPath) as? TableViewCell {
             // Show SubCategory Title
-            let subCategoryTitle = colorsArray.objectsArray[indexPath.section].subcategory
-            cell.subCategoryLabel.text = subCategoryTitle[indexPath.row]
-
+            let subCategoryTitle = viewModel.templateData.value
+            cell.subCategoryLabel.text = subCategoryTitle[indexPath.section].name
             // Pass the data to colletionview inside the tableviewcell
-            let rowArray = colorsArray.objectsArray[indexPath.section].colors[indexPath.row]
+            let rowArray = viewModel.templateData.value[indexPath.section].content
+            
+            
             cell.updateCellWith(row: rowArray)
 
             // Set cell's delegate

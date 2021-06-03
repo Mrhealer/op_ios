@@ -238,6 +238,7 @@
 		607DB3512662C7A8008798D5 /* terms_conditions_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 607DB3502662C7A8008798D5 /* terms_conditions_en.html */; };
 		607DB3562662C991008798D5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607DB3542662C991008798D5 /* WebViewController.swift */; };
 		607DB3572662C991008798D5 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607DB3552662C991008798D5 /* WebViewController.xib */; };
+		607DB35B26693AEC008798D5 /* TemplateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607DB35A26693AEC008798D5 /* TemplateRequest.swift */; };
 		60B3D8DA26615F3A005F032B /* InformationBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B3D8D226615F3A005F032B /* InformationBridge.swift */; };
 		60B3D8DC26615F3A005F032B /* InformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B3D8D426615F3A005F032B /* InformationRouter.swift */; };
 		60B3D8DD26615F3A005F032B /* InformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B3D8D626615F3A005F032B /* InformationCell.xib */; };
@@ -260,10 +261,8 @@
 		C4AB1EC72668DD5600AEA87E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AB1EC32668DD5600AEA87E /* TableViewCell.xib */; };
 		C4AB1EC82668DD5600AEA87E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1EC42668DD5600AEA87E /* TableViewCell.swift */; };
 		C4AB1EC92668DD5600AEA87E /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1EC52668DD5600AEA87E /* TableViewCellModel.swift */; };
-		C4AB1ECE2668E07E00AEA87E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1ECD2668E07E00AEA87E /* Colors.swift */; };
 		C4AB1EDA2668E15900AEA87E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AB1ED72668E15900AEA87E /* CollectionViewCell.xib */; };
 		C4AB1EDB2668E15900AEA87E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1ED82668E15900AEA87E /* CollectionViewCell.swift */; };
-		C4AB1EDC2668E15900AEA87E /* CollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1ED92668E15900AEA87E /* CollectionViewCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -526,6 +525,7 @@
 		607DB3542662C991008798D5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		607DB3552662C991008798D5 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		607DB3582664B9E7008798D5 /* ios-opdep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-opdep.entitlements"; sourceTree = "<group>"; };
+		607DB35A26693AEC008798D5 /* TemplateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateRequest.swift; sourceTree = "<group>"; };
 		60B3D8D226615F3A005F032B /* InformationBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationBridge.swift; sourceTree = "<group>"; };
 		60B3D8D426615F3A005F032B /* InformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRouter.swift; sourceTree = "<group>"; };
 		60B3D8D626615F3A005F032B /* InformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationCell.xib; sourceTree = "<group>"; };
@@ -550,10 +550,8 @@
 		C4AB1EC32668DD5600AEA87E /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C4AB1EC42668DD5600AEA87E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C4AB1EC52668DD5600AEA87E /* TableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
-		C4AB1ECD2668E07E00AEA87E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C4AB1ED72668E15900AEA87E /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		C4AB1ED82668E15900AEA87E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		C4AB1ED92668E15900AEA87E /* CollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellModel.swift; sourceTree = "<group>"; };
 		C55C0A7EDA2C207A457517FF /* Pods_ios_opdep_ios_opdepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_opdep_ios_opdepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -694,7 +692,6 @@
 				C4AB1EA42668C3C700AEA87E /* TemplateRouter.swift */,
 				C4AB1EAA2668C40200AEA87E /* TemplateWorker.swift */,
 				C4AB1EB22668C41A00AEA87E /* TemplateViewModel.swift */,
-				C4AB1ECD2668E07E00AEA87E /* Colors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1045,6 +1042,7 @@
 		3DD13D762633C54D00C2795D /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				607DB35926693AD4008798D5 /* Template */,
 				3D2200A32650F5270060A308 /* Profile */,
 				3D580F6E264FF6EF00B5E11D /* Order */,
 				3DEF4B7D264E6B8F0081B4B4 /* Discount */,
@@ -1533,6 +1531,14 @@
 			path = screen;
 			sourceTree = "<group>";
 		};
+		607DB35926693AD4008798D5 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				607DB35A26693AEC008798D5 /* TemplateRequest.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
 		60B3D8D126615F3A005F032B /* Infor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1593,7 +1599,6 @@
 			children = (
 				C4AB1ED82668E15900AEA87E /* CollectionViewCell.swift */,
 				C4AB1ED72668E15900AEA87E /* CollectionViewCell.xib */,
-				C4AB1ED92668E15900AEA87E /* CollectionViewCellModel.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1966,10 +1971,8 @@
 				3DD13D9B2633C58A00C2795D /* HeadersAdapter.swift in Sources */,
 				3DD13D852633C55800C2795D /* Request.swift in Sources */,
 				3DE99F1726414D4100A18E8A /* TextLayerViewModel.swift in Sources */,
-				C4AB1ECE2668E07E00AEA87E /* Colors.swift in Sources */,
 				3DD13D2B2633C49900C2795D /* BasicViewController.swift in Sources */,
 				3DEF4B7F264E6BAB0081B4B4 /* DiscountRequest.swift in Sources */,
-				C4AB1EDC2668E15900AEA87E /* CollectionViewCellModel.swift in Sources */,
 				3DE99EB026414B5600A18E8A /* PagingStickerViewModel.swift in Sources */,
 				3D586778264A830A0065572D /* CartItemViewCell.swift in Sources */,
 				3DE99F2226414D5B00A18E8A /* TemplateFrame.swift in Sources */,
@@ -2043,6 +2046,7 @@
 				3DE99EB926414B7C00A18E8A /* StyleFrameSelectionWorker.swift in Sources */,
 				3DD3BD5D265A6A6400EA1DD3 /* StyleView.swift in Sources */,
 				3DD13D9A2633C58A00C2795D /* APIService.swift in Sources */,
+				607DB35B26693AEC008798D5 /* TemplateRequest.swift in Sources */,
 				60B3D8DA26615F3A005F032B /* InformationBridge.swift in Sources */,
 				3D040495263F9A2400519C7A /* ProductRouter.swift in Sources */,
 				3DD13DAC2633C5CF00C2795D /* StorageService.swift in Sources */,

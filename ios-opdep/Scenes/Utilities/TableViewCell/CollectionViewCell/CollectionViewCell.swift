@@ -11,8 +11,9 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var colorView: UIView!
-    @IBOutlet var nameLabel: UILabel!
 
+    @IBOutlet weak var imageTemplate: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

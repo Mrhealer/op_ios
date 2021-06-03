@@ -17,22 +17,22 @@ class TableViewCell: UITableViewCell {
     
     weak var cellDelegate: CollectionViewCellDelegate?
     
-    var rowWithColors: [CollectionViewCellModel]?
+    var rowWithColors: [Content]?
     
     @IBOutlet var subCategoryLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = UIColor.clear
-        self.subCategoryLabel.textColor = UIColor.white
+        backgroundColor = UIColor.init(hexString: "#FFB0BD")
+        self.subCategoryLabel.textColor = UIColor.init(hexString: "#FFB0BD")
         
         // TODO: need to setup collection view flow layout
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = CGSize(width: 150, height: 180)
-        flowLayout.minimumLineSpacing = 2.0
-        flowLayout.minimumInteritemSpacing = 5.0
+//        flowLayout.minimumLineSpacing = 1.0
+//        flowLayout.minimumInteritemSpacing = 1.0
         self.collectionView.collectionViewLayout = flowLayout
         self.collectionView.showsHorizontalScrollIndicator = false
         
@@ -49,8 +49,8 @@ class TableViewCell: UITableViewCell {
 extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // The data we passed from the TableView send them to the CollectionView Model
-    func updateCellWith(row: [CollectionViewCellModel]) {
-        self.rowWithColors = row
+    func updateCellWith(row: [Content]) {
+        self.rowWithColors = Array(row[0...5])
         self.collectionView.reloadData()
     }
     
@@ -71,8 +71,17 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     // Set the data for each cell (color and color name)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionviewcellid", for: indexPath) as? CollectionViewCell {
-            cell.colorView.backgroundColor = self.rowWithColors?[indexPath.item].color ?? UIColor.black
-            cell.nameLabel.text = self.rowWithColors?[indexPath.item].name ?? ""
+            
+            
+            if let urlString = self.rowWithColors?[indexPath.item].category?.imageURL, let url = URL(string: urlString) {
+                if urlString.range(of: "webp") != nil {
+                    cell.imageTemplate.sd_setImage(with: url, completed: nil)
+                }else {
+                    cell.imageTemplate.af.setImage(withURL: url)
+                }
+     
+            }
+            
             return cell
         }
         return UICollectionViewCell()
@@ -80,6 +89,6 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     // Add spaces at the beginning and the end of the collection view
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

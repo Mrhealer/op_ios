@@ -14,4 +14,9 @@ class TemplateWorker {
     init(apiService: APIService) {
         self.apiService = apiService
     }
+    
+    func getAllTemplate() -> SignalProducer<[Template], APIError> {
+        let request = TemplateRequest()
+        return apiService.reactive.response(of: request).map { $0.template }
+    }
 }

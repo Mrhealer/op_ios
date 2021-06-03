@@ -17,6 +17,9 @@ class TemplateViewModel: BasicViewModel {
     let navigateToProfileAction: Action<Void, Void, Never>
     let navigateToOrderHistoryAction: Action<Void, Void, Never>
     
+    let fetchTemplateAction: Action<Void, [Template], APIError>
+    let templateData = MutableProperty<[Template]>([])
+    
     let router: TemplateRouter
     let worker: TemplateWorker
     
@@ -24,6 +27,12 @@ class TemplateViewModel: BasicViewModel {
          router: TemplateRouter) {
         self.router = router
         self.worker = .init(apiService: apiService)
+        
+        fetchTemplateAction = Action { [worker] in
+            worker.getAllTemplate()
+        }
+        
+        templateData <~ fetchTemplateAction.values
         
         navigateToProfileAction = Action { [router] in
             if let userId = apiService.keyStore.userId {
@@ -42,5 +51,9 @@ class TemplateViewModel: BasicViewModel {
     
         errors = .empty
         isLoading = .empty
+    }
+    
+    func fetchTemplate() {
+        fetchTemplateAction.apply().start()
     }
 }
