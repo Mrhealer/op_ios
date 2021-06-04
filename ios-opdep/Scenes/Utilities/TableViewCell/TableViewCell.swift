@@ -25,8 +25,8 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.init(hexString: "#FFB0BD")
-        self.subCategoryLabel.textColor = UIColor.init(hexString: "#FFB0BD")
-        
+        self.subCategoryLabel.textColor = .blue
+        self.subCategoryLabel.isHidden = true
         // TODO: need to setup collection view flow layout
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal

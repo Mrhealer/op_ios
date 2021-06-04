@@ -19,4 +19,11 @@ class TemplateWorker {
         let request = TemplateRequest()
         return apiService.reactive.response(of: request).map { $0.template }
     }
+    
+    func fetchTemplateCategory(categoryId: String) -> SignalProducer<[TemplateCategoryData], APIError> {
+        let request = TemplateCategoryRequest(categoryId: categoryId)
+        return apiService.reactive.response(of: request).map{
+            $0.data
+        }
+    }
 }

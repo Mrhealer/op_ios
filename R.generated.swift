@@ -1144,7 +1144,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
   struct nib {
     /// Nib `CollectionViewCell`.
     static let collectionViewCell = _R.nib._CollectionViewCell()
@@ -1158,6 +1158,8 @@ struct R: Rswift.Validatable {
     static let tableViewCell = _R.nib._TableViewCell()
     /// Nib `TemplateController`.
     static let templateController = _R.nib._TemplateController()
+    /// Nib `TemplateDetailViewController`.
+    static let templateDetailViewController = _R.nib._TemplateDetailViewController()
     /// Nib `TestViewController`.
     static let testViewController = _R.nib._TestViewController()
     /// Nib `TextViewCommon`.
@@ -1214,6 +1216,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TemplateDetailViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.templateDetailViewController) instead")
+    static func templateDetailViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.templateDetailViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TestViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.testViewController) instead")
     static func testViewController(_: Void = ()) -> UIKit.UINib {
@@ -1259,6 +1269,10 @@ struct R: Rswift.Validatable {
 
     static func templateController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.templateController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func templateDetailViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.templateDetailViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func testViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2291,6 +2305,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "template", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'template' is used in nib 'TemplateController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TemplateDetailViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TemplateDetailViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

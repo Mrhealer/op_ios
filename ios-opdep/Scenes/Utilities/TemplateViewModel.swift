@@ -20,6 +20,11 @@ class TemplateViewModel: BasicViewModel {
     let fetchTemplateAction: Action<Void, [Template], APIError>
     let templateData = MutableProperty<[Template]>([])
     
+    
+    let fetchTemplateCategoryAction: Action<Void, [TemplateCategoryData], APIError>
+    let templateCategoryData = MutableProperty<[TemplateCategoryData]>([])
+    let categoryId = MutableProperty<String?>(nil)
+    
     let router: TemplateRouter
     let worker: TemplateWorker
     
@@ -33,6 +38,10 @@ class TemplateViewModel: BasicViewModel {
         }
         
         templateData <~ fetchTemplateAction.values
+        
+        fetchTemplateCategoryAction = Action(state: categoryId){[worker] in worker.fetchTemplateCategory(categoryId: categoryId)}
+        
+        templateCategoryData <~ fetchTemplateCategoryAction.values
         
         navigateToProfileAction = Action { [router] in
             if let userId = apiService.keyStore.userId {
