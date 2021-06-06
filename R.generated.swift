@@ -1153,7 +1153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
   struct nib {
     /// Nib `CollectionViewCell`.
     static let collectionViewCell = _R.nib._CollectionViewCell()
@@ -1163,6 +1163,8 @@ struct R: Rswift.Validatable {
     static let informationCell = _R.nib._InformationCell()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
+    /// Nib `OrderDetailsViewController`.
+    static let orderDetailsViewController = _R.nib._OrderDetailsViewController()
     /// Nib `TableViewCell`.
     static let tableViewCell = _R.nib._TableViewCell()
     /// Nib `TemplateController`.
@@ -1205,6 +1207,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loginViewController) instead")
     static func loginViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loginViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OrderDetailsViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.orderDetailsViewController) instead")
+    static func orderDetailsViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.orderDetailsViewController)
     }
     #endif
 
@@ -1272,6 +1282,10 @@ struct R: Rswift.Validatable {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func orderDetailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.orderDetailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func tableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TableViewCell? {
       return R.nib.tableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCell
     }
@@ -1311,7 +1325,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 46 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 47 localization keys.
     struct localizable {
       /// en translation: Bạn chưa có đơn hàng nào.
       ///
@@ -1489,6 +1503,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let description_login = Rswift.StringResource(key: "description_login", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Đăng xuất
+      ///
+      /// Locales: en, vi
+      static let information_auth_no_login = Rswift.StringResource(key: "information_auth_no_login", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Ảnh
       ///
       /// Locales: en, vi
@@ -2158,6 +2176,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("description_login", bundle: bundle, comment: "")
       }
 
+      /// en translation: Đăng xuất
+      ///
+      /// Locales: en, vi
+      static func information_auth_no_login(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("information_auth_no_login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "information_auth_no_login"
+        }
+
+        return NSLocalizedString("information_auth_no_login", bundle: bundle, comment: "")
+      }
+
       /// en translation: Ảnh
       ///
       /// Locales: en, vi
@@ -2222,6 +2255,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _HeaderView.validate()
       try _LoginViewController.validate()
+      try _OrderDetailsViewController.validate()
       try _TemplateController.validate()
     }
 
@@ -2283,6 +2317,26 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "navigation_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navigation_back' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "AccentColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'AccentColor' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _OrderDetailsViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "OrderDetailsViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "confirm_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'confirm_icon' is used in nib 'OrderDetailsViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "edit_text_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'edit_text_icon' is used in nib 'OrderDetailsViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "effects", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'effects' is used in nib 'OrderDetailsViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "navigation_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navigation_back' is used in nib 'OrderDetailsViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
 

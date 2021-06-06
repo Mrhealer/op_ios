@@ -63,5 +63,10 @@ class InformationViewModel : BasicViewModel {
             router.presentSignIn()
         }
     }
+    
+    func clearToken() {
+        apiService.clearToken()
+        apiService.keyStore.setUserId(nil)
+    }
 }
 

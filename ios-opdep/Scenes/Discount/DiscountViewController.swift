@@ -26,6 +26,10 @@ class DiscountViewController: LayoutSpecViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchDataDiscount()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

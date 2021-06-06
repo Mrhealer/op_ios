@@ -17,16 +17,34 @@ target 'ios-opdep' do
   pod 'R.swift', '5.2.2'
   pod 'GPUImage'
   pod 'Kingfisher', '~> 5.14.1'
+  pod 'Google-Mobile-Ads-SDK'
   
   # Firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   
-  pod 'FBSDKLoginKit'
+  #pod 'FBSDKCoreKit', :modular_headers => true
+  pod 'FBSDKLoginKit', '~> 9.3.0'
   pod 'GoogleSignIn'
-  
+  pod 'Nuke'
   pod 'SDWebImage'
+  
+  pod 'Alamofire'
+  pod 'UIColor_Hex_Swift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'NVActivityIndicatorView/Extended'
+  pod 'PromiseKit'
+  pod 'RMDateSelectionViewController'
+  pod 'AFDateHelper'
+  pod 'SwiftyJSON'
+  pod 'SDWebImage'
+  pod 'IQKeyboardManagerSwift'
+  pod 'SwiftLint'
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'SwiftyBeaver'
   
   #Language support
   pod 'Localize'

@@ -39,10 +39,12 @@ class TemplateViewModel: BasicViewModel {
         
         templateData <~ fetchTemplateAction.values
         
-        fetchTemplateCategoryAction = Action(state: categoryId){[worker] in worker.fetchTemplateCategory(categoryId: categoryId)}
+        fetchTemplateCategoryAction = Action(state: categoryId) {[worker] categoryId in
+            worker.fetchTemplateCategory(categoryId: categoryId.asStringOrEmpty())
+        }
         
         templateCategoryData <~ fetchTemplateCategoryAction.values
-        
+
         navigateToProfileAction = Action { [router] in
             if let userId = apiService.keyStore.userId {
                 router.navigateToProfile(userId: userId)
@@ -51,13 +53,13 @@ class TemplateViewModel: BasicViewModel {
             }
             return .init(value: ())
         }
-        
+
         navigateToOrderHistoryAction = Action { [router] in
             let userId = apiService.keyStore.userId.asStringOrEmpty()
             router.navigateToOrderHistory(userId: userId)
             return .init(value: ())
         }
-    
+
         errors = .empty
         isLoading = .empty
     }

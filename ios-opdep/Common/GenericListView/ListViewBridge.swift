@@ -54,7 +54,9 @@ UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     // MARK: - View lifecycle and properties
     var prefersHomeIndicatorAutoHidden = false
     
-    func viewWillAppear(_ animated: Bool) {}
+    func viewWillAppear(_ animated: Bool) {
+        bindViewModel()
+    }
     
     func viewDidDisappear(_ animated: Bool) {}
     

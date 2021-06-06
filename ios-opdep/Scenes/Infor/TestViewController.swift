@@ -7,6 +7,7 @@
 
 import UIKit
 import ReactiveCocoa
+import ReactiveSwift
 
 class TestViewController: BasicViewController {
     
@@ -27,6 +28,17 @@ class TestViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        stackViewInfo.subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+        stackViewSettings.subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
         textTitle.text = Localize.InfomationAccount.titleInfor
         textSettings.text = Localize.InfomationAccount.titleSettings
         textTitle.font = R.font.openSansLightItalic(size: 18)
@@ -50,9 +62,13 @@ class TestViewController: BasicViewController {
         
         let inforAuth = ItemInformation(imageLeft: R.image.login(), strTitle: Localize.InfomationAccount.auth, imageRight:  R.image.next())
         
+        let noLogin = ItemInformation(imageLeft: R.image.login(), strTitle: "Đăng xuất", imageRight:  R.image.next())
+        
+        let userID = Property(value: APIService.shared.keyStore.userId.asStringOrEmpty())
+        
         arrayItemInfo = [inforOrder,inforCard,inforHistory,inforInstagram,inforFacebook,inforShared]
         
-        arraySettings = [inforTerm,inforSurvey,inforAuth]
+        arraySettings = [inforTerm,inforSurvey, userID.value.isEmpty ? inforAuth : noLogin]
         
         for (index, item) in arrayItemInfo.enumerated() {
             let view = TextViewCommon()
@@ -156,7 +172,14 @@ class TestViewController: BasicViewController {
             break
         case 2:
             print("login")
-            InformationRouter(AppLogic.shared.appRouter.rootNavigationController).presentSignIn()
+            let userID = Property(value: APIService.shared.keyStore.userId.asStringOrEmpty())
+            if userID.value.isEmpty {
+                InformationRouter(AppLogic.shared.appRouter.rootNavigationController).presentSignIn()
+            } else {
+                viewModel.clearToken()
+                viewDidLoad()
+                InformationRouter(AppLogic.shared.appRouter.rootNavigationController).presentSignIn()
+            }
             break
         default:
             print("Hello Dear you are here2")
