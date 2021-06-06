@@ -85,7 +85,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                     let userID = userInfo["id"] as? String ?? ""
                     let userName = userInfo["name"] as? String ?? ""
                     let email = userInfo["email"] as? String ?? ""
-                    let dataLogin = DataLogin(name: userName, fb_id: userID, email_google: email, phone_number_firebase: "", type: "1")
+                    let dataLogin = DataLogin(name: userName, fb_id: userID, email_google: email, phone_number_firebase: "", type: "1",apple_id: "")
                     self.viewModel.dataLogin.value = dataLogin
                     self.viewModel.loginWithSocial()
 
@@ -109,7 +109,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             let userID = user.userID ?? ""
             let userName = user.profile.name ?? ""
             let email = user.profile.email ?? ""
-            let dataLogin = DataLogin(name: userName, fb_id: userID, email_google: email, phone_number_firebase: "", type: "3")
+            let dataLogin = DataLogin(name: userName, fb_id: userID, email_google: email, phone_number_firebase: "", type: "3",apple_id: "")
             self.viewModel.dataLogin.value = dataLogin
             self.viewModel.loginWithSocial()
     
@@ -142,10 +142,11 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
             let userIdentifier = appleIDCredential.fullName
-            if let data = appleIDCredential.authorizationCode, let authorizationCode = String(data: data, encoding: .utf8) {
+            let userId = appleIDCredential.user
+            if let data = appleIDCredential.authorizationCode, let _ = String(data: data, encoding: .utf8) {
                 let name = "\(userIdentifier?.givenName ?? "")\(userIdentifier?.familyName ?? "")"
                 let email = appleIDCredential.email ?? ""
-                let dataLogin = DataLogin(name: name, fb_id: "", email_google: email, phone_number_firebase: "", type: "4")
+                let dataLogin = DataLogin(name: name, fb_id: "", email_google: email, phone_number_firebase: "", type: "5", apple_id: userId)
                 self.viewModel.dataLogin.value = dataLogin
                 self.viewModel.loginWithSocial()
             }

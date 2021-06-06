@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFDateHelper.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>44</integer>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -98,7 +103,7 @@
 		<key>GSKStretchyHeaderView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>36</integer>
+			<integer>39</integer>
 		</dict>
 		<key>GTMAppAuth.xcscheme</key>
 		<dict>
@@ -113,6 +118,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>18</integer>
+		</dict>
+		<key>Google-Mobile-Ads-SDK.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>51</integer>
 		</dict>
 		<key>GoogleAppMeasurement.xcscheme</key>
 		<dict>
@@ -135,12 +145,22 @@
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
+		<key>GoogleUserMessagingPlatform.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>46</integer>
+		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
+		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>37</integer>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
@@ -163,6 +183,21 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
+		<key>Moya.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>47</integer>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
+		</dict>
+		<key>Nuke.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>45</integer>
+		</dict>
 		<key>Pods-ios-opdep-ios-opdepUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -183,6 +218,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>25</integer>
+		</dict>
+		<key>PromiseKit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
 		</dict>
 		<key>PromisesObjC.xcscheme</key>
 		<dict>
@@ -205,6 +245,16 @@
 			<key>orderHint</key>
 			<integer>27</integer>
 		</dict>
+		<key>RMActionController.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>50</integer>
+		</dict>
+		<key>RMDateSelectionViewController.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -218,6 +268,21 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>30</integer>
+		</dict>
+		<key>RxCocoa.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
+		<key>RxRelay.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>40</integer>
+		</dict>
+		<key>RxSwift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>48</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
@@ -246,6 +311,21 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>34</integer>
+		</dict>
+		<key>SwiftyBeaver.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>49</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>42</integer>
+		</dict>
+		<key>UIColor_Hex_Swift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>52</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>

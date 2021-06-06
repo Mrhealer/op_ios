@@ -8,9 +8,9 @@ public enum Environment {
     
     var serverURL: String {
         switch self {
-        case .production:  return "https://opdep.opdienthoaidep.vn/api/"
-        case .stage:       return "https://opdep.opdienthoaidep.vn/api/"
-        case .development: return "https://opdep.opdienthoaidep.vn/api/"
+        case .production:  return "https://fingzi.xyz/api/"
+        case .stage:       return "https://fingzi.xyz/api/"
+        case .development: return "https://fingzi.xyz/api/"
         }
     }
     

@@ -10,17 +10,16 @@ import UIKit
 import ReactiveSwift
 
 enum HomeTab: Int {
-    case infor = 3
-    case home = 1
-    case cart = 2
-    case history = 0
+    case infor = 2
+    case home = 0
+    case cart = 1
+
     
     var title: String {
         switch self {
         case .infor: return "Thông tin"
         case .home: return "Trang Chủ"
         case .cart: return "Giỏ Hàng"
-        case .history: return "Tính năng"
         }
     }
     
@@ -29,7 +28,6 @@ enum HomeTab: Int {
         case .infor: return R.image.tabbar_infor()
         case .home: return R.image.tabbar_home()
         case .cart: return R.image.tabbar_cart()
-        case .history: return R.image.tabbar_history()
         }
     }
     
@@ -38,7 +36,6 @@ enum HomeTab: Int {
         case .infor: return R.image.tabbar_infor_active()
         case .home: return R.image.tabbar_home_active()
         case .cart: return R.image.tabbar_cart_active()
-        case .history: return R.image.tabbar_history_active()
         }
     }
 }
@@ -63,9 +60,9 @@ class TabBarViewModel {
         customBarViewModel = .init()
         self.startTab = startTab
         
-        let templateContainer = BasicNavigationController()
-        let template = Module(container: templateContainer,
-                             router: TemplateRouter(templateContainer))
+//        let templateContainer = BasicNavigationController()
+//        let template = Module(container: templateContainer,
+//                             router: TemplateRouter(templateContainer))
         
         let homeContainer = BasicNavigationController()
         let home = Module(container: homeContainer,
@@ -77,7 +74,7 @@ class TabBarViewModel {
         
         let inforContainer = BasicNavigationController()
         let infor = Module(container: inforContainer, router: InformationRouter(inforContainer))
-        modules = [template, home, cart, infor]
+        modules = [ home, cart, infor]
     }
     
     func start() {

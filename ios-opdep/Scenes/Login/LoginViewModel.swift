@@ -150,13 +150,15 @@ class DataLogin {
     var email_google : String?
     var phone_number_firebase : String?
     var type : String
+    var apple_id : String?
     
     
-    init(name: String, fb_id :String, email_google : String, phone_number_firebase: String, type :String) {
+    init(name: String, fb_id :String, email_google : String, phone_number_firebase: String, type :String,apple_id: String) {
         self.name = name
         self.fb_id = fb_id
         self.email_google = email_google
         self.phone_number_firebase = phone_number_firebase
         self.type = type
+        self.apple_id = apple_id
     }
 }

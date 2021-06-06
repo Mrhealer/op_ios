@@ -100,5 +100,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB10E459-DCDE-4BE9-B2A6-836140D9E6A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-opdep/Scenes/Login/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "init(apiService:router:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DB10E459-DCDE-4BE9-B2A6-836140D9E6A9 - 546700dfe3393719"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ReactiveSwift.Signal&lt;Swift.String, ios_opdep.ValidateError&gt;.Observer, ReactiveSwift.Lifetime) -&gt; () in closure #2 ((Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;)) -&gt; ReactiveSwift.SignalProducer&lt;Swift.String, ios_opdep.ValidateError&gt; in ios_opdep.LoginViewModel.init(apiService: ios_opdep.APIService, router: ios_opdep.LoginRouter) -&gt; ios_opdep.LoginViewModel"
+                  moduleName = "ios-opdep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/healer/Documents/OP/IOS/op_ios/ios-opdep/Scenes/Login/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "DB10E459-DCDE-4BE9-B2A6-836140D9E6A9 - 2f6625de66334676"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (ReactiveSwift.Signal&lt;Swift.String, ios_opdep.ValidateError&gt;.Observer, ReactiveSwift.Lifetime) -&gt; () in closure #2 ((Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;)) -&gt; ReactiveSwift.SignalProducer&lt;Swift.String, ios_opdep.ValidateError&gt; in ios_opdep.LoginViewModel.init(apiService: ios_opdep.APIService, router: ios_opdep.LoginRouter) -&gt; ios_opdep.LoginViewModel"
+                  moduleName = "ios-opdep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/healer/Documents/OP/IOS/op_ios/ios-opdep/Scenes/Login/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
