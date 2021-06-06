@@ -8,11 +8,10 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
-
 import ReactiveCocoa
 import ReactiveSwift
 import SkyFloatingLabelTextField
-
+import AuthenticationServices
 
 class LoginViewController: UIViewController, GIDSignInDelegate {
 
@@ -20,6 +19,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var textDesAuth: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleHeader: UILabel!
+    @IBOutlet weak var appleLoginButton: UIButton!
     
     let viewModel: LoginViewModel
     
@@ -42,6 +42,12 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
         textWellcome.textAlignment = .center
         textDesAuth.font = R.font.openSansSemiBold(size: 14)
         textDesAuth.textAlignment = .center
+        
+        if #available(iOS 13.0, *) {
+            appleLoginButton.isHidden = false
+        } else {
+            appleLoginButton.isHidden = true
+        }
 
     }
     
@@ -100,10 +106,10 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             return
         }
         if let idtoken = user.authentication.idToken {
-            let userID = user.userID
-            let userName = user.profile.name
-            let email = user.profile.email
-            let dataLogin = DataLogin(name: userName!, fb_id: userID!, email_google: email!, phone_number_firebase: "", type: "3")
+            let userID = user.userID ?? ""
+            let userName = user.profile.name ?? ""
+            let email = user.profile.email ?? ""
+            let dataLogin = DataLogin(name: userName, fb_id: userID, email_google: email, phone_number_firebase: "", type: "3")
             self.viewModel.dataLogin.value = dataLogin
             self.viewModel.loginWithSocial()
     
@@ -115,6 +121,57 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     
     @IBAction func backButton(_ sender: Any) {
         InformationRouter(AppLogic.shared.appRouter.rootNavigationController).close()
+    }
+    
+    @IBAction func taploginApple(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.performRequests()
+        }
+    }
+    
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
+            let userIdentifier = appleIDCredential.fullName
+            if let data = appleIDCredential.authorizationCode, let authorizationCode = String(data: data, encoding: .utf8) {
+                let name = "\(userIdentifier?.givenName ?? "")\(userIdentifier?.familyName ?? "")"
+                let email = appleIDCredential.email ?? ""
+                let dataLogin = DataLogin(name: name, fb_id: "", email_google: email, phone_number_firebase: "", type: "4")
+                self.viewModel.dataLogin.value = dataLogin
+                self.viewModel.loginWithSocial()
+            }
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        guard let error = error as? ASAuthorizationError else {
+            return
+        }
+        
+        switch error.code {
+        case .canceled:
+            print("Canceled")
+        case .unknown:
+            print("Unknown")
+        case .invalidResponse:
+            print("Invalid Respone")
+        case .notHandled:
+            print("Not handled")
+        case .failed:
+            print("Failed")
+        @unknown default:
+            print("Default")
+        }
     }
     
 }
