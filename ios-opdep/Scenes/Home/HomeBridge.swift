@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class HomeBridge: ListViewBridge<HomeViewModel> {
 

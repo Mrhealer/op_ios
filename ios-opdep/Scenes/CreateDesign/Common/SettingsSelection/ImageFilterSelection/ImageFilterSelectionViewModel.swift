@@ -57,6 +57,7 @@ class ImageFilterSelectionViewModel: GridViewModel {
         selectedFilter.value?.isSelected.swap(false)
         let item = itemAt(indexPath: indexPath)
         item.isSelected.swap(true)
+        //black image when select fillter
         selectedFilter.swap(item)
     }
     

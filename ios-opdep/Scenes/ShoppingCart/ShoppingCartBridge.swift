@@ -17,11 +17,17 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
         viewController?.view.backgroundColor = .white
         setupView(tableView: tableView, in: parentView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchDataShoppingCart()
+    }
+    
     private func setupView(tableView: UITableView, in parentView: UIView) {
         tableView.separatorStyle = .none
         let navigationBar = CustomNavigation(title: Localize.ShoppingCart.title,
                                              viewController: viewController)
         navigationBar.backBarItem.isHidden = viewModel.typeScreen == TypeScreen.root ? true : false
+        navigationBar.nextBarItem.isHidden = true
         let stackView = buildTotalPriceView()
         let buttonCheckout = StyleButton(title: Localize.ShoppingCart.next,
                                          titleFont: .font(style: .medium, size: 16),
@@ -96,6 +102,13 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
     
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
+        let controller = OrderDetailsViewController()
+        controller.modalPresentationStyle = .fullScreen
+        controller.data.value = viewModel.shoppingCart.value[indexPath.row]
+        controller.tapDeleteOrder.subscribe(onNext: { _ in
+            self.viewModel.fetchDataShoppingCart()
+        })
+        AppLogic.shared.appRouter.rootNavigationController?.present(controller, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView,

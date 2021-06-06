@@ -62,3 +62,4 @@
 "information_term" = "Chính sách";
 "information_survey" = "Góp ý - Đánh giá";
 "information_auth" = "Đăng ký / Đăng nhập";
+"information_auth_no_login" = "Đăng xuất";

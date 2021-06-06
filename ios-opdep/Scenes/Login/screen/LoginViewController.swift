@@ -100,7 +100,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
             return
         }
         if let idtoken = user.authentication.idToken {
-            print("abc123===", idtoken)
             let userID = user.userID
             let userName = user.profile.name
             let email = user.profile.email
