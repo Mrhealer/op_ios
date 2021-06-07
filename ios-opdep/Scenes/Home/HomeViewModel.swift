@@ -52,7 +52,7 @@ class HomeViewModel: ListViewModel, BasicViewModel {
         categories.value[indexPath.row]
     }
     
-    let cellMapping: [String: UITableViewCell.Type] = ["home_cell": HomeCell.self]
+    let cellMapping: [String: UITableViewCell.Type] = ["home_cell": HomeCell.self, "ads_cell": AdsTableViewCell.self]
     
     let style: UITableView.Style = .plain
     
@@ -63,7 +63,8 @@ class HomeViewModel: ListViewModel, BasicViewModel {
     }
     
     func cellIdentifier(at indexPath: IndexPath) -> String {
-        "home_cell"
+        let viewModel = content(at: indexPath)
+        return viewModel.type == 1 ? "home_cell" : "ads_cell"
     }
     
     func configure<T>(cell: T, at indexPath: IndexPath) where T: UITableViewCell {

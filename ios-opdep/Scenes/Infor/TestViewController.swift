@@ -8,8 +8,8 @@
 import UIKit
 import ReactiveCocoa
 import ReactiveSwift
-
-class TestViewController: BasicViewController {
+import GoogleMobileAds
+class TestViewController: BasicViewController, GADBannerViewDelegate {
     
     
     
@@ -20,15 +20,30 @@ class TestViewController: BasicViewController {
     @IBOutlet weak var stackViewSettings: UIStackView!
     
     @IBOutlet weak var textTitle: UILabel!
+    
+    
+    private let banner :GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.load(GADRequest())
+        
+        if #available(iOS 13.0, *) {
+            banner.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        } else {
+            banner.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        }
+        
+        return banner
+    }()
+    
     let viewModel: InformationViewModel
     
     var arrayItemInfo = [ItemInformation]()
     var arraySettings = [ItemInformation]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        banner.frame = CGRect(x: 0, y: self.view.bounds.size.height-150, width: self.view.bounds.width, height: 50).integral
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,11 +103,11 @@ class TestViewController: BasicViewController {
             view.isUserInteractionEnabled = true
             view.tag = index
             
-    
+            
             
             stackViewInfo.withBorder(width: 1)
             stackViewInfo.addArrangedSubview(view)
-
+            
         }
         
         
@@ -122,6 +137,9 @@ class TestViewController: BasicViewController {
     init(viewModel: InformationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "TestViewController", bundle: nil)
+        
+        banner.rootViewController = self
+        view.addSubview(banner)
     }
     
     required init?(coder: NSCoder) {
@@ -196,28 +214,28 @@ extension UIView {
         border.frame = CGRect(x:0,y: 0, width:self.frame.size.width, height:width)
         self.layer.addSublayer(border)
     }
-
+    
     func addRightBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: self.frame.size.width - width,y: 0, width:width, height:self.frame.size.height)
         self.layer.addSublayer(border)
     }
-
+    
     func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x:0, y:self.frame.size.height - width, width:self.frame.size.width, height:width)
         self.layer.addSublayer(border)
     }
-
+    
     func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x:0, y:0, width:width, height:self.frame.size.height)
         self.layer.addSublayer(border)
     }
-
+    
     func addMiddleBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor

@@ -56,9 +56,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
-  - Google-Mobile-Ads-SDK (8.5.0):
-    - GoogleAppMeasurement (< 9.0, >= 7.0)
-    - GoogleUserMessagingPlatform (>= 1.1)
+  - Google-Mobile-Ads-SDK (7.68.0):
+    - GoogleAppMeasurement (~> 7.0)
+    - GoogleUserMessagingPlatform (~> 1.1)
   - GoogleAppMeasurement (7.7.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -71,7 +71,7 @@ PODS:
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleUserMessagingPlatform (2.0.0)
+  - GoogleUserMessagingPlatform (1.4.0)
   - GoogleUtilities/AppDelegateSwizzler (7.2.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -115,6 +115,7 @@ PODS:
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
+  - netfox (1.19.0)
   - Nuke (9.5.0)
   - NVActivityIndicatorView/Base (5.1.1)
   - NVActivityIndicatorView/Extended (5.1.1):
@@ -162,7 +163,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
-  - Google-Mobile-Ads-SDK
+  - Google-Mobile-Ads-SDK (~> 7.68.0)
   - GoogleSignIn
   - GPUImage
   - GSKStretchyHeaderView
@@ -172,6 +173,7 @@ DEPENDENCIES:
   - MBProgressHUD (= 1.2.0)
   - Moya
   - Moya/RxSwift
+  - netfox
   - Nuke
   - NVActivityIndicatorView/Extended
   - PromiseKit
@@ -219,6 +221,7 @@ SPEC REPOS:
     - MBProgressHUD
     - Moya
     - nanopb
+    - netfox
     - Nuke
     - NVActivityIndicatorView
     - PromiseKit
@@ -253,11 +256,11 @@ SPEC CHECKSUMS:
   FirebaseCore: ac35d680a0bf32319a59966a1478e0741536b97b
   FirebaseCoreDiagnostics: 179bf3831213451c8addd036aca7fcf5492ec154
   FirebaseInstallations: 42c86e7b02ff75b7f27f85833bf5dcb5f38a9774
-  Google-Mobile-Ads-SDK: 6f5c41bf73db1656e5b203ba9c31e3d0899a128d
+  Google-Mobile-Ads-SDK: 29bbdb182d69ff606cc0301da1590b40be8d2205
   GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
-  GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
+  GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
@@ -269,6 +272,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
+  netfox: efeec1d23406df6cd605212f09a40957bb5654eb
   Nuke: 6f400a4ea957e09149ec335a3c6acdcc814d89e4
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
@@ -290,6 +294,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   UIColor_Hex_Swift: 8be7432edacb7fa91c78aa05ef3c30b66e4f9415
 
-PODFILE CHECKSUM: 015e8f5e99d7208ed54922d8a96ebc8ae0fbf4e1
+PODFILE CHECKSUM: bf9d0e16611ac91ac1018eadb3b32d63a20d0df0
 
 COCOAPODS: 1.10.1

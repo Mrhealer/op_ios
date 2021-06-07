@@ -1153,8 +1153,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
+    /// Nib `AdsTableViewCell`.
+    static let adsTableViewCell = _R.nib._AdsTableViewCell()
     /// Nib `CollectionViewCell`.
     static let collectionViewCell = _R.nib._CollectionViewCell()
     /// Nib `HeaderView`.
@@ -1175,8 +1177,18 @@ struct R: Rswift.Validatable {
     static let testViewController = _R.nib._TestViewController()
     /// Nib `TextViewCommon`.
     static let textViewCommon = _R.nib._TextViewCommon()
+    /// Nib `UnifiedNativeAdView`.
+    static let unifiedNativeAdView = _R.nib._UnifiedNativeAdView()
     /// Nib `WebViewController`.
     static let webViewController = _R.nib._WebViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AdsTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.adsTableViewCell) instead")
+    static func adsTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.adsTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CollectionViewCell", in: bundle)`
@@ -1259,12 +1271,24 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "UnifiedNativeAdView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.unifiedNativeAdView) instead")
+    static func unifiedNativeAdView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.unifiedNativeAdView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "WebViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.webViewController) instead")
     static func webViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.webViewController)
     }
     #endif
+
+    static func adsTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdsTableViewCell? {
+      return R.nib.adsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdsTableViewCell
+    }
 
     static func collectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CollectionViewCell? {
       return R.nib.collectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CollectionViewCell
@@ -1304,6 +1328,10 @@ struct R: Rswift.Validatable {
 
     static func textViewCommon(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.textViewCommon.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func unifiedNativeAdView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GADUnifiedNativeAdView? {
+      return R.nib.unifiedNativeAdView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GADUnifiedNativeAdView
     }
 
     static func webViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2259,6 +2287,17 @@ struct _R: Rswift.Validatable {
       try _TemplateController.validate()
     }
 
+    struct _AdsTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AdsTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdsTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdsTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _CollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = CollectionViewCell
 
@@ -2402,6 +2441,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _UnifiedNativeAdView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "UnifiedNativeAdView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GADUnifiedNativeAdView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GADUnifiedNativeAdView
       }
 
       fileprivate init() {}
