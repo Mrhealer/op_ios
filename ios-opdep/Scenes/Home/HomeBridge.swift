@@ -9,11 +9,11 @@ import UIKit
 import GoogleMobileAds
 
 class HomeBridge: ListViewBridge<HomeViewModel> {
-
+    
     override func render(tableView: UITableView, in parentView: UIView) {
         setupView(tableView: tableView, in: parentView)
     }
-
+    
     private func setupView(tableView: UITableView, in parentView: UIView) {
         tableView.separatorStyle = .none
         viewController?.view.backgroundColor = .white
@@ -25,6 +25,18 @@ class HomeBridge: ListViewBridge<HomeViewModel> {
         }
         viewController?.bindViewModel(viewModel)
         viewModel.fetchDataCategory()
+        viewModel.fetchDataCategoryAction.values.observeValues { _ in
+            var array = self.viewModel.categories.value
+            for (index, item) in array.enumerated(){
+                if (index % 3 == 0) {
+                    var category = Categories.init(id: 1, name: "", imageUrl: "")
+                    category.type = 0
+                    array.append(category)
+                }
+            }
+            self.viewModel.categories.value = array
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView,

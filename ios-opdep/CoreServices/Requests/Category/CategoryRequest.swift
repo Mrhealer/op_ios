@@ -24,12 +24,11 @@ struct Categories: Decodable {
     let id: Int
     let name: String
     let imageUrl: String?
-    let type: Int = 1
+    var type: Int = 1
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case imageUrl = "image_url"
-        case type 
     }
 }

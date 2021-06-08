@@ -68,9 +68,15 @@ class HomeViewModel: ListViewModel, BasicViewModel {
     }
     
     func configure<T>(cell: T, at indexPath: IndexPath) where T: UITableViewCell {
-        guard let cell = cell as? HomeCell else { fatalError() }
-        let viewModel = content(at: indexPath)
-        cell.configure(viewModel: viewModel)
+        if let cell = cell as? HomeCell {
+            let viewModel = content(at: indexPath)
+            cell.configure(viewModel: viewModel)
+        }else if let cell = cell as? AdsTableViewCell{
+            print("longkaka")
+        }else{
+            fatalError()
+        }
+      
     }
     
     func willDisplayCell(_ cell: UITableViewCell, at indexPath: IndexPath) {}
