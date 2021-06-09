@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GraphikRegular.otf">
+            <string>Graphik-Regular</string>
+        </array>
+        <array key="GraphikSemibold.otf">
+            <string>Graphik-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GADUnifiedNativeAdView">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="156"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W3N-oL-Cck">
+                    <rect key="frame" x="0.0" y="0.0" width="363" height="156"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.97254901960784312" green="0.97647058823529409" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-Oc-phj" customClass="GADMediaView">
+                    <rect key="frame" x="0.0" y="0.0" width="363" height="156.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zqE-Oc-phj" secondAttribute="height" multiplier="329:142" id="6aX-E0-dcA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view tag="10215" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avi-Vp-yQ3">
+                    <rect key="frame" x="0.0" y="96.5" width="363" height="59.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJg-z3-eD1">
+                    <rect key="frame" x="16" y="128" width="244" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awA-oL-5lf">
+                    <rect key="frame" x="16" y="8" width="25" height="15"/>
+                    <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="UD9-xt-wpM"/>
+                        <constraint firstAttribute="width" constant="25" id="wPA-UC-ob6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTS-U5-IxP">
+                    <rect key="frame" x="265" y="124" width="82" height="25"/>
+                    <color key="backgroundColor" red="0.0" green="0.68235294117647061" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="lDd-fF-c09"/>
+                        <constraint firstAttribute="width" constant="82" id="vXp-5N-SiQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="12"/>
+                    <state key="normal" title=" ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="avi-Vp-yQ3" secondAttribute="bottom" id="0T5-5h-mvf"/>
+                <constraint firstAttribute="trailing" secondItem="avi-Vp-yQ3" secondAttribute="trailing" id="0UO-cR-mOG"/>
+                <constraint firstItem="avi-Vp-yQ3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="54:142" id="64w-8z-wog"/>
+                <constraint firstItem="FJg-z3-eD1" firstAttribute="bottom" secondItem="zqE-Oc-phj" secondAttribute="bottom" constant="-12" id="MoJ-vh-pkF"/>
+                <constraint firstItem="MTS-U5-IxP" firstAttribute="trailing" secondItem="zqE-Oc-phj" secondAttribute="trailing" constant="-16" id="Njz-4T-5gK"/>
+                <constraint firstItem="W3N-oL-Cck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ulq-if-1f7"/>
+                <constraint firstItem="FJg-z3-eD1" firstAttribute="leading" secondItem="zqE-Oc-phj" secondAttribute="leading" constant="16" id="VT3-6C-I2i"/>
+                <constraint firstItem="avi-Vp-yQ3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wia-z1-SU9"/>
+                <constraint firstItem="W3N-oL-Cck" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YI8-9T-F8z"/>
+                <constraint firstItem="zqE-Oc-phj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YPf-OT-gPh"/>
+                <constraint firstItem="MTS-U5-IxP" firstAttribute="centerY" secondItem="FJg-z3-eD1" secondAttribute="centerY" id="Z8H-c1-Pc5"/>
+                <constraint firstAttribute="bottom" secondItem="W3N-oL-Cck" secondAttribute="bottom" id="d9e-Ik-V7t"/>
+                <constraint firstItem="zqE-Oc-phj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jMT-cd-yU5"/>
+                <constraint firstItem="MTS-U5-IxP" firstAttribute="leading" secondItem="FJg-z3-eD1" secondAttribute="trailing" constant="5" id="jUk-V5-jb7"/>
+                <constraint firstItem="awA-oL-5lf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="lwp-Qc-PGg"/>
+                <constraint firstItem="awA-oL-5lf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="rsa-dg-roZ"/>
+                <constraint firstAttribute="trailing" secondItem="zqE-Oc-phj" secondAttribute="trailing" id="u02-hL-EKJ"/>
+                <constraint firstAttribute="trailing" secondItem="W3N-oL-Cck" secondAttribute="trailing" id="v3u-fk-DUA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="callToActionView" destination="MTS-U5-IxP" id="equ-xD-gzE"/>
+                <outlet property="headlineView" destination="FJg-z3-eD1" id="Vz9-Tb-Hxp"/>
+                <outlet property="imageView" destination="W3N-oL-Cck" id="mxd-0B-VHB"/>
+            </connections>
+            <point key="canvasLocation" x="49" y="91"/>
+        </view>
+    </objects>
+</document>
