@@ -260,6 +260,7 @@
 		A4BE00AA266CF1AB0086EE5E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE00A9266CF1AB0086EE5E /* BaseViewModel.swift */; };
 		A4BE00AF266CF1DC0086EE5E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE00AE266CF1DC0086EE5E /* OrderViewModel.swift */; };
 		A4F2BFD3D0481F7E91815857 /* Pods_ios_opdep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802A91513690FA6A4C96DDB /* Pods_ios_opdep.framework */; };
+		C4173FA62670691C008EF307 /* Ads in Resources */ = {isa = PBXBuildFile; fileRef = C4173FA52670691C008EF307 /* Ads */; };
 		C4AB1E2F2668B49F00AEA87E /* ScalableLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */; };
 		C4AB1E832668BE1700AEA87E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E822668BE1700AEA87E /* HeaderView.swift */; };
 		C4AB1E882668BE2800AEA87E /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AB1E872668BE2800AEA87E /* HeaderView.xib */; };
@@ -278,7 +279,6 @@
 		C4AB1EEC266A2FD900AEA87E /* TemplateGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1EEB266A2FD900AEA87E /* TemplateGridViewModel.swift */; };
 		C4AB1EF4266A2FEC00AEA87E /* TemplateGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1EF3266A2FEC00AEA87E /* TemplateGridViewCell.swift */; };
 		C4AB1EF9266A35BE00AEA87E /* TemplateCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1EF8266A35BE00AEA87E /* TemplateCategoryRequest.swift */; };
-		C4AB209D266E1B4500AEA87E /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AB209C266E1B4500AEA87E /* UnifiedNativeAdView.xib */; };
 		C4AB20AD266E1B9000AEA87E /* AdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB20AB266E1B9000AEA87E /* AdsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -566,6 +566,7 @@
 		A4BE00AE266CF1DC0086EE5E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		A4BEFFF9266CDA080086EE5E /* SearchApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiResponse.swift; sourceTree = "<group>"; };
 		B9B01018FD69C6D02935429E /* Pods-ios-opdep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-opdep.debug.xcconfig"; path = "Target Support Files/Pods-ios-opdep/Pods-ios-opdep.debug.xcconfig"; sourceTree = "<group>"; };
+		C4173FA52670691C008EF307 /* Ads */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ads; sourceTree = "<group>"; };
 		C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalableLabelHeaderView.swift; sourceTree = "<group>"; };
 		C4AB1E822668BE1700AEA87E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C4AB1E872668BE2800AEA87E /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -584,7 +585,6 @@
 		C4AB1EEB266A2FD900AEA87E /* TemplateGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGridViewModel.swift; sourceTree = "<group>"; };
 		C4AB1EF3266A2FEC00AEA87E /* TemplateGridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGridViewCell.swift; sourceTree = "<group>"; };
 		C4AB1EF8266A35BE00AEA87E /* TemplateCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCategoryRequest.swift; sourceTree = "<group>"; };
-		C4AB209C266E1B4500AEA87E /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UnifiedNativeAdView.xib; path = "../../../../voice-app-ios/VoiceApp/SourceCode/CustomView/CustomAdMobView/UnifiedNativeAdView.xib"; sourceTree = "<group>"; };
 		C4AB20AB266E1B9000AEA87E /* AdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTableViewCell.swift; sourceTree = "<group>"; };
 		C55C0A7EDA2C207A457517FF /* Pods_ios_opdep_ios_opdepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_opdep_ios_opdepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -915,7 +915,7 @@
 		3DD13D1C2633C3E900C2795D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C4AB2019266E117300AEA87E /* Ads */,
+				C4173FA52670691C008EF307 /* Ads */,
 				60B3D8D126615F3A005F032B /* Infor */,
 				3D1BBD70265A7BBA0075D968 /* Order */,
 				3D2358B026540D6A001F015A /* Utilities */,
@@ -1702,14 +1702,6 @@
 			path = TemplateGridView;
 			sourceTree = "<group>";
 		};
-		C4AB2019266E117300AEA87E /* Ads */ = {
-			isa = PBXGroup;
-			children = (
-				C4AB209C266E1B4500AEA87E /* UnifiedNativeAdView.xib */,
-			);
-			path = Ads;
-			sourceTree = "<group>";
-		};
 		D1BBF4175B7AC224634933D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1863,8 +1855,8 @@
 				3DD13CC92633C33E00C2795D /* Assets.xcassets in Resources */,
 				A42075EB266C198A0043C75F /* OrderDetailsViewController.xib in Resources */,
 				C4AB1EE62669E23300AEA87E /* TemplateDetailViewController.xib in Resources */,
+				C4173FA62670691C008EF307 /* Ads in Resources */,
 				60B3D8E52662151B005F032B /* TestViewController.xib in Resources */,
-				C4AB209D266E1B4500AEA87E /* UnifiedNativeAdView.xib in Resources */,
 				607DB3512662C7A8008798D5 /* terms_conditions_en.html in Resources */,
 				60B3D8DD26615F3A005F032B /* InformationCell.xib in Resources */,
 				3D7BA64D26387D6E009597CA /* OpenSans-SemiBoldItalic.ttf in Resources */,
