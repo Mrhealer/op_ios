@@ -280,7 +280,6 @@
 		C4AB1EF9266A35BE00AEA87E /* TemplateCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1EF8266A35BE00AEA87E /* TemplateCategoryRequest.swift */; };
 		C4AB209D266E1B4500AEA87E /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AB209C266E1B4500AEA87E /* UnifiedNativeAdView.xib */; };
 		C4AB20AD266E1B9000AEA87E /* AdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB20AB266E1B9000AEA87E /* AdsTableViewCell.swift */; };
-		C4AB20AE266E1B9000AEA87E /* AdsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AB20AC266E1B9000AEA87E /* AdsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -587,7 +586,6 @@
 		C4AB1EF8266A35BE00AEA87E /* TemplateCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCategoryRequest.swift; sourceTree = "<group>"; };
 		C4AB209C266E1B4500AEA87E /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UnifiedNativeAdView.xib; path = "../../../../voice-app-ios/VoiceApp/SourceCode/CustomView/CustomAdMobView/UnifiedNativeAdView.xib"; sourceTree = "<group>"; };
 		C4AB20AB266E1B9000AEA87E /* AdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTableViewCell.swift; sourceTree = "<group>"; };
-		C4AB20AC266E1B9000AEA87E /* AdsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsTableViewCell.xib; sourceTree = "<group>"; };
 		C55C0A7EDA2C207A457517FF /* Pods_ios_opdep_ios_opdepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_opdep_ios_opdepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -747,7 +745,6 @@
 			children = (
 				3D3DE1D9263D3574006C4F36 /* HomeCell.swift */,
 				C4AB20AB266E1B9000AEA87E /* AdsTableViewCell.swift */,
-				C4AB20AC266E1B9000AEA87E /* AdsTableViewCell.xib */,
 			);
 			path = HomeCell;
 			sourceTree = "<group>";
@@ -1863,7 +1860,6 @@
 				3D7BA65226387D6E009597CA /* OpenSans-BoldItalic.ttf in Resources */,
 				C4AB1EC72668DD5600AEA87E /* TableViewCell.xib in Resources */,
 				C4AB1EDA2668E15900AEA87E /* CollectionViewCell.xib in Resources */,
-				C4AB20AE266E1B9000AEA87E /* AdsTableViewCell.xib in Resources */,
 				3DD13CC92633C33E00C2795D /* Assets.xcassets in Resources */,
 				A42075EB266C198A0043C75F /* OrderDetailsViewController.xib in Resources */,
 				C4AB1EE62669E23300AEA87E /* TemplateDetailViewController.xib in Resources */,

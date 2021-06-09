@@ -22,6 +22,7 @@ class HomeViewModel: ListViewModel, BasicViewModel {
     
     private let router: HomeRouter
     private let worker: HomeWorker
+    var viewController: UIViewController?
     
     init(apiService: APIService,
          router: HomeRouter) {
@@ -71,8 +72,8 @@ class HomeViewModel: ListViewModel, BasicViewModel {
         if let cell = cell as? HomeCell {
             let viewModel = content(at: indexPath)
             cell.configure(viewModel: viewModel)
-        }else if let cell = cell as? AdsTableViewCell{
-            print("longkaka")
+        }else if let cell = cell as? AdsTableViewCell,let viewController = self.viewController{
+            cell.loadAd(rootViewController: viewController)
         }else{
             fatalError()
         }

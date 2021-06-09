@@ -10,7 +10,7 @@ import GoogleMobileAds
 
 class AdsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tableAdsCell: UIView!
+    var tableAdsCell =  UIView()
     
     private var adLoader: GADAdLoader!
     private var nativeAdView: GADUnifiedNativeAdView!
@@ -20,12 +20,24 @@ class AdsTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func layoutSubviews() {
-        tableAdsCell.translatesAutoresizingMaskIntoConstraints = false
-        let leftConstraint = tableAdsCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-        let rightConstraint = tableAdsCell.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        let bottomConstraint = tableAdsCell.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, rightConstraint, bottomConstraint])
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style,
+                   reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        prepare()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func prepare() {
+        self.addSubview(tableAdsCell)
+        tableAdsCell.snp.makeConstraints {
+            $0.top.bottom.right.equalToSuperview()
+            $0.left.equalToSuperview().offset(24)
+            $0.right.equalToSuperview().offset(-24)
+        }
     }
     
     func loadAd(rootViewController: UIViewController) {
@@ -33,7 +45,7 @@ class AdsTableViewCell: UITableViewCell {
         let adMediaLoad = GADNativeAdMediaAdLoaderOptions()
         adMediaLoad.mediaAspectRatio = .landscape
         adLoader = GADAdLoader(
-            adUnitID: "", rootViewController: rootViewController,
+            adUnitID: "ca-app-pub-7717959238784130/1547878940", rootViewController: rootViewController,
             adTypes: [.unifiedNative], options: [adMediaLoad])
         adLoader.delegate = self
         adLoader.load(request)
@@ -81,6 +93,11 @@ extension AdsTableViewCell: GADUnifiedNativeAdLoaderDelegate {
             viewWithTag.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             viewWithTag.clipsToBounds = true
         }
+//        nativeAdView.snp.makeConstraints{
+//            $0.left.equalToSuperview().offset(24)
+//            $0.right.equalToSuperview().offset(-24)
+//            $0.bottom.equalToSuperview().offset(-8)
+//        }
         nativeAdView.nativeAd = nativeAd
         nativeAdView.callToActionView?.isUserInteractionEnabled = false
     }

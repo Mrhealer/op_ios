@@ -24,7 +24,7 @@ class TestViewController: BasicViewController, GADBannerViewDelegate {
     
     private let banner :GADBannerView = {
         let banner = GADBannerView()
-        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.adUnitID = "ca-app-pub-7717959238784130/8617340861"
         banner.load(GADRequest())
         
         if #available(iOS 13.0, *) {
