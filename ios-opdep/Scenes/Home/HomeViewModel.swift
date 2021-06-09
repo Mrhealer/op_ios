@@ -22,6 +22,7 @@ class HomeViewModel: ListViewModel, BasicViewModel {
     
     private let router: HomeRouter
     private let worker: HomeWorker
+    var viewController: UIViewController?
     
     init(apiService: APIService,
          router: HomeRouter) {
@@ -52,7 +53,7 @@ class HomeViewModel: ListViewModel, BasicViewModel {
         categories.value[indexPath.row]
     }
     
-    let cellMapping: [String: UITableViewCell.Type] = ["home_cell": HomeCell.self]
+    let cellMapping: [String: UITableViewCell.Type] = ["home_cell": HomeCell.self, "ads_cell": AdsTableViewCell.self]
     
     let style: UITableView.Style = .plain
     
@@ -63,13 +64,20 @@ class HomeViewModel: ListViewModel, BasicViewModel {
     }
     
     func cellIdentifier(at indexPath: IndexPath) -> String {
-        "home_cell"
+        let viewModel = content(at: indexPath)
+        return viewModel.type == 1 ? "home_cell" : "ads_cell"
     }
     
     func configure<T>(cell: T, at indexPath: IndexPath) where T: UITableViewCell {
-        guard let cell = cell as? HomeCell else { fatalError() }
-        let viewModel = content(at: indexPath)
-        cell.configure(viewModel: viewModel)
+        if let cell = cell as? HomeCell {
+            let viewModel = content(at: indexPath)
+            cell.configure(viewModel: viewModel)
+        }else if let cell = cell as? AdsTableViewCell,let viewController = self.viewController{
+            cell.loadAd(rootViewController: viewController)
+        }else{
+            fatalError()
+        }
+      
     }
     
     func willDisplayCell(_ cell: UITableViewCell, at indexPath: IndexPath) {}

@@ -24,6 +24,7 @@ struct Categories: Decodable {
     let id: Int
     let name: String
     let imageUrl: String?
+    var type: Int = 1
     
     enum CodingKeys: String, CodingKey {
         case id

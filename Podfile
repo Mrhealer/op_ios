@@ -17,8 +17,7 @@ target 'ios-opdep' do
   pod 'R.swift', '5.2.2'
   pod 'GPUImage'
   pod 'Kingfisher', '~> 5.14.1'
-  pod 'Google-Mobile-Ads-SDK'
-  
+  pod 'Google-Mobile-Ads-SDK', '~> 7.68.0'
   # Firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
@@ -44,6 +43,7 @@ target 'ios-opdep' do
   pod 'SwiftLint'
   pod 'Moya'
   pod 'Moya/RxSwift'
+  pod 'netfox'
   pod 'SwiftyBeaver'
   
   #Language support

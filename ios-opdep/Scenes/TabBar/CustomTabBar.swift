@@ -34,10 +34,11 @@ class CustomeTabBarViewModel {
     let selectedItem = MutableProperty<TabBarItemViewModel?>((nil))
 
     init() {
-        tabs = .init([TabBarItemViewModel(tab: .home),
+        tabs = .init([TabBarItemViewModel(tab: .template),
+                      TabBarItemViewModel(tab: .home),
                       TabBarItemViewModel(tab: .cart),
                       TabBarItemViewModel(tab: .infor)])
-        selectedBarItem = .init(tabs.value[0])
+        selectedBarItem = .init(tabs.value[1])
         selectedItem <~ selectedBarItem
     }
 }
@@ -133,7 +134,7 @@ class TabBarItemView: UIView {
         button.reactive.backgroundColor <~ viewModel.isSelected
             .map { $0 ? UIColor.BottomBar.bgActive : UIColor.Basic.white }
         button.reactive.image <~ viewModel.isSelected.map { [viewModel] in $0 ? viewModel.tab.activedIcon : viewModel.tab.icon }
-        button.reactive.title <~ viewModel.isSelected.map { [viewModel] in $0 ? viewModel.tab.title : "" }
+//        button.reactive.title <~ viewModel.isSelected.map { [viewModel] in $0 ? viewModel.tab.title : "" }
         button.reactive.sizeToFit <~ viewModel.isSelected.map { $0 }
     }
 }
