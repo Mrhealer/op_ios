@@ -45,6 +45,7 @@ target 'ios-opdep' do
   pod 'Moya/RxSwift'
   pod 'netfox'
   pod 'SwiftyBeaver'
+  pod 'netfox'
   
   #Language support
   pod 'Localize'

@@ -178,7 +178,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 88 images.
+  /// This `R.image` struct is generated, and contains static references to 89 images.
   struct image {
     /// Image `Facebook-2`.
     static let facebook2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Facebook-2")
@@ -264,6 +264,8 @@ struct R: Rswift.Validatable {
     static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "info")
     /// Image `instagram`.
     static let instagram = Rswift.ImageResource(bundle: R.hostingBundle, name: "instagram")
+    /// Image `iphone_template`.
+    static let iphone_template = Rswift.ImageResource(bundle: R.hostingBundle, name: "iphone_template")
     /// Image `keyboard`.
     static let keyboard = Rswift.ImageResource(bundle: R.hostingBundle, name: "keyboard")
     /// Image `lock_scroll_content`.
@@ -648,6 +650,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "instagram", bundle: ..., traitCollection: ...)`
     static func instagram(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.instagram, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "iphone_template", bundle: ..., traitCollection: ...)`
+    static func iphone_template(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iphone_template, compatibleWith: traitCollection)
     }
     #endif
 

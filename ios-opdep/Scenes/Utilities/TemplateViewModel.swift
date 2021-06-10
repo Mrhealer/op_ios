@@ -24,6 +24,10 @@ class TemplateViewModel: BasicViewModel {
     let fetchTemplateCategoryAction: Action<Void, [TemplateCategoryData], APIError>
     let templateCategoryData = MutableProperty<[TemplateCategoryData]>([])
     let categoryId = MutableProperty<String?>(nil)
+    let fetchPhoneTemplateAction: Action<Void, [PhoneTemplateData], APIError>
+    let phoneTemplateData = MutableProperty<[PhoneTemplateData]>([])
+    let fetchPhoneListAction: Action<Void, [PhoneListTemplateData], APIError>
+    let phoneListData = MutableProperty<[PhoneListTemplateData]>([])
     
     let router: TemplateRouter
     let worker: TemplateWorker
@@ -44,6 +48,18 @@ class TemplateViewModel: BasicViewModel {
         }
         
         templateCategoryData <~ fetchTemplateCategoryAction.values
+        
+        fetchPhoneTemplateAction = Action() {[worker] in
+            worker.getPhoneTemplate()
+        }
+        
+        phoneTemplateData <~ fetchPhoneTemplateAction.values
+        
+        fetchPhoneListAction = Action(state: categoryId) {[worker] categoryId in
+            worker.getPhoneDetailTemplate(categoryId: categoryId.asStringOrEmpty())
+        }
+        
+        phoneListData <~ fetchPhoneListAction.values
 
         navigateToProfileAction = Action { [router] in
             if let userId = apiService.keyStore.userId {
@@ -66,5 +82,19 @@ class TemplateViewModel: BasicViewModel {
     
     func fetchTemplate() {
         fetchTemplateAction.apply().start()
+    }
+    
+    func fetchTemplateCategory(categoryId: String) {
+        self.categoryId.value = categoryId
+        fetchTemplateCategoryAction.apply().start()
+    }
+    
+    func fetchPhoneTemplate() {
+        fetchPhoneTemplateAction.apply().start()
+    }
+    
+    func fetchPhoneList(categoryId: String) {
+        self.categoryId.value = categoryId
+        fetchPhoneListAction.apply().start()
     }
 }

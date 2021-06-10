@@ -21,7 +21,7 @@ enum HomeTab: Int {
 //        case .infor: return "Thông tin"
 //        case .home: return "Trang Chủ"
 //        case .cart: return "Giỏ Hàng"
-////        case .template
+//        case .template: return
 //        }
 //    }
     
@@ -30,7 +30,7 @@ enum HomeTab: Int {
         case .infor: return R.image.tabbar_infor()
         case .home: return R.image.tabbar_home()
         case .cart: return R.image.tabbar_cart()
-        case .template : return R.image.tabbar_history()
+        case .template: return R.image.tabbar_history()
         }
     }
     
@@ -40,7 +40,6 @@ enum HomeTab: Int {
         case .home: return R.image.tabbar_home_active()
         case .cart: return R.image.tabbar_cart_active()
         case .template: return R.image.tabbar_history_active()
-            
         }
     }
 }
@@ -79,7 +78,8 @@ class TabBarViewModel {
         
         let inforContainer = BasicNavigationController()
         let infor = Module(container: inforContainer, router: InformationRouter(inforContainer))
-        modules = [ template, home, cart, infor]
+        
+        modules = [template, home, cart, infor]
     }
     
     func start() {

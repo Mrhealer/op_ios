@@ -167,7 +167,7 @@ class TestViewController: BasicViewController, GADBannerViewDelegate {
             UIApplication.shared.open(url!)
             break
         case 5:
-            if let name = URL(string: "https://www.instagram.com/inopdepvn/"), !name.absoluteString.isEmpty {
+            if let name = URL(string: "https://apps.apple.com/vn/app/fingzi-in-op-dep/id1570567548?l=vi"), !name.absoluteString.isEmpty {
                 let objectsToShare = [name]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
                 self.present(activityVC, animated: true, completion: nil)
@@ -186,7 +186,7 @@ class TestViewController: BasicViewController, GADBannerViewDelegate {
             CommonWebViewRouter(AppLogic.shared.appRouter.rootNavigationController).startTerm()
             break
         case 1:
-            print("Hello Dear you are here1")
+            rateApp()
             break
         case 2:
             print("login")
@@ -201,6 +201,29 @@ class TestViewController: BasicViewController, GADBannerViewDelegate {
             break
         default:
             print("Hello Dear you are here2")
+        }
+    }
+    
+    
+    func rateApp() {
+
+        if #available(iOS 10.3, *) {
+
+            SKStoreReviewController.requestReview()
+        
+        } else {
+
+            let appID = "1570567548"
+//            let urlStr = "https://itunes.apple.com/app/id\(appID)" // (Option 1) Open App Page
+            let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review" // (Option 2) Open App Review Page
+            
+            guard let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) else { return }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url) // openURL(_:) is deprecated from iOS 10.
+            }
         }
     }
     

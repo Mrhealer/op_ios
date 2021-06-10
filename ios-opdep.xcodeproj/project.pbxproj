@@ -260,6 +260,12 @@
 		A4BE00AA266CF1AB0086EE5E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE00A9266CF1AB0086EE5E /* BaseViewModel.swift */; };
 		A4BE00AF266CF1DC0086EE5E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE00AE266CF1DC0086EE5E /* OrderViewModel.swift */; };
 		A4F2BFD3D0481F7E91815857 /* Pods_ios_opdep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5802A91513690FA6A4C96DDB /* Pods_ios_opdep.framework */; };
+		AC30CE702670693C002232D5 /* TemplateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30CE6E2670693C002232D5 /* TemplateCollectionCell.swift */; };
+		AC30CE712670693C002232D5 /* TemplateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC30CE6F2670693C002232D5 /* TemplateCollectionCell.xib */; };
+		AC52A88D2670AC110059C3A7 /* SelectPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52A88B2670AC110059C3A7 /* SelectPhoneViewController.swift */; };
+		AC52A88E2670AC110059C3A7 /* SelectPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC52A88C2670AC110059C3A7 /* SelectPhoneViewController.xib */; };
+		AC677D142672072200665A90 /* PhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC677D122672072200665A90 /* PhoneTableViewCell.swift */; };
+		AC677D152672072200665A90 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC677D132672072200665A90 /* PhoneTableViewCell.xib */; };
 		C417401B26709C8E008EF307 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C417401A26709C8E008EF307 /* UnifiedNativeAdView.xib */; };
 		C4AB1E2F2668B49F00AEA87E /* ScalableLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */; };
 		C4AB1E832668BE1700AEA87E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E822668BE1700AEA87E /* HeaderView.swift */; };
@@ -565,6 +571,12 @@
 		A4BE00A9266CF1AB0086EE5E /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A4BE00AE266CF1DC0086EE5E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		A4BEFFF9266CDA080086EE5E /* SearchApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiResponse.swift; sourceTree = "<group>"; };
+		AC30CE6E2670693C002232D5 /* TemplateCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionCell.swift; sourceTree = "<group>"; };
+		AC30CE6F2670693C002232D5 /* TemplateCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemplateCollectionCell.xib; sourceTree = "<group>"; };
+		AC52A88B2670AC110059C3A7 /* SelectPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhoneViewController.swift; sourceTree = "<group>"; };
+		AC52A88C2670AC110059C3A7 /* SelectPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhoneViewController.xib; sourceTree = "<group>"; };
+		AC677D122672072200665A90 /* PhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTableViewCell.swift; sourceTree = "<group>"; };
+		AC677D132672072200665A90 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
 		B9B01018FD69C6D02935429E /* Pods-ios-opdep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-opdep.debug.xcconfig"; path = "Target Support Files/Pods-ios-opdep/Pods-ios-opdep.debug.xcconfig"; sourceTree = "<group>"; };
 		C417401A26709C8E008EF307 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 		C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalableLabelHeaderView.swift; sourceTree = "<group>"; };
@@ -1677,6 +1689,8 @@
 				C4AB1E9E2668C35800AEA87E /* TemplateController.xib */,
 				C4AB1EE32669E23300AEA87E /* TemplateDetailViewController.swift */,
 				C4AB1EE42669E23300AEA87E /* TemplateDetailViewController.xib */,
+				AC52A88B2670AC110059C3A7 /* SelectPhoneViewController.swift */,
+				AC52A88C2670AC110059C3A7 /* SelectPhoneViewController.xib */,
 			);
 			path = screen;
 			sourceTree = "<group>";
@@ -1688,6 +1702,8 @@
 				C4AB1EC42668DD5600AEA87E /* TableViewCell.swift */,
 				C4AB1EC32668DD5600AEA87E /* TableViewCell.xib */,
 				C4AB1EC52668DD5600AEA87E /* TableViewCellModel.swift */,
+				AC677D122672072200665A90 /* PhoneTableViewCell.swift */,
+				AC677D132672072200665A90 /* PhoneTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -1697,6 +1713,8 @@
 			children = (
 				C4AB1ED82668E15900AEA87E /* CollectionViewCell.swift */,
 				C4AB1ED72668E15900AEA87E /* CollectionViewCell.xib */,
+				AC30CE6E2670693C002232D5 /* TemplateCollectionCell.swift */,
+				AC30CE6F2670693C002232D5 /* TemplateCollectionCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1846,6 +1864,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D7BA65326387D6E009597CA /* OpenSans-Light.ttf in Resources */,
+				AC30CE712670693C002232D5 /* TemplateCollectionCell.xib in Resources */,
 				3DD13CCC2633C33E00C2795D /* LaunchScreen.storyboard in Resources */,
 				607DB3572662C991008798D5 /* WebViewController.xib in Resources */,
 				607DB34F2662A72C008798D5 /* LoginViewController.xib in Resources */,
@@ -1854,6 +1873,7 @@
 				3D7BA62126386645009597CA /* Localizable.strings in Resources */,
 				C417401B26709C8E008EF307 /* UnifiedNativeAdView.xib in Resources */,
 				C4AB1E882668BE2800AEA87E /* HeaderView.xib in Resources */,
+				AC52A88E2670AC110059C3A7 /* SelectPhoneViewController.xib in Resources */,
 				3D7BA64A26387D6E009597CA /* OpenSans-Regular.ttf in Resources */,
 				3D7BA64E26387D6E009597CA /* OpenSans-ExtraBold.ttf in Resources */,
 				3D7BA64C26387D6E009597CA /* OpenSans-Italic.ttf in Resources */,
@@ -1865,6 +1885,7 @@
 				A42075EB266C198A0043C75F /* OrderDetailsViewController.xib in Resources */,
 				C4AB1EE62669E23300AEA87E /* TemplateDetailViewController.xib in Resources */,
 				60B3D8E52662151B005F032B /* TestViewController.xib in Resources */,
+				AC677D152672072200665A90 /* PhoneTableViewCell.xib in Resources */,
 				607DB3512662C7A8008798D5 /* terms_conditions_en.html in Resources */,
 				60B3D8DD26615F3A005F032B /* InformationCell.xib in Resources */,
 				3D7BA64D26387D6E009597CA /* OpenSans-SemiBoldItalic.ttf in Resources */,
@@ -2144,11 +2165,13 @@
 				3DE99F3B26414DA000A18E8A /* StickerLayer.swift in Sources */,
 				3DE99E9D26414B2F00A18E8A /* ImageEffectBarItemCell.swift in Sources */,
 				3DD13DC22633C5F200C2795D /* AppConstants.swift in Sources */,
+				AC52A88D2670AC110059C3A7 /* SelectPhoneViewController.swift in Sources */,
 				60B3D8DE26615F3A005F032B /* InformationCell.swift in Sources */,
 				3DD13D6A2633C52C00C2795D /* CommonUtility.swift in Sources */,
 				3DEF4B67264E5CCA0081B4B4 /* DiscountViewController.swift in Sources */,
 				3DD13D3E2633C4AE00C2795D /* StyleTextField.swift in Sources */,
 				3D2DB970264B7C1F00A9844C /* CustomNavigation.swift in Sources */,
+				AC30CE702670693C002232D5 /* TemplateCollectionCell.swift in Sources */,
 				3DD13D8E2633C56B00C2795D /* GenericResponse.swift in Sources */,
 				3DD13D2C2633C49900C2795D /* BasicViewModel.swift in Sources */,
 				3DD13CC22633C33B00C2795D /* SceneDelegate.swift in Sources */,
@@ -2282,6 +2305,7 @@
 				3D114F5D264C0F8A00EA610F /* UploadDesignWorker.swift in Sources */,
 				3DE99EF226414C9900A18E8A /* BaseView.swift in Sources */,
 				3DE99E6926414A6D00A18E8A /* CategoryBarViewModel.swift in Sources */,
+				AC677D142672072200665A90 /* PhoneTableViewCell.swift in Sources */,
 				3DBD9BDE264A3EA60031A5ED /* ShoppingCartViewModel.swift in Sources */,
 				3DE99F3326414D8A00A18E8A /* StyleFrameViewModel.swift in Sources */,
 				3DD13DDA2633C60800C2795D /* UIImage.swift in Sources */,

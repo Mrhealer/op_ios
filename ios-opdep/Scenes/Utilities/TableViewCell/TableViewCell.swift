@@ -19,14 +19,14 @@ class TableViewCell: UITableViewCell {
     
     var rowWithColors: [Content]?
     
-    @IBOutlet var subCategoryLabel: UILabel!
+//    @IBOutlet var subCategoryLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.init(hexString: "#FFB0BD")
-        self.subCategoryLabel.textColor = .blue
-        self.subCategoryLabel.isHidden = true
+//        self.subCategoryLabel.textColor = .blue
+//        self.subCategoryLabel.isHidden = true
         // TODO: need to setup collection view flow layout
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -74,11 +74,7 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
             
             
             if let urlString = self.rowWithColors?[indexPath.item].category?.imageURL, let url = URL(string: urlString) {
-                if urlString.range(of: "webp") != nil {
-                    cell.imageTemplate.sd_setImage(with: url, completed: nil)
-                }else {
-                    cell.imageTemplate.af.setImage(withURL: url)
-                }
+                cell.imageTemplate.sd_setImage(with: url, completed: nil)
      
             }
             
@@ -89,6 +85,10 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     // Add spaces at the beginning and the end of the collection view
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 87, height: 170)
     }
 }

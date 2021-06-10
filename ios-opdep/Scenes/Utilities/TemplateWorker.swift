@@ -26,4 +26,14 @@ class TemplateWorker {
             $0.data
         }
     }
+    
+    func getPhoneTemplate() -> SignalProducer<[PhoneTemplateData], APIError> {
+        let request = PhoneTemplateRequest()
+        return apiService.reactive.response(of: request).map { ($0.data ?? []) }
+    }
+    
+    func getPhoneDetailTemplate(categoryId: String) -> SignalProducer<[PhoneListTemplateData], APIError> {
+        let request = PhoneListRequest(categoryId: categoryId)
+        return apiService.reactive.response(of: request).map { ($0.data ?? []) }
+    }
 }

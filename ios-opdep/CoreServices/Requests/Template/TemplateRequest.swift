@@ -15,6 +15,58 @@ struct TemplateRequest:RoutableRequest {
     let method: HTTPMethod = .get
 }
 
+struct PhoneTemplateRequest:RoutableRequest {
+    public typealias Response = PhoneData
+    public let route = "get-phone-model"
+    let method: HTTPMethod = .post
+}
+
+struct PhoneListRequest:RoutableRequest, EncodableRequest {
+    public typealias Response = PhoneListData
+    public let route = "get-product"
+    var body: TemplateCategoryBodyRequest
+    let method: HTTPMethod = .post
+    init(categoryId: String) {
+        body = TemplateCategoryBodyRequest(categoryId: categoryId)
+    }
+}
+
+struct PhoneData: Decodable {
+    let status: Int
+    let message: String
+    let data: [PhoneTemplateData]?
+}
+
+struct PhoneListData: Decodable {
+    let status: Int
+    let message: String
+    let data: [PhoneListTemplateData]?
+}
+
+struct PhoneTemplateData: Decodable {
+    let id: Int
+    let imageURL: String
+    let name: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case imageURL = "image_url"
+        case name
+    }
+}
+
+struct PhoneListTemplateData: Decodable {
+    let id: Int
+    let editor: [ProductModel.EditorItem]
+    let name: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case editor
+        case name
+    }
+}
+
 // MARK: - PurpleData
 struct PurpleData: Decodable {
     let status: Int
@@ -47,7 +99,7 @@ struct Category: Decodable {
     let createdAt, updatedAt: String?
     let orderDisplay: JSONNull?
     let nameFolder: String?
-    let template: TemplateUnion?
+//    let template: TemplateUnion?
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -59,7 +111,7 @@ struct Category: Decodable {
         case updatedAt = "updated_at"
         case orderDisplay = "order_display"
         case nameFolder = "name_folder"
-        case template
+//        case template
     }
 }
 

@@ -81,8 +81,8 @@ extension TemplateController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "tableviewcellid", for: indexPath) as? TableViewCell {
             // Show SubCategory Title
-            let subCategoryTitle = viewModel.templateData.value
-            cell.subCategoryLabel.text = subCategoryTitle[indexPath.section].name
+//            let subCategoryTitle = viewModel.templateData.value
+//            cell.subCategoryLabel.text = subCategoryTitle[indexPath.section].name
             // Pass the data to colletionview inside the tableviewcell
             let rowArray = viewModel.templateData.value[indexPath.section].content
             
@@ -99,20 +99,24 @@ extension TemplateController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailsviewcontrollerseg" {
-//            let DestViewController = segue.destination as! DetailsViewController
-//            DestViewController.backgroundColor = tappedCell.color
-//            DestViewController.backgroundColorName = tappedCell.name
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "detailsviewcontrollerseg" {
+////            let DestViewController = segue.destination as! DetailsViewController
+////            DestViewController.backgroundColor = tappedCell.color
+////            DestViewController.backgroundColorName = tappedCell.name
+//        }
+//    }
 }
 
 extension TemplateController: CollectionViewCellDelegate {
     func collectionView(collectionviewcell: CollectionViewCell?, index: Int, didTappedInTableViewCell: TableViewCell) {
         if let colorsRow = didTappedInTableViewCell.rowWithColors {
             self.tappedCell = colorsRow[index]
-            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+            
+            let vc = TemplateDetailViewController(viewModel: viewModel)
+            vc.tappedCell = self.tappedCell
+            self.navigationController?.pushViewController(vc, animated: true)
+//            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
             // You can also do changes to the cell you tapped using the 'collectionviewcell'
         }
     }
