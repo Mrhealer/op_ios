@@ -27,20 +27,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-            let openURLContext = Array(URLContexts).first
-            if openURLContext != nil {
-                if let URL = openURLContext?.url, let annotation = openURLContext?.options.annotation {
-                    ApplicationDelegate.shared.application(UIApplication.shared, open: URL, sourceApplication: openURLContext?.options.sourceApplication, annotation: annotation)
-                }
-            }
+//            let openURLContext = Array(URLContexts).first
+//            if openURLContext != nil {
+//                if let URL = openURLContext?.url, let annotation = openURLContext?.options.annotation {
+//                    ApplicationDelegate.shared.application(UIApplication.shared, open: URL, sourceApplication: openURLContext?.options.sourceApplication, annotation: annotation)
+//                }
+//            }
+        guard let url = URLContexts.first?.url else {
+                  return
+              }
+              let _ = ApplicationDelegate.shared.application(
+                  UIApplication.shared,
+                  open: url,
+                  sourceApplication: nil,
+                  annotation: [UIApplication.OpenURLOptionsKey.annotation])
         }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
-    }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.

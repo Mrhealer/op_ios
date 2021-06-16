@@ -54,7 +54,7 @@ class TemplateDetailViewController: BasicViewController {
 extension TemplateDetailViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = SelectPhoneViewController(viewModel: viewModel, content: tappedCell, template: viewModel.templateCategoryData.value[indexPath.item])
+        let vc = SelectPhoneViewController(viewModel: viewModel, template: viewModel.templateCategoryData.value[indexPath.item])
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

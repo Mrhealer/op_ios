@@ -15,15 +15,13 @@ class SelectPhoneViewController: UIViewController {
     @IBOutlet weak var phoneNameTableView: UITableView!
     
     let viewModel: TemplateViewModel
-    let tappedCell: Content
     let template: TemplateCategoryData
     
     var selectBrandIndex = 0
     var selectNameIndex: Int?
     
-    init(viewModel: TemplateViewModel, content: Content, template: TemplateCategoryData) {
+    init(viewModel: TemplateViewModel, template: TemplateCategoryData) {
         self.viewModel = viewModel
-        self.tappedCell = content
         self.template = template
         super.init(nibName: "SelectPhoneViewController", bundle: nil)
     }
@@ -55,9 +53,11 @@ class SelectPhoneViewController: UIViewController {
     }
     
     @IBAction func onPressEdit(_ sender: Any) {
-        guard selectNameIndex != nil else {
+        guard let selectNameIndex = selectNameIndex else {
             return
         }
+        let vc = EditPhoneViewController(viewModel: viewModel, template: template, phoneImageData: viewModel.phoneListData.value[selectNameIndex])
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onPressBack(_ sender: Any) {

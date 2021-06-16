@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditPhoneFrameView" customModule="ios_opdep" customModuleProvider="target">
+            <connections>
+                <outlet property="imageHeightConstraint" destination="wuz-Ta-G6W" id="3zr-Lc-1qh"/>
+                <outlet property="imageView" destination="IOj-sr-U6f" id="Sjx-LB-a7d"/>
+                <outlet property="scrollView" destination="Wj3-WG-t6C" id="Oaj-23-fcK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wj3-WG-t6C">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-sr-U6f">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="wuz-Ta-G6W"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="IOj-sr-U6f" firstAttribute="leading" secondItem="Wj3-WG-t6C" secondAttribute="leading" id="2Sr-bi-C1F"/>
+                        <constraint firstAttribute="trailing" secondItem="IOj-sr-U6f" secondAttribute="trailing" id="7v3-26-b0b"/>
+                        <constraint firstItem="IOj-sr-U6f" firstAttribute="top" secondItem="Wj3-WG-t6C" secondAttribute="top" id="R3s-eq-5HE"/>
+                        <constraint firstAttribute="bottom" secondItem="IOj-sr-U6f" secondAttribute="bottom" id="Wmg-KG-BFe"/>
+                        <constraint firstItem="IOj-sr-U6f" firstAttribute="width" secondItem="Wj3-WG-t6C" secondAttribute="width" id="uRu-MJ-Kk8"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="KQl-e5-pty"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="ZhR-oi-fC6"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="6PK-L7-nEQ"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Wj3-WG-t6C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ABM-KY-btI"/>
+                <constraint firstItem="Wj3-WG-t6C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bI6-CM-CsG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Wj3-WG-t6C" secondAttribute="bottom" id="lvX-ey-eA4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Wj3-WG-t6C" secondAttribute="trailing" id="x3n-0b-Vqd"/>
+            </constraints>
+            <point key="canvasLocation" x="134.78260869565219" y="72.991071428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
