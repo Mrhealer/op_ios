@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditPhoneFrameView" customModule="ios_opdep" customModuleProvider="target">
             <connections>
+                <outlet property="addImage" destination="dIU-vu-Xbg" id="wge-WC-vKG"/>
                 <outlet property="imageHeightConstraint" destination="wuz-Ta-G6W" id="3zr-Lc-1qh"/>
                 <outlet property="imageView" destination="IOj-sr-U6f" id="Sjx-LB-a7d"/>
                 <outlet property="scrollView" destination="Wj3-WG-t6C" id="Oaj-23-fcK"/>
@@ -44,12 +45,18 @@
                         <outlet property="delegate" destination="-1" id="6PK-L7-nEQ"/>
                     </connections>
                 </scrollView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dIU-vu-Xbg">
+                    <rect key="frame" x="198" y="440" width="18" height="16"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Wj3-WG-t6C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ABM-KY-btI"/>
+                <constraint firstItem="dIU-vu-Xbg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WxY-Jo-JoX"/>
                 <constraint firstItem="Wj3-WG-t6C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bI6-CM-CsG"/>
+                <constraint firstItem="dIU-vu-Xbg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jJA-nl-Dne"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Wj3-WG-t6C" secondAttribute="bottom" id="lvX-ey-eA4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Wj3-WG-t6C" secondAttribute="trailing" id="x3n-0b-Vqd"/>
             </constraints>
@@ -57,6 +64,10 @@
         </view>
     </objects>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

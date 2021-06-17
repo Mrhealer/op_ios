@@ -12,6 +12,7 @@ class EditPhoneFrameView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addImage: UIImageView!
     
     var view: UIView!
     fileprivate(set) var nibName: String!
