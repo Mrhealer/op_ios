@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,17 +79,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-md-bUd">
-                    <rect key="frame" x="20" y="435" width="374" height="208"/>
+                    <rect key="frame" x="20" y="435" width="374" height="220"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIU-Tq-Aln">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
-                            <color key="backgroundColor" name="AccentColor"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIU-Tq-Aln">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="56" id="5zB-Ai-P88"/>
+                                <constraint firstAttribute="height" constant="60" id="hjQ-sb-VKa"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
-                            <state key="normal" title="Sign in with Facebook" image="facebook-logo-png-38362">
+                            <color key="tintColor" red="0.87213741440000003" green="0.94266610240000004" blue="0.97942182089999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="facebook-logo-png-38362">
                                 <color key="titleColor" systemColor="systemBackgroundColor"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -102,12 +100,10 @@
                                 <action selector="loginFacebook:" destination="-1" eventType="touchUpInside" id="YOD-WD-OfB"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-c9-18f">
-                            <rect key="frame" x="0.0" y="76" width="374" height="56"/>
-                            <color key="backgroundColor" red="0.93169744964671974" green="0.98631815033578096" blue="1" alpha="0.62114668865593115" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
-                            <state key="normal" title="Sign in with Google  " image="google">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUQ-c9-18f">
+                            <rect key="frame" x="0.0" y="80" width="374" height="60"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="24"/>
+                            <state key="normal" image="google">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -120,10 +116,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-5p-5O6">
-                            <rect key="frame" x="0.0" y="152" width="374" height="56"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="0.0" y="160" width="374" height="60"/>
                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="24"/>
-                            <state key="normal" title="Sign up with Apple" image="apple">
+                            <state key="normal" image="apple">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -162,14 +157,11 @@
         </view>
     </objects>
     <resources>
-        <image name="apple" width="69" height="44"/>
-        <image name="facebook-logo-png-38362" width="44" height="44"/>
-        <image name="google" width="44" height="44"/>
+        <image name="apple" width="942" height="165"/>
+        <image name="facebook-logo-png-38362" width="942" height="165"/>
+        <image name="google" width="942" height="165"/>
         <image name="logo" width="256" height="256"/>
         <image name="navigation_back" width="24" height="24"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
