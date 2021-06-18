@@ -272,7 +272,7 @@ class EditPhoneViewController: UIViewController {
                                                     desginBounds: containerView.bounds)
         let designModel = OutPutFileModel(preview: preview, photo: image, print: print)
         // ko sử dụng product để làm gì
-        let product = ProductModel(id: 0, name: nil, imgUrl: nil, price: nil, priceDiscount: nil, editor: nil)
+        let product = ProductModel(id: Int64(phoneImageData.id), name: nil, imgUrl: nil, price: nil, priceDiscount: nil, editor: nil)
         buyRouter.start(productModel: product, outPutFile: designModel)
     }
 }

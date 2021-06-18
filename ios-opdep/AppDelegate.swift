@@ -36,7 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         GIDSignIn.sharedInstance().clientID = "439309188709-k5bviqnelhibvug5ann8dr46es45i1et.apps.googleusercontent.com"
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        #if DEBUG
         NFX.sharedInstance().start()
+        #endif
+        
         return true
     }
     
