@@ -115,7 +115,7 @@ extension TemplateController: CollectionViewCellDelegate {
             
             let vc = TemplateDetailViewController(viewModel: viewModel)
             vc.tappedCell = self.tappedCell
-            self.navigationController?.pushViewController(vc, animated: true)
+            AppLogic.shared.appRouter.rootNavigationController?.pushViewController(vc, animated: true)
 //            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
             // You can also do changes to the cell you tapped using the 'collectionviewcell'
         }

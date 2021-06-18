@@ -262,6 +262,18 @@ class EditPhoneViewController: UIViewController {
             view.endEditing(true)
             return
         }
+        
+        let buyRouter = BuyRouter(navigationController)
+        let preview = containerView.imageFromView(scale: 0.75)
+        let image = CommonUtility.createPdfFromView(designLayer: containerView.layer,
+                                                    desginBounds: containerView.bounds)
+        phoneImageView.isHidden = true
+        let print = CommonUtility.createPdfFromView(designLayer: containerView.layer,
+                                                    desginBounds: containerView.bounds)
+        let designModel = OutPutFileModel(preview: preview, photo: image, print: print)
+        // ko sử dụng product để làm gì
+        let product = ProductModel(id: 0, name: nil, imgUrl: nil, price: nil, priceDiscount: nil, editor: nil)
+        buyRouter.start(productModel: product, outPutFile: designModel)
     }
 }
 
@@ -529,9 +541,6 @@ extension EditPhoneViewController: UIGestureRecognizerDelegate {
             
             if deleteView.frame.contains(point) { // Delete the view
                 view.removeFromSuperview()
-//                if let tagView = view as? ImageTagView, let index = listImageTag.firstIndex(of: tagView) {
-//                    listImageTag.remove(at: index)
-//                }
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.success)
             } else  { //Snap the view back to canvasView
