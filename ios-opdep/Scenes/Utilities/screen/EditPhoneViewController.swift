@@ -106,6 +106,8 @@ class EditPhoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.text = phoneImageData.name
+        
         if let data = Data(base64Encoded: template.context) {
             let json = try? JSON(data: data)
             guard let frameLayer = json?["frameLayer"] else {
