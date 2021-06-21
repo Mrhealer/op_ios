@@ -291,7 +291,7 @@ extension EditPhoneViewController: UIImagePickerControllerDelegate, UINavigation
             cropVC.didCrop = { [weak self] newImage in
                 guard let self = self else { return }
                 let view = self.listFrameView[self.indexSelectFrame]
-                view.imageView.image = newImage
+                view.imageView.image = newImage.resizedToMB(size: 2)
                 view.imageHeightConstraint.constant = newImage.size.height / newImage.size.width * view.imageView.frame.width
                 view.addImage.isHidden = true
             }
