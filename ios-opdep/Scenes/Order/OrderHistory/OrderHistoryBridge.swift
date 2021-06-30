@@ -51,4 +51,14 @@ class OrderHistoryBridge: ListViewBridge<OrderHistoryViewModel> {
             labelNoItems.isHidden = $0.count == 0 ? false : true
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = OrderDetailsViewController(order: viewModel.orderHistory.value[indexPath.row].model)
+        controller.modalPresentationStyle = .fullScreen
+        controller.tapDeleteOrder.subscribe(onNext: { [weak self] _ in
+//            self.viewModel.fetchDataShoppingCart()
+            self?.viewModel.fetchOrderHistory()
+        })
+        AppLogic.shared.appRouter.rootNavigationController?.pushViewController(controller, animated: true)
+    }
 }

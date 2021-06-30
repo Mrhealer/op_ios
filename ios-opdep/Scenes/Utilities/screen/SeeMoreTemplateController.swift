@@ -1,24 +1,23 @@
 //
-//  TemplateDetailViewController.swift
+//  SeeMoreTemplateController.swift
 //  ios-opdep
 //
-//  Created by VMO C10 IOS on 6/4/21.
+//  Created by VMO on 6/30/21.
 //
 
 import UIKit
 
-class TemplateDetailViewController: UIViewController {
-
+class SeeMoreTemplateController: UIViewController {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    override var shouldHideNavigationBar: Bool { true }
+    
     let viewModel: TemplateViewModel
+    let template: Template
     
-    var tappedCell: Content!
-    
-    
-    init(viewModel: TemplateViewModel) {
+    init(viewModel: TemplateViewModel, template: Template) {
         self.viewModel = viewModel
+        self.template = template
         super.init(nibName: "TemplateDetailViewController", bundle: nil)
     }
     
@@ -30,39 +29,44 @@ class TemplateDetailViewController: UIViewController {
         super.loadView()
         bindViewModel(viewModel)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = tappedCell.category?.name
-        
-        let id = tappedCell.category?.id ?? 0
-        viewModel.fetchTemplateCategory(categoryId: "\(id)")
-        viewModel.fetchTemplateCategoryAction.values.observeValues { _ in
-            self.collectionView.reloadData()
-        }
+
+        titleLabel.text = template.name
         
         // Register the xib for tableview cell
         let cellNib = UINib(nibName: "TemplateCollectionCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "collectionviewcellid")
     }
-
+    
     @IBAction func onPressBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
 }
 
-extension TemplateDetailViewController: UICollectionViewDelegate {
+extension SeeMoreTemplateController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = SelectPhoneViewController(viewModel: viewModel, template: viewModel.templateCategoryData.value[indexPath.item])
-        self.navigationController?.pushViewController(vc, animated: true)
+        let content = template.content[indexPath.item]
+        if content.category != nil {
+            let vc = TemplateDetailViewController(viewModel: viewModel)
+            vc.tappedCell = content
+            navigationController?.pushViewController(vc, animated: true)
+        } else if let contentTemplate = content.template {
+            let template = TemplateCategoryData(contentTemplate: contentTemplate)
+            let vc = SelectPhoneViewController(viewModel: viewModel, template: template)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 }
 
-extension TemplateDetailViewController: UICollectionViewDataSource {
+extension SeeMoreTemplateController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.templateCategoryData.value.count
+        return template.content.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,17 +74,25 @@ extension TemplateDetailViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        
-        if let url = URL(string: viewModel.templateCategoryData.value[indexPath.item].imageURL) {
-            cell.templateImageView.sd_setImage(with: url, completed: nil)
- 
+        let content = template.content[indexPath.item]
+        if content.category != nil {
+            let urlString = content.category?.imageURL ?? ""
+            if let url = URL(string: urlString) {
+                cell.templateImageView.sd_setImage(with: url, completed: nil)
+            }
+        } else {
+            let urlString = content.template?.imageURL ?? ""
+            if let url = URL(string: urlString) {
+                cell.templateImageView.sd_setImage(with: url, completed: nil)
+            }
         }
+        
         return cell
     }
     
 }
 
-extension TemplateDetailViewController: UICollectionViewDelegateFlowLayout {
+extension SeeMoreTemplateController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0

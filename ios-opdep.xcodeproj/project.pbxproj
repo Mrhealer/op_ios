@@ -335,6 +335,8 @@
 		ACD2DD78268566A00049B126 /* mint.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6B268566A00049B126 /* mint.acv */; };
 		ACD2DD79268566A00049B126 /* whiteskin.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6C268566A00049B126 /* whiteskin.acv */; };
 		ACD2DD7A268566A00049B126 /* purple.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6D268566A00049B126 /* purple.acv */; };
+		ACD51141268C0912009A8364 /* SeeMoreTemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD5113F268C0912009A8364 /* SeeMoreTemplateController.swift */; };
+		ACD51142268C0912009A8364 /* SeeMoreTemplateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACD51140268C0912009A8364 /* SeeMoreTemplateController.xib */; };
 		C417401B26709C8E008EF307 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C417401A26709C8E008EF307 /* UnifiedNativeAdView.xib */; };
 		C4AB1E2F2668B49F00AEA87E /* ScalableLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */; };
 		C4AB1E832668BE1700AEA87E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E822668BE1700AEA87E /* HeaderView.swift */; };
@@ -715,6 +717,8 @@
 		ACD2DD6B268566A00049B126 /* mint.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = mint.acv; sourceTree = "<group>"; };
 		ACD2DD6C268566A00049B126 /* whiteskin.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = whiteskin.acv; sourceTree = "<group>"; };
 		ACD2DD6D268566A00049B126 /* purple.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = purple.acv; sourceTree = "<group>"; };
+		ACD5113F268C0912009A8364 /* SeeMoreTemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreTemplateController.swift; sourceTree = "<group>"; };
+		ACD51140268C0912009A8364 /* SeeMoreTemplateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreTemplateController.xib; sourceTree = "<group>"; };
 		B9B01018FD69C6D02935429E /* Pods-ios-opdep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-opdep.debug.xcconfig"; path = "Target Support Files/Pods-ios-opdep/Pods-ios-opdep.debug.xcconfig"; sourceTree = "<group>"; };
 		C417401A26709C8E008EF307 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 		C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalableLabelHeaderView.swift; sourceTree = "<group>"; };
@@ -2040,6 +2044,8 @@
 			children = (
 				C4AB1E9D2668C35800AEA87E /* TemplateController.swift */,
 				C4AB1E9E2668C35800AEA87E /* TemplateController.xib */,
+				ACD5113F268C0912009A8364 /* SeeMoreTemplateController.swift */,
+				ACD51140268C0912009A8364 /* SeeMoreTemplateController.xib */,
 				C4AB1EE32669E23300AEA87E /* TemplateDetailViewController.swift */,
 				C4AB1EE42669E23300AEA87E /* TemplateDetailViewController.xib */,
 				AC52A88B2670AC110059C3A7 /* SelectPhoneViewController.swift */,
@@ -2225,6 +2231,7 @@
 				ACD2DD78268566A00049B126 /* mint.acv in Resources */,
 				3D7BA65326387D6E009597CA /* OpenSans-Light.ttf in Resources */,
 				AC30CE712670693C002232D5 /* TemplateCollectionCell.xib in Resources */,
+				ACD51142268C0912009A8364 /* SeeMoreTemplateController.xib in Resources */,
 				3DD13CCC2633C33E00C2795D /* LaunchScreen.storyboard in Resources */,
 				ACD2DD73268566A00049B126 /* deep.acv in Resources */,
 				607DB3572662C991008798D5 /* WebViewController.xib in Resources */,
@@ -2724,6 +2731,7 @@
 				3DD13D802633C55800C2795D /* UploadableRequest.swift in Sources */,
 				3D0404A5263F9BFF00519C7A /* ProductGirdCell.swift in Sources */,
 				C4AB1EC92668DD5600AEA87E /* TableViewCellModel.swift in Sources */,
+				ACD51141268C0912009A8364 /* SeeMoreTemplateController.swift in Sources */,
 				3D7BA62A2638668D009597CA /* Localizable.swift in Sources */,
 				3DD13D292633C49900C2795D /* BasicNavigationController.swift in Sources */,
 				3DD13D3A2633C4AE00C2795D /* PassthroughStackView.swift in Sources */,

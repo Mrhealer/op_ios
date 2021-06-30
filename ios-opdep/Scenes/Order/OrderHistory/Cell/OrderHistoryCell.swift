@@ -99,6 +99,7 @@ class OrderHistoryCell: UITableViewCell {
             $0.bottom.equalToSuperview().offset(-16)
         }
         buttonViewOrder.adjustsImageWhenHighlighted = false
+        buttonViewOrder.isUserInteractionEnabled = false
     }
     
     override func prepareForReuse() {

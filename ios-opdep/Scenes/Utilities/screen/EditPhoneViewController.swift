@@ -66,6 +66,7 @@ class EditPhoneViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var phoneImageView: UIImageView!
+    @IBOutlet weak var backgroundImageContainer: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var backgroundHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var deleteView: UIView!
@@ -222,13 +223,12 @@ class EditPhoneViewController: UIViewController {
         
         textLayer.frame.size = containerView.frame.size
         
-        listFrameView.forEach({ $0.removeFromSuperview() })
-        listFrameView.removeAll()
-        
         widthBackground = backgroundImageView.frame.width
         heightBackground = layer.height / layer.width * widthBackground
         backgroundHeightConstraint.constant = heightBackground
         view.layoutIfNeeded()
+        
+        guard listFrameView.isEmpty else { return }
         
         for (index, frame) in layer.frames.enumerated() {
             let view = EditPhoneFrameView()
@@ -238,7 +238,7 @@ class EditPhoneViewController: UIViewController {
             view.frame.origin.x = frame.x / scaleX
             view.frame.origin.y = frame.y / scaleY
             view.transform = view.transform.rotated(by: frame.angle / 180 * .pi)
-            backgroundImageView.addSubview(view)
+            backgroundImageContainer.insertSubview(view, at: 0)
             
             view.didTap = { [weak self] in
                 self?.indexSelectFrame = index
@@ -315,6 +315,7 @@ class EditPhoneViewController: UIViewController {
         let designModel = OutPutFileModel(preview: preview, photo: image, print: print)
         let product = ProductModel(id: Int64(phoneImageData.id), name: nil, imgUrl: nil, price: nil, priceDiscount: nil, editor: nil)
         buyRouter.start(productModel: product, outPutFile: designModel)
+        phoneImageView.isHidden = false
     }
 }
 
