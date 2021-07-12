@@ -53,4 +53,15 @@ struct TemplateCategoryData: Decodable {
         case updatedAt = "updated_at"
         case used
     }
+    
+    init(contentTemplate: ContentTemplate) {
+        id = contentTemplate.id
+        categoryID = contentTemplate.categoryID
+        imageURL = contentTemplate.imageURL
+        context = contentTemplate.context ?? ""
+        orderDisplay = contentTemplate.orderDisplay
+        createdAt = contentTemplate.createdAt
+        updatedAt = contentTemplate.updatedAt
+        used = contentTemplate.used
+    }
 }

@@ -13,6 +13,7 @@ class SelectPhoneViewController: UIViewController {
     @IBOutlet weak var templateImageView: UIImageView!
     @IBOutlet weak var phoneBrandTableView: UITableView!
     @IBOutlet weak var phoneNameTableView: UITableView!
+    @IBOutlet weak var nextButton: UIButton!
     
     let viewModel: TemplateViewModel
     let template: TemplateCategoryData
@@ -50,6 +51,8 @@ class SelectPhoneViewController: UIViewController {
         let cellNib = UINib(nibName: "PhoneTableViewCell", bundle: nil)
         self.phoneBrandTableView.register(cellNib, forCellReuseIdentifier: "tableviewcellid")
         self.phoneNameTableView.register(cellNib, forCellReuseIdentifier: "tableviewcellid")
+        
+        nextButton.backgroundColor = UIColor(hexString: "#AEAEB2")
     }
     
     @IBAction func onPressEdit(_ sender: Any) {
@@ -74,12 +77,14 @@ extension SelectPhoneViewController: UITableViewDelegate {
             selectNameIndex = nil
             self.viewModel.fetchPhoneList(categoryId: "\(self.viewModel.phoneTemplateData.value[selectBrandIndex].id)")
             phoneBrandTableView.reloadData()
+            nextButton.backgroundColor = UIColor(hexString: "#AEAEB2")
         case phoneNameTableView:
             selectNameIndex = indexPath.row
             phoneNameTableView.reloadData()
             if let url = URL(string: viewModel.phoneListData.value[indexPath.row].editor[1].image ?? "") {
                 phoneImageView.sd_setImage(with: url, completed: nil)
             }
+            nextButton.backgroundColor = UIColor(hexString: "#00ACEA")
         default:
             fatalError()
         }

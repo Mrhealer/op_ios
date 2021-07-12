@@ -10,12 +10,11 @@ import PromiseKit
 
 class OrderViewModel: BaseViewModel {
 
-    func deleteOrder(productId: String) {
-        let apiName = ApiName.deleteOrderApi
+    func cancelOrder(orderId: String) {
+        let apiName = ApiName.cancelOrder
         firstly { () -> Promise<ApiResponse> in
-            let params = ["user_id": APIService.shared.keyStore.userId.asStringOrEmpty(),
-                          "order_upload_temp_id": productId]
-            return ApiClient.shared.callApi(HomeApi.deleteOrder(params: params))
+            let params = ["order_id": orderId]
+            return ApiClient.shared.callApi(HomeApi.cancelOrder(params: params))
         }.done { [weak self] (response) in
             
             self?.responseSubject.onNext((api: apiName,
@@ -35,7 +34,7 @@ class OrderViewModel: BaseViewModel {
 extension OrderViewModel {
         
     struct ApiName {
-        static let deleteOrderApi = "deleteOrderApi"
+        static let cancelOrder = "cancelOrder"
     }
         
 }

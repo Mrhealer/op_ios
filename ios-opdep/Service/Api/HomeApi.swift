@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 public enum HomeApi {
-    case deleteOrder(params: [String: Any])
+    case cancelOrder(params: [String: Any])
 }
 
 extension HomeApi: TargetType {
@@ -21,14 +21,14 @@ extension HomeApi: TargetType {
     
     public var path: String {
         switch self {
-        case .deleteOrder:
-            return "shopCartInfo/delete"
+        case .cancelOrder:
+            return "order/cancel"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .deleteOrder:
+        case .cancelOrder:
             return .post
         }
     }
@@ -39,8 +39,8 @@ extension HomeApi: TargetType {
     
     public var task: Task {
         switch self {
-        case .deleteOrder(let params):
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .cancelOrder(let params):
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
     

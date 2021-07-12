@@ -8,6 +8,7 @@
 import UIKit
 import SwiftyJSON
 import SnapKit
+import ReactiveSwift
 
 struct PhoneFrameLayerModel {
     let background: String?
@@ -65,6 +66,7 @@ class EditPhoneViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var phoneImageView: UIImageView!
+    @IBOutlet weak var backgroundImageContainer: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var backgroundHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var deleteView: UIView!
@@ -81,9 +83,11 @@ class EditPhoneViewController: UIViewController {
     var listFrameView: [EditPhoneFrameView] = []
     var indexSelectFrame = 0
     
-    private var textColor = UIColor.black
-    private var isTyping = false
-    private var activeTextView: UITextView?
+    private let attributeText: AttributeText
+    private let attributeTextViewModel: AttributeTextViewModel
+    private var bottomTextSelectionConstraint: Constraint?
+    private let textLayerViewModel: TextLayerViewModel
+    private let textLayer: TextLayer
     private var lastPanPoint: CGPoint?
     
     private let stickerView: StickerSelection
@@ -96,6 +100,10 @@ class EditPhoneViewController: UIViewController {
         self.phoneImageData = phoneImageData
         stickerSelectionViewModel = .init(apiService: APIService.shared)
         stickerView = .init(viewModel: stickerSelectionViewModel)
+        attributeTextViewModel = .init(apiService: APIService.shared)
+        attributeText = .init(viewModel: attributeTextViewModel)
+        textLayerViewModel = .init(apiService: APIService.shared)
+        textLayer = .init(viewModel: textLayerViewModel, frame: CGRect(origin: .zero, size: .zero))
         super.init(nibName: "EditPhoneViewController", bundle: nil)
     }
     
@@ -131,9 +139,6 @@ class EditPhoneViewController: UIViewController {
         addStickerView.isUserInteractionEnabled = true
         addStickerView.addGestureRecognizer(tapAddSticker)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
         view.addSubview(stickerView)
         stickerView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
@@ -161,19 +166,69 @@ class EditPhoneViewController: UIViewController {
             imageView.center = CGPoint(x: self.containerView.frame.width / 2, y: self.containerView.frame.height / 2)
             self.addGestures(view: imageView)
         }
+        
+        view.addSubview(attributeText)
+        attributeText.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(240)
+            bottomTextSelectionConstraint = $0.bottom.equalTo(view.safeAreaLayoutGuide).constraint
+        }
+        
+        attributeText.textView.reactive.becomeFirstResponder <~ textLayerViewModel.selectedNewLabel.signal
+            .filter { $0 == true }
+            .map { _ in }
+
+        attributeText.textView.reactive.text <~ textLayerViewModel.editedText
+
+        textLayerViewModel.selectedNewLabel.signal.filter { $0 == true }.observeValues { [weak self] _ in
+            guard let sself = self else { return }
+            sself.attributeTextViewModel.updateWhenChangeText()
+        }
+
+        textLayerViewModel.changedText <~ attributeText.textView.reactive.continuousTextValues
+        
+        attributeTextViewModel.isSelected.signal.observeValues { [weak self] in
+            if $0, let sself = self {
+                sself.showSelection(selection: sself.attributeText,
+                                    contraint: sself.bottomTextSelectionConstraint)
+            }
+        }
+        
+        attributeTextViewModel.fontSizeValue <~ textLayerViewModel.currentFontSize
+        attributeTextViewModel.interlineValue <~ textLayerViewModel.currentStyles.map { $0.0 }
+        attributeTextViewModel.distanceValue <~ textLayerViewModel.currentStyles.map { $0.1 }
+        attributeTextViewModel.shadowValue <~ textLayerViewModel.currentStyles.map { $0.2 }
+        attributeTextViewModel.showedKeyboard <~ Signal.merge(textLayerViewModel.deletedLabel.signal.map { _ in false },
+                                                              textLayerViewModel.selectedNewLabel.signal.filter { $0 == true })
+        
+        textLayerViewModel.fetchFontAction <~ attributeTextViewModel.selectedFont.signal.skipNil()
+        textLayerViewModel.changedColor <~ attributeTextViewModel.selectedColor.signal
+            .skipNil()
+            .map { $0.color }
+        textLayerViewModel.changedAlign <~ attributeTextViewModel.selectedAlign.signal
+            .map { $0 }
+        textLayerViewModel.changedTextCased <~ attributeTextViewModel.selectedTextCased.signal
+            .map { $0 }
+        textLayerViewModel.interlineValue <~ attributeTextViewModel.interlineValue
+        textLayerViewModel.distanceValue <~ attributeTextViewModel.distanceValue
+        textLayerViewModel.shadowValue <~ attributeTextViewModel.shadowValue
+        textLayerViewModel.fontSizeValue <~ attributeTextViewModel.fontSizeValue
+        
+        containerView.addSubview(textLayer)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let layer = self.layer else { return }
         
-        listFrameView.forEach({ $0.removeFromSuperview() })
-        listFrameView.removeAll()
+        textLayer.frame.size = containerView.frame.size
         
         widthBackground = backgroundImageView.frame.width
         heightBackground = layer.height / layer.width * widthBackground
         backgroundHeightConstraint.constant = heightBackground
         view.layoutIfNeeded()
+        
+        guard listFrameView.isEmpty else { return }
         
         for (index, frame) in layer.frames.enumerated() {
             let view = EditPhoneFrameView()
@@ -183,7 +238,7 @@ class EditPhoneViewController: UIViewController {
             view.frame.origin.x = frame.x / scaleX
             view.frame.origin.y = frame.y / scaleY
             view.transform = view.transform.rotated(by: frame.angle / 180 * .pi)
-            backgroundImageView.addSubview(view)
+            backgroundImageContainer.insertSubview(view, at: 0)
             
             view.didTap = { [weak self] in
                 self?.indexSelectFrame = index
@@ -234,21 +289,9 @@ class EditPhoneViewController: UIViewController {
         })
     }
     
-    @objc func keyboardDidShow() {
-        if isTyping {
-            doneButton.setTitle("Xong", for: .normal)
-            doneButton.setImage(nil, for: .normal)
-        }
-    }
-    
-    @objc func keyboardWillHide() {
-        doneButton.setImage(R.image.navigation_next(), for: .normal)
-        doneButton.setTitle(nil, for: .normal)
-        isTyping = false
-    }
-    
     @objc func tappedAddText(_ sender: UITapGestureRecognizer) {
-        addText()
+        attributeTextViewModel.isSelected.value = true
+        textLayer.add(text: AppConstants.CreateDesign.defaultText)
     }
     
     @objc func tappedAddSticker(_ sender: UITapGestureRecognizer) {
@@ -260,10 +303,7 @@ class EditPhoneViewController: UIViewController {
     }
     
     @IBAction func onPressDone(_ sender: Any) {
-        if isTyping {
-            view.endEditing(true)
-            return
-        }
+        textLayer.deselect()
         
         let buyRouter = BuyRouter(navigationController)
         let preview = containerView.imageFromView(scale: 0.75)
@@ -273,9 +313,9 @@ class EditPhoneViewController: UIViewController {
         let print = CommonUtility.createPdfFromView(designLayer: containerView.layer,
                                                     desginBounds: containerView.bounds)
         let designModel = OutPutFileModel(preview: preview, photo: image, print: print)
-        // ko sử dụng product để làm gì
         let product = ProductModel(id: Int64(phoneImageData.id), name: nil, imgUrl: nil, price: nil, priceDiscount: nil, editor: nil)
         buyRouter.start(productModel: product, outPutFile: designModel)
+        phoneImageView.isHidden = false
     }
 }
 
@@ -301,60 +341,7 @@ extension EditPhoneViewController: UIImagePickerControllerDelegate, UINavigation
     
 }
 
-extension EditPhoneViewController: UITextViewDelegate {
-    
-    func addText() {
-        isTyping = true
-        let textView = UITextView(frame: CGRect(x: 0, y: containerView.center.y,
-                                                width: containerView.frame.width, height: 30))
-        
-        textView.textAlignment = .center
-        textView.font = UIFont(name: "Helvetica", size: 30)
-        textView.textColor = textColor
-        textView.layer.shadowColor = UIColor.black.cgColor
-        textView.layer.shadowOffset = CGSize(width: 1.0, height: 0.0)
-        textView.layer.shadowOpacity = 0.2
-        textView.layer.shadowRadius = 1.0
-        textView.layer.backgroundColor = UIColor.clear.cgColor
-        textView.autocorrectionType = .no
-        textView.isScrollEnabled = false
-        textView.delegate = self
-        
-        self.containerView.addSubview(textView)
-        addGestures(view: textView)
-        textView.becomeFirstResponder()
-        textView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
-    }
-    
-    
-    
-    func textViewDidChange(_ textView: UITextView) {
-        let rotation = atan2(textView.transform.b, textView.transform.a)
-        if rotation == 0 {
-            let oldFrame = textView.frame
-            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height: CGFloat.greatestFiniteMagnitude))
-            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
-        }
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        isTyping = true
-        activeTextView = textView
-        textView.superview?.bringSubviewToFront(textView)
-        // TODO: remove this if don't need change font when edit
-        textView.font = UIFont(name: "Helvetica", size: 30)
-        UIView.animate(withDuration: 0.3,
-                       animations: { [weak self] in
-                        guard let self = self else { return }
-                        textView.transform = CGAffineTransform.identity
-                        textView.center = CGPoint(x: self.containerView.frame.width / 2,
-                                                  y: self.containerView.frame.height / 2)
-        })
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        activeTextView = nil
-    }
+extension EditPhoneViewController {
     
     func addGestures(view: UIView) {
         //Gestures

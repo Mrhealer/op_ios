@@ -322,6 +322,21 @@
 		AC559C392673496F00DE2F95 /* EditPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC559C372673496F00DE2F95 /* EditPhoneViewController.xib */; };
 		AC677D142672072200665A90 /* PhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC677D122672072200665A90 /* PhoneTableViewCell.swift */; };
 		AC677D152672072200665A90 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC677D132672072200665A90 /* PhoneTableViewCell.xib */; };
+		ACD2DD6E268566A00049B126 /* juicy.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD612685669E0049B126 /* juicy.acv */; };
+		ACD2DD6F268566A00049B126 /* crisp.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD622685669E0049B126 /* crisp.acv */; };
+		ACD2DD70268566A00049B126 /* fresh.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD632685669F0049B126 /* fresh.acv */; };
+		ACD2DD71268566A00049B126 /* morning.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD642685669F0049B126 /* morning.acv */; };
+		ACD2DD72268566A00049B126 /* charm.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD652685669F0049B126 /* charm.acv */; };
+		ACD2DD73268566A00049B126 /* deep.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD662685669F0049B126 /* deep.acv */; };
+		ACD2DD74268566A00049B126 /* red.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD672685669F0049B126 /* red.acv */; };
+		ACD2DD75268566A00049B126 /* serene.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD682685669F0049B126 /* serene.acv */; };
+		ACD2DD76268566A00049B126 /* green.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD69268566A00049B126 /* green.acv */; };
+		ACD2DD77268566A00049B126 /* sweet.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6A268566A00049B126 /* sweet.acv */; };
+		ACD2DD78268566A00049B126 /* mint.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6B268566A00049B126 /* mint.acv */; };
+		ACD2DD79268566A00049B126 /* whiteskin.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6C268566A00049B126 /* whiteskin.acv */; };
+		ACD2DD7A268566A00049B126 /* purple.acv in Resources */ = {isa = PBXBuildFile; fileRef = ACD2DD6D268566A00049B126 /* purple.acv */; };
+		ACD51141268C0912009A8364 /* SeeMoreTemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD5113F268C0912009A8364 /* SeeMoreTemplateController.swift */; };
+		ACD51142268C0912009A8364 /* SeeMoreTemplateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACD51140268C0912009A8364 /* SeeMoreTemplateController.xib */; };
 		C417401B26709C8E008EF307 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C417401A26709C8E008EF307 /* UnifiedNativeAdView.xib */; };
 		C4AB1E2F2668B49F00AEA87E /* ScalableLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */; };
 		C4AB1E832668BE1700AEA87E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AB1E822668BE1700AEA87E /* HeaderView.swift */; };
@@ -689,6 +704,21 @@
 		AC559C372673496F00DE2F95 /* EditPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPhoneViewController.xib; sourceTree = "<group>"; };
 		AC677D122672072200665A90 /* PhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTableViewCell.swift; sourceTree = "<group>"; };
 		AC677D132672072200665A90 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
+		ACD2DD612685669E0049B126 /* juicy.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = juicy.acv; sourceTree = "<group>"; };
+		ACD2DD622685669E0049B126 /* crisp.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = crisp.acv; sourceTree = "<group>"; };
+		ACD2DD632685669F0049B126 /* fresh.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fresh.acv; sourceTree = "<group>"; };
+		ACD2DD642685669F0049B126 /* morning.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = morning.acv; sourceTree = "<group>"; };
+		ACD2DD652685669F0049B126 /* charm.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = charm.acv; sourceTree = "<group>"; };
+		ACD2DD662685669F0049B126 /* deep.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = deep.acv; sourceTree = "<group>"; };
+		ACD2DD672685669F0049B126 /* red.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = red.acv; sourceTree = "<group>"; };
+		ACD2DD682685669F0049B126 /* serene.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = serene.acv; sourceTree = "<group>"; };
+		ACD2DD69268566A00049B126 /* green.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = green.acv; sourceTree = "<group>"; };
+		ACD2DD6A268566A00049B126 /* sweet.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = sweet.acv; sourceTree = "<group>"; };
+		ACD2DD6B268566A00049B126 /* mint.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = mint.acv; sourceTree = "<group>"; };
+		ACD2DD6C268566A00049B126 /* whiteskin.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = whiteskin.acv; sourceTree = "<group>"; };
+		ACD2DD6D268566A00049B126 /* purple.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = purple.acv; sourceTree = "<group>"; };
+		ACD5113F268C0912009A8364 /* SeeMoreTemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreTemplateController.swift; sourceTree = "<group>"; };
+		ACD51140268C0912009A8364 /* SeeMoreTemplateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreTemplateController.xib; sourceTree = "<group>"; };
 		B9B01018FD69C6D02935429E /* Pods-ios-opdep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-opdep.debug.xcconfig"; path = "Target Support Files/Pods-ios-opdep/Pods-ios-opdep.debug.xcconfig"; sourceTree = "<group>"; };
 		C417401A26709C8E008EF307 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 		C4AB1E2E2668B49F00AEA87E /* ScalableLabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalableLabelHeaderView.swift; sourceTree = "<group>"; };
@@ -1009,6 +1039,7 @@
 				3DD13D1C2633C3E900C2795D /* Scenes */,
 				3D7BA63F26387D55009597CA /* Fonts */,
 				3D7BA618263865CA009597CA /* Language */,
+				ACD2DD60268566820049B126 /* Filter */,
 				3DD13CBF2633C33B00C2795D /* AppDelegate.swift */,
 				3DD13CC12633C33B00C2795D /* SceneDelegate.swift */,
 				3DD13CC82633C33E00C2795D /* Assets.xcassets */,
@@ -1970,6 +2001,26 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		ACD2DD60268566820049B126 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				ACD2DD652685669F0049B126 /* charm.acv */,
+				ACD2DD622685669E0049B126 /* crisp.acv */,
+				ACD2DD662685669F0049B126 /* deep.acv */,
+				ACD2DD632685669F0049B126 /* fresh.acv */,
+				ACD2DD69268566A00049B126 /* green.acv */,
+				ACD2DD612685669E0049B126 /* juicy.acv */,
+				ACD2DD6B268566A00049B126 /* mint.acv */,
+				ACD2DD642685669F0049B126 /* morning.acv */,
+				ACD2DD6D268566A00049B126 /* purple.acv */,
+				ACD2DD672685669F0049B126 /* red.acv */,
+				ACD2DD682685669F0049B126 /* serene.acv */,
+				ACD2DD6A268566A00049B126 /* sweet.acv */,
+				ACD2DD6C268566A00049B126 /* whiteskin.acv */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		C417401926709C77008EF307 /* Ads */ = {
 			isa = PBXGroup;
 			children = (
@@ -1993,6 +2044,8 @@
 			children = (
 				C4AB1E9D2668C35800AEA87E /* TemplateController.swift */,
 				C4AB1E9E2668C35800AEA87E /* TemplateController.xib */,
+				ACD5113F268C0912009A8364 /* SeeMoreTemplateController.swift */,
+				ACD51140268C0912009A8364 /* SeeMoreTemplateController.xib */,
 				C4AB1EE32669E23300AEA87E /* TemplateDetailViewController.swift */,
 				C4AB1EE42669E23300AEA87E /* TemplateDetailViewController.xib */,
 				AC52A88B2670AC110059C3A7 /* SelectPhoneViewController.swift */,
@@ -2175,27 +2228,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD2DD78268566A00049B126 /* mint.acv in Resources */,
 				3D7BA65326387D6E009597CA /* OpenSans-Light.ttf in Resources */,
 				AC30CE712670693C002232D5 /* TemplateCollectionCell.xib in Resources */,
+				ACD51142268C0912009A8364 /* SeeMoreTemplateController.xib in Resources */,
 				3DD13CCC2633C33E00C2795D /* LaunchScreen.storyboard in Resources */,
+				ACD2DD73268566A00049B126 /* deep.acv in Resources */,
 				607DB3572662C991008798D5 /* WebViewController.xib in Resources */,
+				ACD2DD7A268566A00049B126 /* purple.acv in Resources */,
 				607DB34F2662A72C008798D5 /* LoginViewController.xib in Resources */,
+				ACD2DD70268566A00049B126 /* fresh.acv in Resources */,
 				3D7BA64F26387D6E009597CA /* OpenSans-SemiBold.ttf in Resources */,
 				C4AB1EA02668C35800AEA87E /* TemplateController.xib in Resources */,
 				3D7BA62126386645009597CA /* Localizable.strings in Resources */,
+				ACD2DD74268566A00049B126 /* red.acv in Resources */,
 				AC559C392673496F00DE2F95 /* EditPhoneViewController.xib in Resources */,
+				ACD2DD72268566A00049B126 /* charm.acv in Resources */,
+				ACD2DD79268566A00049B126 /* whiteskin.acv in Resources */,
 				C417401B26709C8E008EF307 /* UnifiedNativeAdView.xib in Resources */,
+				ACD2DD6F268566A00049B126 /* crisp.acv in Resources */,
 				C4AB1E882668BE2800AEA87E /* HeaderView.xib in Resources */,
 				AC1FA64426799F8F00C2FF53 /* CropViewController.xib in Resources */,
+				ACD2DD75268566A00049B126 /* serene.acv in Resources */,
 				AC52A88E2670AC110059C3A7 /* SelectPhoneViewController.xib in Resources */,
 				3D7BA64A26387D6E009597CA /* OpenSans-Regular.ttf in Resources */,
 				AC1FA4AE26798D4700C2FF53 /* EditPhoneFrameView.xib in Resources */,
 				3D7BA64E26387D6E009597CA /* OpenSans-ExtraBold.ttf in Resources */,
+				ACD2DD71268566A00049B126 /* morning.acv in Resources */,
 				3D7BA64C26387D6E009597CA /* OpenSans-Italic.ttf in Resources */,
+				ACD2DD76268566A00049B126 /* green.acv in Resources */,
+				ACD2DD6E268566A00049B126 /* juicy.acv in Resources */,
 				60B3D8E926621C64005F032B /* TextViewCommon.xib in Resources */,
 				3D7BA65226387D6E009597CA /* OpenSans-BoldItalic.ttf in Resources */,
 				C4AB1EC72668DD5600AEA87E /* TableViewCell.xib in Resources */,
 				C4AB1EDA2668E15900AEA87E /* CollectionViewCell.xib in Resources */,
+				ACD2DD77268566A00049B126 /* sweet.acv in Resources */,
 				3DD13CC92633C33E00C2795D /* Assets.xcassets in Resources */,
 				A42075EB266C198A0043C75F /* OrderDetailsViewController.xib in Resources */,
 				C4AB1EE62669E23300AEA87E /* TemplateDetailViewController.xib in Resources */,
@@ -2664,6 +2731,7 @@
 				3DD13D802633C55800C2795D /* UploadableRequest.swift in Sources */,
 				3D0404A5263F9BFF00519C7A /* ProductGirdCell.swift in Sources */,
 				C4AB1EC92668DD5600AEA87E /* TableViewCellModel.swift in Sources */,
+				ACD51141268C0912009A8364 /* SeeMoreTemplateController.swift in Sources */,
 				3D7BA62A2638668D009597CA /* Localizable.swift in Sources */,
 				3DD13D292633C49900C2795D /* BasicNavigationController.swift in Sources */,
 				3DD13D3A2633C4AE00C2795D /* PassthroughStackView.swift in Sources */,

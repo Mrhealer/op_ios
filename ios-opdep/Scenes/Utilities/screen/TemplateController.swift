@@ -46,6 +46,12 @@ class TemplateController: BasicViewController {
         
     }
     
+    @objc func tapSeeMore(_ sender: UIButton) {
+        let section = sender.tag
+        let vc = SeeMoreTemplateController(viewModel: viewModel, template: viewModel.templateData.value[section])
+        AppLogic.shared.appRouter.rootNavigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension TemplateController: UITableViewDelegate, UITableViewDataSource {
@@ -71,6 +77,16 @@ extension TemplateController: UITableViewDelegate, UITableViewDataSource {
         titleLabel.textColor = .blue
         titleLabel.font = R.font.openSansBold(size: 18)
         titleLabel.text = viewModel.templateData.value[section].name
+        let seeMore = UIButton()
+        headerView.addSubview(seeMore)
+        seeMore.setTitle("Xem tiếp", for: .normal)
+        seeMore.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(-10)
+        }
+        seeMore.titleLabel?.textColor = .black
+        seeMore.tag = section
+        seeMore.addTarget(self, action: #selector(tapSeeMore(_:)), for: .touchUpInside)
         return headerView
     }
     
@@ -111,13 +127,17 @@ extension TemplateController: UITableViewDelegate, UITableViewDataSource {
 extension TemplateController: CollectionViewCellDelegate {
     func collectionView(collectionviewcell: CollectionViewCell?, index: Int, didTappedInTableViewCell: TableViewCell) {
         if let colorsRow = didTappedInTableViewCell.rowWithColors {
-            self.tappedCell = colorsRow[index]
-            
-            let vc = TemplateDetailViewController(viewModel: viewModel)
-            vc.tappedCell = self.tappedCell
-            AppLogic.shared.appRouter.rootNavigationController?.pushViewController(vc, animated: true)
-//            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
-            // You can also do changes to the cell you tapped using the 'collectionviewcell'
+            let content = colorsRow[index]
+            self.tappedCell = content
+            if content.category != nil {
+                let vc = TemplateDetailViewController(viewModel: viewModel)
+                vc.tappedCell = content
+                AppLogic.shared.appRouter.rootNavigationController?.pushViewController(vc, animated: true)
+            } else if let contentTemplate = content.template {
+                let template = TemplateCategoryData(contentTemplate: contentTemplate)
+                let vc = SelectPhoneViewController(viewModel: viewModel, template: template)
+                AppLogic.shared.appRouter.rootNavigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

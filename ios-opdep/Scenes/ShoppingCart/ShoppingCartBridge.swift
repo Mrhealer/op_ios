@@ -101,17 +101,6 @@ class ShoppingCartBridge: ListViewBridge<ShoppingCartViewModel> {
     }
     
     override func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
-        let controller = OrderDetailsViewController()
-        controller.modalPresentationStyle = .fullScreen
-        controller.data.value = viewModel.shoppingCart.value[indexPath.row]
-        controller.tapDeleteOrder.subscribe(onNext: { _ in
-            self.viewModel.fetchDataShoppingCart()
-        })
-        AppLogic.shared.appRouter.rootNavigationController?.present(controller, animated: true, completion: nil)
-    }
-    
-    override func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }

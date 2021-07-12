@@ -146,6 +146,7 @@ struct OrderDetailDataResponse: Decodable {
     let product: ProductResponse?
     let createdAt: String?
     let updatedAt: String?
+    let order: OrderMetaData?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -161,6 +162,25 @@ struct OrderDetailDataResponse: Decodable {
         case product
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case order
+    }
+}
+
+struct OrderMetaData: Decodable {
+    let status: Int?
+    let id: Int?
+    let userId: Int?
+    let totalPrice: String?
+    let shippingPrice: Int?
+    let cashOnDeliveryPrice: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case id
+        case userId = "user_id"
+        case totalPrice = "total_price"
+        case shippingPrice = "shipping_price"
+        case cashOnDeliveryPrice = "cash_on_delivery_price"
     }
 }
 

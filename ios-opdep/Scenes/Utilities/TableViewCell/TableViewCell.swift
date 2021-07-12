@@ -72,10 +72,19 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionviewcellid", for: indexPath) as? CollectionViewCell {
             
-            
-            if let urlString = self.rowWithColors?[indexPath.item].category?.imageURL, let url = URL(string: urlString) {
-                cell.imageTemplate.sd_setImage(with: url, completed: nil)
-     
+            guard let content = rowWithColors?[indexPath.item] else {
+                return cell
+            }
+            if content.category != nil {
+                let urlString = content.category?.imageURL ?? ""
+                if let url = URL(string: urlString) {
+                    cell.imageTemplate.sd_setImage(with: url, completed: nil)
+                }
+            } else {
+                let urlString = content.template?.imageURL ?? ""
+                if let url = URL(string: urlString) {
+                    cell.imageTemplate.sd_setImage(with: url, completed: nil)
+                }
             }
             
             return cell

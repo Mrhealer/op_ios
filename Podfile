@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '11.0'
 
 target 'ios-opdep' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -19,9 +19,10 @@ target 'ios-opdep' do
   pod 'Kingfisher', '~> 5.14.1'
   pod 'Google-Mobile-Ads-SDK', '~> 7.68.0'
   # Firebase
-  pod 'Firebase/Analytics'
+  pod 'FirebaseAnalytics'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
   
   #pod 'FBSDKCoreKit', :modular_headers => true
   pod 'FBSDKLoginKit', '~> 9.3.0'
@@ -31,8 +32,8 @@ target 'ios-opdep' do
   
   pod 'Alamofire'
   pod 'UIColor_Hex_Swift'
-  pod 'RxSwift'
-  pod 'RxCocoa'
+#  pod 'RxSwift'
+#  pod 'RxCocoa'
   pod 'NVActivityIndicatorView/Extended'
   pod 'PromiseKit'
   pod 'RMDateSelectionViewController'

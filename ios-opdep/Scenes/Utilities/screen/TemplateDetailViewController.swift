@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TemplateDetailViewController: BasicViewController {
+class TemplateDetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -62,7 +62,7 @@ extension TemplateDetailViewController: UICollectionViewDelegate {
 extension TemplateDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.templateCategoryData.value.count - 1
+        return viewModel.templateCategoryData.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
