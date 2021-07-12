@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NFX.sharedInstance().start()
         #endif
         
+        Messaging.messaging().delegate = self
+        
         return true
     }
     
@@ -70,3 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(String(describing: fcmToken))")
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+}
